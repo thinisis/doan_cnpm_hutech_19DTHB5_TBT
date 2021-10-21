@@ -31,7 +31,6 @@ namespace DoAn_CNPM_App
         private void MainForm_Load(object sender, EventArgs e)
         {
             GetInfoUser();
-            PhanQuyen();
             StartTimer();
             lbl_Time.Visible = true;
             lbl_HelloUsername.Text = "Xin chào " + nameOfUser.ToString();
@@ -89,24 +88,6 @@ namespace DoAn_CNPM_App
         {
         }
 
-        private void PhanQuyen()
-        {
-            if(userLevel == 0)
-            {
-
-            }
-
-            if(userLevel == 1)
-            {
-
-            }
-            if(userLevel == 2)
-            {
-                btn_HeThong.Visible = false;
-                btn_BaoHanh.Visible = false;
-            }
-        }
-
         private void OpenChildForm (Form ChildForm, object btnSender)
         {
             if(activeForm != null)
@@ -122,7 +103,6 @@ namespace DoAn_CNPM_App
             ChildForm.BringToFront();
             ChildForm.Show();
             lbl_TitleText.Text = ChildForm.Text;
-            
         }
 
 
@@ -167,7 +147,15 @@ namespace DoAn_CNPM_App
 
         private void btn_HeThong_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.HeThong(), sender);
+            if(userLevel == 0)
+            {
+                OpenChildForm(new ChildForm.HeThong(), sender);
+            }
+            else
+            {
+                OpenChildForm(new ChildForm.PQ_Error(), sender);
+            }
+            
         }
 
         private void btn_DanhMuc_Click(object sender, EventArgs e)
@@ -177,7 +165,15 @@ namespace DoAn_CNPM_App
 
         private void btn_BaoCao_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.BaoCao(), sender);
+            if (userLevel == 0)
+            {
+                OpenChildForm(new ChildForm.BaoCao(), sender);
+            }
+            else
+            {
+                OpenChildForm(new ChildForm.PQ_Error(), sender);
+            }
+                
         }
 
         private void btn_TimKiem_Click(object sender, EventArgs e)

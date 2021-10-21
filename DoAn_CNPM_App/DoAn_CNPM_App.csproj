@@ -89,6 +89,12 @@
     <Compile Include="ChildForm\HeThong.Designer.cs">
       <DependentUpon>HeThong.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildForm\PQ_Error.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildForm\PQ_Error.Designer.cs">
+      <DependentUpon>PQ_Error.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildForm\TimKiem.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\HeThong.resx">
       <DependentUpon>HeThong.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildForm\PQ_Error.resx">
+      <DependentUpon>PQ_Error.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildForm\TimKiem.resx">
       <DependentUpon>TimKiem.cs</DependentUpon>

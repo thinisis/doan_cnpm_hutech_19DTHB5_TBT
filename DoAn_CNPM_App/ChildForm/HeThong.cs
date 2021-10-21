@@ -170,9 +170,6 @@ namespace DoAn_CNPM_App.ChildForm
             return Result;
         }
 
-
-        #endregion
-
         private void chbx_TTK_ShowOrHidePWD_CheckedChanged(object sender, EventArgs e)
         {
             if (chbx_TTK_ShowOrHidePWD.Checked == true)
@@ -186,6 +183,62 @@ namespace DoAn_CNPM_App.ChildForm
                 txt_TTK_reEnterPWD.UseSystemPasswordChar = true;
             }
         }
+
+        void TNV_CheckMail()
+        {
+            String email = txt_TNV_Email.Text;
+            bool valid = IsValidEmail(email);
+            if(valid == false)
+            {
+                lbl_TNV_ValidEmail.Text = "Email không hợp lệ!";
+                lbl_TNV_ValidEmail.ForeColor = Color.Red;
+                lbl_TNV_ValidEmail.Visible = true;
+            }
+            else
+            {
+                lbl_TNV_ValidEmail.Text = "Email hợp lệ";
+                lbl_TNV_ValidEmail.ForeColor = Color.Green;
+                lbl_TNV_ValidEmail.Visible = true;
+            }
+        }
+
+        void TNV_CheckMaNV()
+        {
+            String manv = txt_TNV_MaNV.Text;
+            NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV.CompareTo(manv) == 0);
+            if (manv == "")
+            {
+                lbl_TNV_checkMNV.Text = "Không thể để trống mã nhân viên!";
+                lbl_TNV_checkMNV.ForeColor = Color.Red;
+                lbl_TNV_checkMNV.Visible = true;
+            }
+            else
+            {
+                if (nv != null)
+                {
+                    lbl_TNV_checkMNV.Text = "Đã có mã nhân viên này trên hệ thống!";
+                    lbl_TNV_checkMNV.ForeColor = Color.Red;
+                    lbl_TNV_checkMNV.Visible = true;
+                }
+                else
+                {
+                    lbl_TNV_checkMNV.Text = "";
+                }
+
+            }
+        }
+        private void txt_TNV_MaNV_TextChanged(object sender, EventArgs e)
+        {
+            TNV_CheckMaNV();
+        }
+        private void txt_TNV_Email_TextChanged(object sender, EventArgs e)
+        {
+            TNV_CheckMail();
+        }
+
+        #endregion
+
+
     }
 }
 

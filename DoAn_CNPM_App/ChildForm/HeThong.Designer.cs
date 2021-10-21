@@ -35,6 +35,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.cbx_TTK_lv = new MetroSet_UI.Controls.MetroSetComboBox();
             this.tab_2 = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.pnl_TaoTK = new MetroSet_UI.Controls.MetroSetPanel();
+            this.chbx_TTK_ShowOrHidePWD = new System.Windows.Forms.CheckBox();
             this.txt_TTK_MSNV = new MetroSet_UI.Controls.MetroSetTextBox();
             this.txt_TTK_reEnterPWD = new MetroSet_UI.Controls.MetroSetTextBox();
             this.txt_TTK_Pwd = new MetroSet_UI.Controls.MetroSetTextBox();
@@ -46,10 +47,10 @@ namespace DoAn_CNPM_App.ChildForm
             this.lbl_TTK_username = new MetroSet_UI.Controls.MetroSetLabel();
             this.tabCtrl_HeThong = new MetroSet_UI.Controls.MetroSetTabControl();
             this.tab3 = new MetroSet_UI.Child.MetroSetSetTabPage();
-            this.metroSetPanel1 = new MetroSet_UI.Controls.MetroSetPanel();
+            this.pnl_TNV = new MetroSet_UI.Controls.MetroSetPanel();
             this.lbl_TNV_MaNV = new MetroSet_UI.Controls.MetroSetLabel();
             this.btn_TNV_Them = new FontAwesome.Sharp.IconButton();
-            this.metroSetTextBox1 = new MetroSet_UI.Controls.MetroSetTextBox();
+            this.txt_TNV_MaNV = new MetroSet_UI.Controls.MetroSetTextBox();
             this.lbl_TNV_checkMNV = new System.Windows.Forms.Label();
             this.lbl_TNV_TenNV = new MetroSet_UI.Controls.MetroSetLabel();
             this.rdb_TNV_Nu = new MetroSet_UI.Controls.MetroSetRadioButton();
@@ -68,12 +69,12 @@ namespace DoAn_CNPM_App.ChildForm
             this.pnl_TTHT_HangTon = new MetroSet_UI.Controls.MetroSetPanel();
             this.lbl_TTH_SoLuongHang = new MetroSet_UI.Controls.MetroSetLabel();
             this.lbl_TTHT_HangCon = new MetroSet_UI.Controls.MetroSetLabel();
-            this.chbx_TTK_ShowOrHidePWD = new System.Windows.Forms.CheckBox();
+            this.lbl_TNV_ValidEmail = new System.Windows.Forms.Label();
             this.tab_2.SuspendLayout();
             this.pnl_TaoTK.SuspendLayout();
             this.tabCtrl_HeThong.SuspendLayout();
             this.tab3.SuspendLayout();
-            this.metroSetPanel1.SuspendLayout();
+            this.pnl_TNV.SuspendLayout();
             this.tab_1.SuspendLayout();
             this.pnl_TTHT_HangTon.SuspendLayout();
             this.SuspendLayout();
@@ -105,7 +106,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.lbl_TTK_checkMSNV.BackColor = System.Drawing.Color.White;
             this.lbl_TTK_checkMSNV.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Italic);
             this.lbl_TTK_checkMSNV.ForeColor = System.Drawing.Color.Black;
-            this.lbl_TTK_checkMSNV.Location = new System.Drawing.Point(515, 235);
+            this.lbl_TTK_checkMSNV.Location = new System.Drawing.Point(502, 235);
             this.lbl_TTK_checkMSNV.Name = "lbl_TTK_checkMSNV";
             this.lbl_TTK_checkMSNV.Size = new System.Drawing.Size(165, 17);
             this.lbl_TTK_checkMSNV.TabIndex = 14;
@@ -203,6 +204,20 @@ namespace DoAn_CNPM_App.ChildForm
             this.pnl_TaoTK.TabIndex = 0;
             this.pnl_TaoTK.ThemeAuthor = "Narwin";
             this.pnl_TaoTK.ThemeName = "MetroLite";
+            // 
+            // chbx_TTK_ShowOrHidePWD
+            // 
+            this.chbx_TTK_ShowOrHidePWD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chbx_TTK_ShowOrHidePWD.AutoSize = true;
+            this.chbx_TTK_ShowOrHidePWD.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbx_TTK_ShowOrHidePWD.ForeColor = System.Drawing.Color.Black;
+            this.chbx_TTK_ShowOrHidePWD.Location = new System.Drawing.Point(502, 140);
+            this.chbx_TTK_ShowOrHidePWD.Name = "chbx_TTK_ShowOrHidePWD";
+            this.chbx_TTK_ShowOrHidePWD.Size = new System.Drawing.Size(108, 21);
+            this.chbx_TTK_ShowOrHidePWD.TabIndex = 16;
+            this.chbx_TTK_ShowOrHidePWD.Text = "Hiện mật khẩu";
+            this.chbx_TTK_ShowOrHidePWD.UseVisualStyleBackColor = true;
+            this.chbx_TTK_ShowOrHidePWD.CheckedChanged += new System.EventHandler(this.chbx_TTK_ShowOrHidePWD_CheckedChanged);
             // 
             // txt_TTK_MSNV
             // 
@@ -415,7 +430,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.tabCtrl_HeThong.ItemSize = new System.Drawing.Size(100, 38);
             this.tabCtrl_HeThong.Location = new System.Drawing.Point(0, 0);
             this.tabCtrl_HeThong.Name = "tabCtrl_HeThong";
-            this.tabCtrl_HeThong.SelectedIndex = 0;
+            this.tabCtrl_HeThong.SelectedIndex = 1;
             this.tabCtrl_HeThong.SelectedTextColor = System.Drawing.Color.White;
             this.tabCtrl_HeThong.Size = new System.Drawing.Size(800, 450);
             this.tabCtrl_HeThong.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
@@ -431,7 +446,7 @@ namespace DoAn_CNPM_App.ChildForm
             // tab3
             // 
             this.tab3.BaseColor = System.Drawing.Color.White;
-            this.tab3.Controls.Add(this.metroSetPanel1);
+            this.tab3.Controls.Add(this.pnl_TNV);
             this.tab3.Font = null;
             this.tab3.ImageIndex = 0;
             this.tab3.ImageKey = null;
@@ -447,44 +462,46 @@ namespace DoAn_CNPM_App.ChildForm
             this.tab3.ThemeName = "MetroLite";
             this.tab3.ToolTipText = null;
             // 
-            // metroSetPanel1
+            // pnl_TNV
             // 
-            this.metroSetPanel1.BackgroundColor = System.Drawing.Color.White;
-            this.metroSetPanel1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
-            this.metroSetPanel1.BorderThickness = 1;
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_MaNV);
-            this.metroSetPanel1.Controls.Add(this.btn_TNV_Them);
-            this.metroSetPanel1.Controls.Add(this.metroSetTextBox1);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_checkMNV);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_TenNV);
-            this.metroSetPanel1.Controls.Add(this.rdb_TNV_Nu);
-            this.metroSetPanel1.Controls.Add(this.txt_TNV_TenNV);
-            this.metroSetPanel1.Controls.Add(this.rdb_TNV_Nam);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_SDT);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_GioiTinh);
-            this.metroSetPanel1.Controls.Add(this.txt_TNV_SDT);
-            this.metroSetPanel1.Controls.Add(this.txt_TNV_Email);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_DiaChi);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_Email);
-            this.metroSetPanel1.Controls.Add(this.txt_TNV_DiaChi);
-            this.metroSetPanel1.Controls.Add(this.txt_TNV_ChucVu);
-            this.metroSetPanel1.Controls.Add(this.lbl_TNV_ChucVu);
-            this.metroSetPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.metroSetPanel1.IsDerivedStyle = true;
-            this.metroSetPanel1.Location = new System.Drawing.Point(0, 0);
-            this.metroSetPanel1.Name = "metroSetPanel1";
-            this.metroSetPanel1.Size = new System.Drawing.Size(792, 404);
-            this.metroSetPanel1.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetPanel1.StyleManager = null;
-            this.metroSetPanel1.TabIndex = 20;
-            this.metroSetPanel1.ThemeAuthor = "Narwin";
-            this.metroSetPanel1.ThemeName = "MetroLite";
+            this.pnl_TNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_TNV.BackgroundColor = System.Drawing.Color.White;
+            this.pnl_TNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(150)))), ((int)(((byte)(150)))));
+            this.pnl_TNV.BorderThickness = 1;
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_ValidEmail);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_MaNV);
+            this.pnl_TNV.Controls.Add(this.btn_TNV_Them);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_MaNV);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_checkMNV);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_TenNV);
+            this.pnl_TNV.Controls.Add(this.rdb_TNV_Nu);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_TenNV);
+            this.pnl_TNV.Controls.Add(this.rdb_TNV_Nam);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_SDT);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_GioiTinh);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_SDT);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_Email);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_DiaChi);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_Email);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_DiaChi);
+            this.pnl_TNV.Controls.Add(this.txt_TNV_ChucVu);
+            this.pnl_TNV.Controls.Add(this.lbl_TNV_ChucVu);
+            this.pnl_TNV.IsDerivedStyle = true;
+            this.pnl_TNV.Location = new System.Drawing.Point(0, 0);
+            this.pnl_TNV.Name = "pnl_TNV";
+            this.pnl_TNV.Size = new System.Drawing.Size(792, 404);
+            this.pnl_TNV.Style = MetroSet_UI.Enums.Style.Light;
+            this.pnl_TNV.StyleManager = null;
+            this.pnl_TNV.TabIndex = 20;
+            this.pnl_TNV.ThemeAuthor = "Narwin";
+            this.pnl_TNV.ThemeName = "MetroLite";
             // 
             // lbl_TNV_MaNV
             // 
+            this.lbl_TNV_MaNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_MaNV.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_MaNV.IsDerivedStyle = true;
-            this.lbl_TNV_MaNV.Location = new System.Drawing.Point(215, 57);
+            this.lbl_TNV_MaNV.Location = new System.Drawing.Point(108, 72);
             this.lbl_TNV_MaNV.Name = "lbl_TNV_MaNV";
             this.lbl_TNV_MaNV.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_MaNV.Style = MetroSet_UI.Enums.Style.Light;
@@ -496,67 +513,72 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // btn_TNV_Them
             // 
+            this.btn_TNV_Them.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_TNV_Them.Font = new System.Drawing.Font("Open Sans Light", 11.25F);
             this.btn_TNV_Them.ForeColor = System.Drawing.Color.Black;
             this.btn_TNV_Them.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btn_TNV_Them.IconColor = System.Drawing.Color.Black;
             this.btn_TNV_Them.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_TNV_Them.IconSize = 25;
-            this.btn_TNV_Them.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TNV_Them.Location = new System.Drawing.Point(367, 310);
+            this.btn_TNV_Them.Location = new System.Drawing.Point(245, 251);
             this.btn_TNV_Them.Name = "btn_TNV_Them";
-            this.btn_TNV_Them.Size = new System.Drawing.Size(87, 34);
+            this.btn_TNV_Them.Size = new System.Drawing.Size(416, 34);
             this.btn_TNV_Them.TabIndex = 19;
             this.btn_TNV_Them.Text = "Thêm ";
-            this.btn_TNV_Them.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_TNV_Them.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btn_TNV_Them.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TNV_Them.UseVisualStyleBackColor = true;
             // 
-            // metroSetTextBox1
+            // txt_TNV_MaNV
             // 
-            this.metroSetTextBox1.AutoCompleteCustomSource = null;
-            this.metroSetTextBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.metroSetTextBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.metroSetTextBox1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroSetTextBox1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.metroSetTextBox1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.metroSetTextBox1.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            this.metroSetTextBox1.Font = new System.Drawing.Font("Open Sans", 9.75F);
-            this.metroSetTextBox1.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            this.metroSetTextBox1.Image = null;
-            this.metroSetTextBox1.IsDerivedStyle = true;
-            this.metroSetTextBox1.Lines = null;
-            this.metroSetTextBox1.Location = new System.Drawing.Point(321, 51);
-            this.metroSetTextBox1.MaxLength = 32767;
-            this.metroSetTextBox1.Multiline = false;
-            this.metroSetTextBox1.Name = "metroSetTextBox1";
-            this.metroSetTextBox1.ReadOnly = false;
-            this.metroSetTextBox1.Size = new System.Drawing.Size(212, 29);
-            this.metroSetTextBox1.Style = MetroSet_UI.Enums.Style.Light;
-            this.metroSetTextBox1.StyleManager = null;
-            this.metroSetTextBox1.TabIndex = 1;
-            this.metroSetTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.metroSetTextBox1.ThemeAuthor = "Narwin";
-            this.metroSetTextBox1.ThemeName = "MetroLite";
-            this.metroSetTextBox1.UseSystemPasswordChar = false;
-            this.metroSetTextBox1.WatermarkText = "Điền vào mã nhân viên";
+            this.txt_TNV_MaNV.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_TNV_MaNV.AutoCompleteCustomSource = null;
+            this.txt_TNV_MaNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txt_TNV_MaNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txt_TNV_MaNV.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txt_TNV_MaNV.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_TNV_MaNV.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.txt_TNV_MaNV.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            this.txt_TNV_MaNV.Font = new System.Drawing.Font("Open Sans", 9.75F);
+            this.txt_TNV_MaNV.HoverColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            this.txt_TNV_MaNV.Image = null;
+            this.txt_TNV_MaNV.IsDerivedStyle = true;
+            this.txt_TNV_MaNV.Lines = null;
+            this.txt_TNV_MaNV.Location = new System.Drawing.Point(214, 66);
+            this.txt_TNV_MaNV.MaxLength = 32767;
+            this.txt_TNV_MaNV.Multiline = false;
+            this.txt_TNV_MaNV.Name = "txt_TNV_MaNV";
+            this.txt_TNV_MaNV.ReadOnly = false;
+            this.txt_TNV_MaNV.Size = new System.Drawing.Size(212, 29);
+            this.txt_TNV_MaNV.Style = MetroSet_UI.Enums.Style.Light;
+            this.txt_TNV_MaNV.StyleManager = null;
+            this.txt_TNV_MaNV.TabIndex = 1;
+            this.txt_TNV_MaNV.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_TNV_MaNV.ThemeAuthor = "Narwin";
+            this.txt_TNV_MaNV.ThemeName = "MetroLite";
+            this.txt_TNV_MaNV.UseSystemPasswordChar = false;
+            this.txt_TNV_MaNV.WatermarkText = "Điền vào mã nhân viên";
+            this.txt_TNV_MaNV.TextChanged += new System.EventHandler(this.txt_TNV_MaNV_TextChanged);
             // 
             // lbl_TNV_checkMNV
             // 
             this.lbl_TNV_checkMNV.AutoSize = true;
             this.lbl_TNV_checkMNV.BackColor = System.Drawing.Color.Transparent;
             this.lbl_TNV_checkMNV.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Italic);
-            this.lbl_TNV_checkMNV.Location = new System.Drawing.Point(327, 10);
+            this.lbl_TNV_checkMNV.ForeColor = System.Drawing.Color.Black;
+            this.lbl_TNV_checkMNV.Location = new System.Drawing.Point(218, 95);
             this.lbl_TNV_checkMNV.Name = "lbl_TNV_checkMNV";
             this.lbl_TNV_checkMNV.Size = new System.Drawing.Size(188, 17);
             this.lbl_TNV_checkMNV.TabIndex = 18;
             this.lbl_TNV_checkMNV.Text = "Mã nhân viên đã có trên hê thống";
+            this.lbl_TNV_checkMNV.Visible = false;
             // 
             // lbl_TNV_TenNV
             // 
+            this.lbl_TNV_TenNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_TenNV.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_TenNV.IsDerivedStyle = true;
-            this.lbl_TNV_TenNV.Location = new System.Drawing.Point(215, 92);
+            this.lbl_TNV_TenNV.Location = new System.Drawing.Point(109, 121);
             this.lbl_TNV_TenNV.Name = "lbl_TNV_TenNV";
             this.lbl_TNV_TenNV.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_TenNV.Style = MetroSet_UI.Enums.Style.Light;
@@ -568,6 +590,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // rdb_TNV_Nu
             // 
+            this.rdb_TNV_Nu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdb_TNV_Nu.BackgroundColor = System.Drawing.Color.White;
             this.rdb_TNV_Nu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
             this.rdb_TNV_Nu.Checked = false;
@@ -577,7 +600,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.rdb_TNV_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rdb_TNV_Nu.Group = 0;
             this.rdb_TNV_Nu.IsDerivedStyle = true;
-            this.rdb_TNV_Nu.Location = new System.Drawing.Point(458, 267);
+            this.rdb_TNV_Nu.Location = new System.Drawing.Point(474, 214);
             this.rdb_TNV_Nu.Name = "rdb_TNV_Nu";
             this.rdb_TNV_Nu.Size = new System.Drawing.Size(75, 17);
             this.rdb_TNV_Nu.Style = MetroSet_UI.Enums.Style.Light;
@@ -589,6 +612,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // txt_TNV_TenNV
             // 
+            this.txt_TNV_TenNV.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_TNV_TenNV.AutoCompleteCustomSource = null;
             this.txt_TNV_TenNV.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_TNV_TenNV.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -601,7 +625,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_TenNV.Image = null;
             this.txt_TNV_TenNV.IsDerivedStyle = true;
             this.txt_TNV_TenNV.Lines = null;
-            this.txt_TNV_TenNV.Location = new System.Drawing.Point(321, 86);
+            this.txt_TNV_TenNV.Location = new System.Drawing.Point(215, 115);
             this.txt_TNV_TenNV.MaxLength = 32767;
             this.txt_TNV_TenNV.Multiline = false;
             this.txt_TNV_TenNV.Name = "txt_TNV_TenNV";
@@ -618,6 +642,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // rdb_TNV_Nam
             // 
+            this.rdb_TNV_Nam.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.rdb_TNV_Nam.BackgroundColor = System.Drawing.Color.White;
             this.rdb_TNV_Nam.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
             this.rdb_TNV_Nam.Checked = false;
@@ -627,7 +652,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.rdb_TNV_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.rdb_TNV_Nam.Group = 0;
             this.rdb_TNV_Nam.IsDerivedStyle = true;
-            this.rdb_TNV_Nam.Location = new System.Drawing.Point(321, 267);
+            this.rdb_TNV_Nam.Location = new System.Drawing.Point(368, 214);
             this.rdb_TNV_Nam.Name = "rdb_TNV_Nam";
             this.rdb_TNV_Nam.Size = new System.Drawing.Size(75, 17);
             this.rdb_TNV_Nam.Style = MetroSet_UI.Enums.Style.Light;
@@ -639,9 +664,10 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // lbl_TNV_SDT
             // 
+            this.lbl_TNV_SDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_SDT.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_SDT.IsDerivedStyle = true;
-            this.lbl_TNV_SDT.Location = new System.Drawing.Point(215, 127);
+            this.lbl_TNV_SDT.Location = new System.Drawing.Point(433, 72);
             this.lbl_TNV_SDT.Name = "lbl_TNV_SDT";
             this.lbl_TNV_SDT.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_SDT.Style = MetroSet_UI.Enums.Style.Light;
@@ -653,9 +679,10 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // lbl_TNV_GioiTinh
             // 
+            this.lbl_TNV_GioiTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_GioiTinh.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_GioiTinh.IsDerivedStyle = true;
-            this.lbl_TNV_GioiTinh.Location = new System.Drawing.Point(215, 267);
+            this.lbl_TNV_GioiTinh.Location = new System.Drawing.Point(273, 212);
             this.lbl_TNV_GioiTinh.Name = "lbl_TNV_GioiTinh";
             this.lbl_TNV_GioiTinh.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_GioiTinh.Style = MetroSet_UI.Enums.Style.Light;
@@ -667,6 +694,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // txt_TNV_SDT
             // 
+            this.txt_TNV_SDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_TNV_SDT.AutoCompleteCustomSource = null;
             this.txt_TNV_SDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_TNV_SDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -679,7 +707,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_SDT.Image = null;
             this.txt_TNV_SDT.IsDerivedStyle = true;
             this.txt_TNV_SDT.Lines = null;
-            this.txt_TNV_SDT.Location = new System.Drawing.Point(321, 121);
+            this.txt_TNV_SDT.Location = new System.Drawing.Point(539, 66);
             this.txt_TNV_SDT.MaxLength = 32767;
             this.txt_TNV_SDT.Multiline = false;
             this.txt_TNV_SDT.Name = "txt_TNV_SDT";
@@ -696,6 +724,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // txt_TNV_Email
             // 
+            this.txt_TNV_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_TNV_Email.AutoCompleteCustomSource = null;
             this.txt_TNV_Email.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_TNV_Email.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -708,7 +737,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_Email.Image = null;
             this.txt_TNV_Email.IsDerivedStyle = true;
             this.txt_TNV_Email.Lines = null;
-            this.txt_TNV_Email.Location = new System.Drawing.Point(321, 226);
+            this.txt_TNV_Email.Location = new System.Drawing.Point(539, 115);
             this.txt_TNV_Email.MaxLength = 32767;
             this.txt_TNV_Email.Multiline = false;
             this.txt_TNV_Email.Name = "txt_TNV_Email";
@@ -722,12 +751,14 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_Email.ThemeName = "MetroLite";
             this.txt_TNV_Email.UseSystemPasswordChar = false;
             this.txt_TNV_Email.WatermarkText = "Điền vào Email";
+            this.txt_TNV_Email.TextChanged += new System.EventHandler(this.txt_TNV_Email_TextChanged);
             // 
             // lbl_TNV_DiaChi
             // 
+            this.lbl_TNV_DiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_DiaChi.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_DiaChi.IsDerivedStyle = true;
-            this.lbl_TNV_DiaChi.Location = new System.Drawing.Point(215, 162);
+            this.lbl_TNV_DiaChi.Location = new System.Drawing.Point(108, 170);
             this.lbl_TNV_DiaChi.Name = "lbl_TNV_DiaChi";
             this.lbl_TNV_DiaChi.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_DiaChi.Style = MetroSet_UI.Enums.Style.Light;
@@ -739,9 +770,10 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // lbl_TNV_Email
             // 
+            this.lbl_TNV_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_Email.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_Email.IsDerivedStyle = true;
-            this.lbl_TNV_Email.Location = new System.Drawing.Point(215, 232);
+            this.lbl_TNV_Email.Location = new System.Drawing.Point(433, 121);
             this.lbl_TNV_Email.Name = "lbl_TNV_Email";
             this.lbl_TNV_Email.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_Email.Style = MetroSet_UI.Enums.Style.Light;
@@ -753,6 +785,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // txt_TNV_DiaChi
             // 
+            this.txt_TNV_DiaChi.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_TNV_DiaChi.AutoCompleteCustomSource = null;
             this.txt_TNV_DiaChi.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_TNV_DiaChi.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -765,7 +798,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_DiaChi.Image = null;
             this.txt_TNV_DiaChi.IsDerivedStyle = true;
             this.txt_TNV_DiaChi.Lines = null;
-            this.txt_TNV_DiaChi.Location = new System.Drawing.Point(321, 156);
+            this.txt_TNV_DiaChi.Location = new System.Drawing.Point(215, 164);
             this.txt_TNV_DiaChi.MaxLength = 32767;
             this.txt_TNV_DiaChi.Multiline = false;
             this.txt_TNV_DiaChi.Name = "txt_TNV_DiaChi";
@@ -782,6 +815,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // txt_TNV_ChucVu
             // 
+            this.txt_TNV_ChucVu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_TNV_ChucVu.AutoCompleteCustomSource = null;
             this.txt_TNV_ChucVu.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_TNV_ChucVu.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -794,7 +828,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_TNV_ChucVu.Image = null;
             this.txt_TNV_ChucVu.IsDerivedStyle = true;
             this.txt_TNV_ChucVu.Lines = null;
-            this.txt_TNV_ChucVu.Location = new System.Drawing.Point(321, 191);
+            this.txt_TNV_ChucVu.Location = new System.Drawing.Point(539, 164);
             this.txt_TNV_ChucVu.MaxLength = 32767;
             this.txt_TNV_ChucVu.Multiline = false;
             this.txt_TNV_ChucVu.Name = "txt_TNV_ChucVu";
@@ -811,9 +845,10 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             // lbl_TNV_ChucVu
             // 
+            this.lbl_TNV_ChucVu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_TNV_ChucVu.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
             this.lbl_TNV_ChucVu.IsDerivedStyle = true;
-            this.lbl_TNV_ChucVu.Location = new System.Drawing.Point(215, 197);
+            this.lbl_TNV_ChucVu.Location = new System.Drawing.Point(433, 170);
             this.lbl_TNV_ChucVu.Name = "lbl_TNV_ChucVu";
             this.lbl_TNV_ChucVu.Size = new System.Drawing.Size(100, 23);
             this.lbl_TNV_ChucVu.Style = MetroSet_UI.Enums.Style.Light;
@@ -886,19 +921,18 @@ namespace DoAn_CNPM_App.ChildForm
             this.lbl_TTHT_HangCon.ThemeAuthor = "Narwin";
             this.lbl_TTHT_HangCon.ThemeName = "MetroLite";
             // 
-            // chbx_TTK_ShowOrHidePWD
+            // lbl_TNV_ValidEmail
             // 
-            this.chbx_TTK_ShowOrHidePWD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.chbx_TTK_ShowOrHidePWD.AutoSize = true;
-            this.chbx_TTK_ShowOrHidePWD.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbx_TTK_ShowOrHidePWD.ForeColor = System.Drawing.Color.Black;
-            this.chbx_TTK_ShowOrHidePWD.Location = new System.Drawing.Point(502, 140);
-            this.chbx_TTK_ShowOrHidePWD.Name = "chbx_TTK_ShowOrHidePWD";
-            this.chbx_TTK_ShowOrHidePWD.Size = new System.Drawing.Size(108, 21);
-            this.chbx_TTK_ShowOrHidePWD.TabIndex = 16;
-            this.chbx_TTK_ShowOrHidePWD.Text = "Hiện mật khẩu";
-            this.chbx_TTK_ShowOrHidePWD.UseVisualStyleBackColor = true;
-            this.chbx_TTK_ShowOrHidePWD.CheckedChanged += new System.EventHandler(this.chbx_TTK_ShowOrHidePWD_CheckedChanged);
+            this.lbl_TNV_ValidEmail.AutoSize = true;
+            this.lbl_TNV_ValidEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lbl_TNV_ValidEmail.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Italic);
+            this.lbl_TNV_ValidEmail.ForeColor = System.Drawing.Color.Red;
+            this.lbl_TNV_ValidEmail.Location = new System.Drawing.Point(542, 144);
+            this.lbl_TNV_ValidEmail.Name = "lbl_TNV_ValidEmail";
+            this.lbl_TNV_ValidEmail.Size = new System.Drawing.Size(109, 17);
+            this.lbl_TNV_ValidEmail.TabIndex = 20;
+            this.lbl_TNV_ValidEmail.Text = "Email không hợp lệ";
+            this.lbl_TNV_ValidEmail.Visible = false;
             // 
             // HeThong
             // 
@@ -914,8 +948,8 @@ namespace DoAn_CNPM_App.ChildForm
             this.pnl_TaoTK.PerformLayout();
             this.tabCtrl_HeThong.ResumeLayout(false);
             this.tab3.ResumeLayout(false);
-            this.metroSetPanel1.ResumeLayout(false);
-            this.metroSetPanel1.PerformLayout();
+            this.pnl_TNV.ResumeLayout(false);
+            this.pnl_TNV.PerformLayout();
             this.tab_1.ResumeLayout(false);
             this.pnl_TTHT_HangTon.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -944,10 +978,10 @@ namespace DoAn_CNPM_App.ChildForm
         private MetroSet_UI.Controls.MetroSetPanel pnl_TTHT_HangTon;
         private MetroSet_UI.Controls.MetroSetLabel lbl_TTH_SoLuongHang;
         private MetroSet_UI.Controls.MetroSetLabel lbl_TTHT_HangCon;
-        private MetroSet_UI.Controls.MetroSetPanel metroSetPanel1;
+        private MetroSet_UI.Controls.MetroSetPanel pnl_TNV;
         private MetroSet_UI.Controls.MetroSetLabel lbl_TNV_MaNV;
         private FontAwesome.Sharp.IconButton btn_TNV_Them;
-        private MetroSet_UI.Controls.MetroSetTextBox metroSetTextBox1;
+        private MetroSet_UI.Controls.MetroSetTextBox txt_TNV_MaNV;
         private System.Windows.Forms.Label lbl_TNV_checkMNV;
         private MetroSet_UI.Controls.MetroSetLabel lbl_TNV_TenNV;
         private MetroSet_UI.Controls.MetroSetRadioButton rdb_TNV_Nu;
@@ -963,5 +997,6 @@ namespace DoAn_CNPM_App.ChildForm
         private MetroSet_UI.Controls.MetroSetTextBox txt_TNV_ChucVu;
         private MetroSet_UI.Controls.MetroSetLabel lbl_TNV_ChucVu;
         private System.Windows.Forms.CheckBox chbx_TTK_ShowOrHidePWD;
+        private System.Windows.Forms.Label lbl_TNV_ValidEmail;
     }
 }
