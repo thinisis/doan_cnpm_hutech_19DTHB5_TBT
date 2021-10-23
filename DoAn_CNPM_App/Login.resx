@@ -118,85 +118,58 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_SPTBT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lbl_MTitle.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lbl_SPTBT.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="lbl_MTitle.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: -4px;font-family: 'Open Sans'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: right; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lbl_SPTBT.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 9.75pt</value>
+  <data name="lbl_MTitle.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 12pt</value>
   </data>
-  <data name="lbl_SPTBT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>324, 422</value>
+  <data name="lbl_MTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>91, 127</value>
   </data>
-  <data name="lbl_SPTBT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>165, 19</value>
+  <data name="lbl_MTitle.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="lbl_SPTBT.TabIndex" type="System.Int32, mscorlib">
-    <value>28</value>
+  <data name="lbl_MTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 19</value>
   </data>
-  <data name="lbl_SPTBT.Text" xml:space="preserve">
-    <value>Sản phẩm của công ty TBT</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lbl_MTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>27</value>
   </data>
-  <data name="&gt;&gt;lbl_SPTBT.Name" xml:space="preserve">
-    <value>lbl_SPTBT</value>
+  <data name="lbl_MTitle.Text" xml:space="preserve">
+    <value>Hệ thống quản lý</value>
   </data>
-  <data name="&gt;&gt;lbl_SPTBT.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lbl_MTitle.Name" xml:space="preserve">
+    <value>lbl_MTitle</value>
   </data>
-  <data name="&gt;&gt;lbl_SPTBT.Parent" xml:space="preserve">
+  <data name="&gt;&gt;lbl_MTitle.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuLabel, Bunifu.UI.WinForms.BunifuLabel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;lbl_MTitle.Parent" xml:space="preserve">
     <value>pnl_Login</value>
   </data>
-  <data name="&gt;&gt;lbl_SPTBT.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;lbl_MTitle.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lbl_Title.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="lbl_TBT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="lbl_Title.AutoSize" type="System.Boolean, mscorlib">
+  <data name="lbl_TBT.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lbl_Title.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 27.75pt, style=Bold</value>
-  </data>
-  <data name="lbl_Title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>138, 33</value>
-  </data>
-  <data name="lbl_Title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>543, 54</value>
-  </data>
-  <data name="lbl_Title.TabIndex" type="System.Int32, mscorlib">
-    <value>25</value>
-  </data>
-  <data name="lbl_Title.Text" xml:space="preserve">
-    <value>ĐĂNG NHẬP VÀO HỆ THỐNG</value>
-  </data>
-  <data name="&gt;&gt;lbl_Title.Name" xml:space="preserve">
-    <value>lbl_Title</value>
-  </data>
-  <data name="&gt;&gt;lbl_Title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Title.Parent" xml:space="preserve">
-    <value>pl_Title</value>
-  </data>
-  <data name="&gt;&gt;lbl_Title.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="lbl_TBT.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
   </data>
   <data name="lbl_TBT.Font" type="System.Drawing.Font, System.Drawing">
     <value>Open Sans Condensed ExtraBold, 36pt, style=Bold</value>
   </data>
   <data name="lbl_TBT.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>105, 209</value>
   </data>
   <data name="lbl_TBT.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 66</value>
+    <value>101, 69</value>
   </data>
   <data name="lbl_TBT.TabIndex" type="System.Int32, mscorlib">
     <value>23</value>
@@ -211,10 +184,13 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lbl_TBT.Parent" xml:space="preserve">
-    <value>pl_Title</value>
+    <value>pnl_Login</value>
   </data>
   <data name="&gt;&gt;lbl_TBT.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -223,7 +199,7 @@
     <value>Open Sans, 8.25pt</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 63</value>
+    <value>126, 272</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>57, 15</value>
@@ -241,37 +217,197 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>pl_Title</value>
+    <value>pnl_Login</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="pl_Title.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
+  <data name="pnl_LoginForm.AutoSizeMode" type="System.Windows.Forms.AutoSizeMode, System.Windows.Forms">
+    <value>GrowAndShrink</value>
   </data>
-  <data name="pl_Title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+  <data name="lbl_Title.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="pl_Title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>800, 100</value>
+  <data name="lbl_Title.BaseStylesheet" xml:space="preserve">
+    <value>#bunifu-label { padding: 0px; font-family: 'Open Sans Condensed'; font-size: 30pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
   </data>
-  <data name="pl_Title.TabIndex" type="System.Int32, mscorlib">
-    <value>27</value>
+  <data name="lbl_Title.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans Condensed, 30pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;pl_Title.Name" xml:space="preserve">
-    <value>pl_Title</value>
+  <data name="lbl_Title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>151, 51</value>
   </data>
-  <data name="&gt;&gt;pl_Title.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_Title.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
+    <value>No</value>
   </data>
-  <data name="&gt;&gt;pl_Title.Parent" xml:space="preserve">
-    <value>pnl_Login</value>
+  <data name="lbl_Title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>187, 58</value>
   </data>
-  <data name="&gt;&gt;pl_Title.ZOrder" xml:space="preserve">
+  <data name="lbl_Title.TabIndex" type="System.Int32, mscorlib">
+    <value>29</value>
+  </data>
+  <data name="lbl_Title.Text" xml:space="preserve">
+    <value>ĐĂNG NHẬP</value>
+  </data>
+  <data name="&gt;&gt;lbl_Title.Name" xml:space="preserve">
+    <value>lbl_Title</value>
+  </data>
+  <data name="&gt;&gt;lbl_Title.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuLabel, Bunifu.UI.WinForms.BunifuLabel, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;lbl_Title.Parent" xml:space="preserve">
+    <value>pnl_LoginForm</value>
+  </data>
+  <data name="&gt;&gt;lbl_Title.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txt_Pwd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="txt_Pwd.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAWcAAAAmCAYAAAAYy1rwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABWSURBVHhe7cNBDQAwCASw+TfFOQMETACPNukDAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAryS1W9Ur0wNgbY1WbZJa
+        GAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txt_Pwd.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAACvSURBVEhL5ZHdDYIwFIU7hm7kg/PgBKzlMLqBPvkk5yM0gdDrLdQmoCf5kvb+Qk/Yis7iKp4D
+        nIl9Ra14G5ArEl/JoJe4iMMAZ2Lkiv6Ep2BI09+mIkaOmtV6CIYc+9tUxMhRs1oMAEte3lWVBSdxF7E5
+        F3rodXUTqQE50OsqFi9Vdt/vLojmW2YWLxibnzLT6pvJKqy+oPoTefqjBWMzl5Iyf6ZoZmrAJyzzd60Q
+        OreokR8GbJgyAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="txt_Pwd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 239</value>
+  </data>
+  <data name="txt_Pwd.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="txt_Pwd.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="txt_Pwd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 38</value>
+  </data>
+  <data name="txt_Pwd.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;txt_Pwd.Name" xml:space="preserve">
+    <value>txt_Pwd</value>
+  </data>
+  <data name="&gt;&gt;txt_Pwd.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;txt_Pwd.Parent" xml:space="preserve">
+    <value>pnl_LoginForm</value>
+  </data>
+  <data name="&gt;&gt;txt_Pwd.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="pnl_LoginForm.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="txt_Account.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
+  </data>
+  <data name="txt_Account.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAWcAAAAnCAYAAADTl4lVAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABWSURBVHhe7cMBCQBACASw71/Ka6bGeGGDPQAAAAAAAAAA
+        AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADgiiS1W9VfpgdmCo1WHfrh
+        PwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txt_Account.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAC/SURBVEhL7ZI9DgFBGEDnADgBlcQR3EPlEq6hdQK1A2jUbqETBZ0QpYb3mGpDxmZ3EpvsS14y
+        +/3NZGZDS2Po4wpPUdfGasFBZ3wUNFbLJp7WgRt0oLo2Zq4yR3TY4PX1xrUxc5XJvkH2K3Jg1kcWB3na
+        LL9psxniDNe4wxt6/4cYM2dNaca4xeLDftNae35igne08YpLnOIIO1HXxsxd0Fp77E2yRxsW2DOQoItz
+        tMfeJBZWMcmnpjK2/BUhPAFpk2Q4Mu3T7gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="txt_Account.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 161</value>
+  </data>
+  <data name="txt_Account.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>1, 1</value>
+  </data>
+  <data name="txt_Account.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="txt_Account.Size" type="System.Drawing.Size, System.Drawing">
+    <value>359, 39</value>
+  </data>
+  <data name="txt_Account.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;txt_Account.Name" xml:space="preserve">
+    <value>txt_Account</value>
+  </data>
+  <data name="&gt;&gt;txt_Account.Type" xml:space="preserve">
+    <value>Bunifu.UI.WinForms.BunifuTextBox, Bunifu.UI.WinForms.BunifuTextBox, Version=5.2.2.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9</value>
+  </data>
+  <data name="&gt;&gt;txt_Account.Parent" xml:space="preserve">
+    <value>pnl_LoginForm</value>
+  </data>
+  <data name="&gt;&gt;txt_Account.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lbl_SPTBT.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="lbl_SPTBT.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbl_SPTBT.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 9.75pt</value>
+  </data>
+  <data name="lbl_SPTBT.Location" type="System.Drawing.Point, System.Drawing">
+    <value>173, 412</value>
+  </data>
+  <data name="lbl_SPTBT.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 19</value>
+  </data>
+  <data name="lbl_SPTBT.TabIndex" type="System.Int32, mscorlib">
+    <value>28</value>
+  </data>
+  <data name="lbl_SPTBT.Text" xml:space="preserve">
+    <value>Sản phẩm của công ty TBT</value>
+  </data>
+  <data name="&gt;&gt;lbl_SPTBT.Name" xml:space="preserve">
+    <value>lbl_SPTBT</value>
+  </data>
+  <data name="&gt;&gt;lbl_SPTBT.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbl_SPTBT.Parent" xml:space="preserve">
+    <value>pnl_LoginForm</value>
+  </data>
+  <data name="&gt;&gt;lbl_SPTBT.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ckbx_RememberPwd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="ckbx_RememberPwd.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="ckbx_RememberPwd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans SemiBold, 9.75pt, style=Bold</value>
+  </data>
+  <data name="ckbx_RememberPwd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 289</value>
+  </data>
+  <data name="ckbx_RememberPwd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 23</value>
+  </data>
+  <data name="ckbx_RememberPwd.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="ckbx_RememberPwd.Text" xml:space="preserve">
+    <value>Nhớ mật khẩu</value>
   </data>
   <data name="&gt;&gt;ckbx_RememberPwd.Name" xml:space="preserve">
     <value>ckbx_RememberPwd</value>
@@ -283,19 +419,28 @@
     <value>pnl_LoginForm</value>
   </data>
   <data name="&gt;&gt;ckbx_RememberPwd.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Name" xml:space="preserve">
-    <value>ckbx_ShowPwd</value>
+  <data name="lbl_Forgot.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lbl_Forgot.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
+  <data name="lbl_Forgot.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans SemiBold, 9.75pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lbl_Forgot.Location" type="System.Drawing.Point, System.Drawing">
+    <value>312, 293</value>
+  </data>
+  <data name="lbl_Forgot.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 19</value>
+  </data>
+  <data name="lbl_Forgot.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="lbl_Forgot.Text" xml:space="preserve">
+    <value>Quên mật khẩu ?</value>
   </data>
   <data name="&gt;&gt;lbl_Forgot.Name" xml:space="preserve">
     <value>lbl_Forgot</value>
@@ -307,55 +452,34 @@
     <value>pnl_LoginForm</value>
   </data>
   <data name="&gt;&gt;lbl_Forgot.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Name" xml:space="preserve">
-    <value>txt_Pwd</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Name" xml:space="preserve">
-    <value>lbl_Pwd</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Name" xml:space="preserve">
-    <value>txt_Account</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;lbl_Account.Name" xml:space="preserve">
-    <value>lbl_Account</value>
+  <data name="btn_Quit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="&gt;&gt;lbl_Account.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btn_Quit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
   </data>
-  <data name="&gt;&gt;lbl_Account.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
+  <data name="btn_Quit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt, style=Bold</value>
   </data>
-  <data name="&gt;&gt;lbl_Account.ZOrder" xml:space="preserve">
-    <value>6</value>
+  <data name="btn_Quit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>287, 354</value>
+  </data>
+  <data name="btn_Quit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 53</value>
+  </data>
+  <data name="btn_Quit.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="btn_Quit.Text" xml:space="preserve">
+    <value>Thoát</value>
+  </data>
+  <data name="btn_Quit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btn_Quit.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;btn_Quit.Name" xml:space="preserve">
     <value>btn_Quit</value>
@@ -367,7 +491,37 @@
     <value>pnl_LoginForm</value>
   </data>
   <data name="&gt;&gt;btn_Quit.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
+  </data>
+  <data name="btn_Login.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="btn_Login.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btn_Login.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Open Sans, 14.25pt, style=Bold</value>
+  </data>
+  <data name="btn_Login.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btn_Login.Location" type="System.Drawing.Point, System.Drawing">
+    <value>66, 354</value>
+  </data>
+  <data name="btn_Login.Size" type="System.Drawing.Size, System.Drawing">
+    <value>164, 53</value>
+  </data>
+  <data name="btn_Login.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btn_Login.Text" xml:space="preserve">
+    <value>Đăng nhập</value>
+  </data>
+  <data name="btn_Login.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="btn_Login.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
+    <value>ImageBeforeText</value>
   </data>
   <data name="&gt;&gt;btn_Login.Name" xml:space="preserve">
     <value>btn_Login</value>
@@ -379,13 +533,16 @@
     <value>pnl_LoginForm</value>
   </data>
   <data name="&gt;&gt;btn_Login.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
+  </data>
+  <data name="pnl_LoginForm.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Right</value>
   </data>
   <data name="pnl_LoginForm.Location" type="System.Drawing.Point, System.Drawing">
-    <value>24, 120</value>
+    <value>315, 0</value>
   </data>
   <data name="pnl_LoginForm.Size" type="System.Drawing.Size, System.Drawing">
-    <value>752, 272</value>
+    <value>485, 450</value>
   </data>
   <data name="pnl_LoginForm.TabIndex" type="System.Int32, mscorlib">
     <value>26</value>
@@ -400,7 +557,7 @@
     <value>pnl_Login</value>
   </data>
   <data name="&gt;&gt;pnl_LoginForm.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pnl_Login.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -425,288 +582,6 @@
   </data>
   <data name="&gt;&gt;pnl_Login.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="ckbx_RememberPwd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ckbx_RememberPwd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 9pt</value>
-  </data>
-  <data name="ckbx_RememberPwd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>250, 133</value>
-  </data>
-  <data name="ckbx_RememberPwd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>105, 21</value>
-  </data>
-  <data name="ckbx_RememberPwd.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="ckbx_RememberPwd.Text" xml:space="preserve">
-    <value>Nhớ mật khẩu</value>
-  </data>
-  <data name="&gt;&gt;ckbx_RememberPwd.Name" xml:space="preserve">
-    <value>ckbx_RememberPwd</value>
-  </data>
-  <data name="&gt;&gt;ckbx_RememberPwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ckbx_RememberPwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;ckbx_RememberPwd.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ckbx_ShowPwd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="ckbx_ShowPwd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 8.25pt</value>
-  </data>
-  <data name="ckbx_ShowPwd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>584, 109</value>
-  </data>
-  <data name="ckbx_ShowPwd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>102, 19</value>
-  </data>
-  <data name="ckbx_ShowPwd.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="ckbx_ShowPwd.Text" xml:space="preserve">
-    <value>Hiện mật khẩu</value>
-  </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Name" xml:space="preserve">
-    <value>ckbx_ShowPwd</value>
-  </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;ckbx_ShowPwd.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="lbl_Forgot.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Forgot.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 8.25pt</value>
-  </data>
-  <data name="lbl_Forgot.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 134</value>
-  </data>
-  <data name="lbl_Forgot.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 15</value>
-  </data>
-  <data name="lbl_Forgot.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="lbl_Forgot.Text" xml:space="preserve">
-    <value>Quên mật khẩu ?</value>
-  </data>
-  <data name="&gt;&gt;lbl_Forgot.Name" xml:space="preserve">
-    <value>lbl_Forgot</value>
-  </data>
-  <data name="&gt;&gt;lbl_Forgot.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Forgot.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;lbl_Forgot.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="txt_Pwd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="txt_Pwd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 8.25pt</value>
-  </data>
-  <data name="txt_Pwd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 107</value>
-  </data>
-  <data name="txt_Pwd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 22</value>
-  </data>
-  <data name="txt_Pwd.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Name" xml:space="preserve">
-    <value>txt_Pwd</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;txt_Pwd.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lbl_Pwd.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Pwd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 11pt, style=Bold</value>
-  </data>
-  <data name="lbl_Pwd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 104</value>
-  </data>
-  <data name="lbl_Pwd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>89, 22</value>
-  </data>
-  <data name="lbl_Pwd.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="lbl_Pwd.Text" xml:space="preserve">
-    <value>MẬT KHẨU</value>
-  </data>
-  <data name="lbl_Pwd.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Name" xml:space="preserve">
-    <value>lbl_Pwd</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;lbl_Pwd.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="txt_Account.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="txt_Account.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 8.25pt</value>
-  </data>
-  <data name="txt_Account.Location" type="System.Drawing.Point, System.Drawing">
-    <value>252, 39</value>
-  </data>
-  <data name="txt_Account.Size" type="System.Drawing.Size, System.Drawing">
-    <value>313, 22</value>
-  </data>
-  <data name="txt_Account.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Name" xml:space="preserve">
-    <value>txt_Account</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;txt_Account.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="lbl_Account.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="lbl_Account.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 11pt, style=Bold</value>
-  </data>
-  <data name="lbl_Account.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 39</value>
-  </data>
-  <data name="lbl_Account.Size" type="System.Drawing.Size, System.Drawing">
-    <value>93, 22</value>
-  </data>
-  <data name="lbl_Account.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lbl_Account.Text" xml:space="preserve">
-    <value>TÀI KHOẢN</value>
-  </data>
-  <data name="lbl_Account.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;lbl_Account.Name" xml:space="preserve">
-    <value>lbl_Account</value>
-  </data>
-  <data name="&gt;&gt;lbl_Account.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lbl_Account.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;lbl_Account.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btn_Quit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_Quit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 9pt, style=Bold</value>
-  </data>
-  <data name="btn_Quit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>542, 195</value>
-  </data>
-  <data name="btn_Quit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 36</value>
-  </data>
-  <data name="btn_Quit.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="btn_Quit.Text" xml:space="preserve">
-    <value>Thoát</value>
-  </data>
-  <data name="btn_Quit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btn_Quit.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btn_Quit.Name" xml:space="preserve">
-    <value>btn_Quit</value>
-  </data>
-  <data name="&gt;&gt;btn_Quit.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_Quit.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;btn_Quit.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="btn_Login.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
-  <data name="btn_Login.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Open Sans, 9pt, style=Bold</value>
-  </data>
-  <data name="btn_Login.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 195</value>
-  </data>
-  <data name="btn_Login.Size" type="System.Drawing.Size, System.Drawing">
-    <value>114, 36</value>
-  </data>
-  <data name="btn_Login.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="btn_Login.Text" xml:space="preserve">
-    <value>Đăng nhập</value>
-  </data>
-  <data name="btn_Login.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="btn_Login.TextImageRelation" type="System.Windows.Forms.TextImageRelation, System.Windows.Forms">
-    <value>ImageBeforeText</value>
-  </data>
-  <data name="&gt;&gt;btn_Login.Name" xml:space="preserve">
-    <value>btn_Login</value>
-  </data>
-  <data name="&gt;&gt;btn_Login.Type" xml:space="preserve">
-    <value>FontAwesome.Sharp.IconButton, FontAwesome.Sharp, Version=5.15.3.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;btn_Login.Parent" xml:space="preserve">
-    <value>pnl_LoginForm</value>
-  </data>
-  <data name="&gt;&gt;btn_Login.ZOrder" xml:space="preserve">
-    <value>8</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

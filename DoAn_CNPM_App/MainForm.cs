@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Threading;
 
 namespace DoAn_CNPM_App
 {
@@ -144,15 +145,28 @@ namespace DoAn_CNPM_App
             }
             lbl_TitleText.Text = "TRANG CHỦ";
         }
+        void LoadingTime()
+        {
+            for (int i = 0; i <= 40; i++)
+                Thread.Sleep(10);
+        }
 
         private void btn_HeThong_Click(object sender, EventArgs e)
         {
             if(userLevel == 0)
             {
+                using (Loading form = new Loading(LoadingTime))
+                {
+                    form.ShowDialog(this);
+                }
                 OpenChildForm(new ChildForm.HeThong(), sender);
             }
             else
             {
+                using (Loading form = new Loading(LoadingTime))
+                {
+                    form.ShowDialog(this);
+                }
                 OpenChildForm(new ChildForm.PQ_Error(), sender);
             }
             

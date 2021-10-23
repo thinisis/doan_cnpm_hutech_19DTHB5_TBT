@@ -62,18 +62,6 @@ namespace DoAn_CNPM_App
             con.Close();
         }
 
-        private void ckbx_ShowPwd_CheckedChanged(object sender, EventArgs e)
-        {
-            if (ckbx_ShowPwd.Checked == true)
-            {
-                txt_Pwd.UseSystemPasswordChar = false;
-            }
-            else
-            {
-                txt_Pwd.UseSystemPasswordChar = true;
-            }
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -116,5 +104,56 @@ namespace DoAn_CNPM_App
         {
             MessageBox.Show(this, "Vui lòng liên hệ quản lí để được cấp lại mật khẩu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void pnl_Login_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_SPTBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pl_Title_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_Title_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_TBT_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pnl_LoginForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lbl_SPwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_Account_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Pwd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_Account_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
