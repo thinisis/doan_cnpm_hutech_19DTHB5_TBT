@@ -35,7 +35,7 @@ namespace DoAn_CNPM_App.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("admin")]
         public string Username {
             get {
                 return ((string)(this["Username"]));
@@ -47,7 +47,7 @@ namespace DoAn_CNPM_App.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("123")]
         public string Password {
             get {
                 return ((string)(this["Password"]));
@@ -59,10 +59,10 @@ namespace DoAn_CNPM_App.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Checked {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Checked {
             get {
-                return ((string)(this["Checked"]));
+                return ((bool)(this["Checked"]));
             }
             set {
                 this["Checked"] = value;

@@ -19,16 +19,16 @@ namespace DoAn_CNPM_App
         {
             InitializeComponent();
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=ADMIN;Initial Catalog=TBT_DTB;Integrated Security=True";
+            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection("Data Source=ADMIN;Initial Catalog=TBT_DTB;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True");
             con.Open(); //ket noi csdl
             txb_Account.Text = Properties.Settings.Default.Username; 
             txb_Pwd.Text = Properties.Settings.Default.Password;
-            if (Properties.Settings.Default.Checked == "true")
+            if (Properties.Settings.Default.Checked == true)
             {
                 ckbx_Remember.Checked = true;
             }
@@ -57,7 +57,7 @@ namespace DoAn_CNPM_App
         private void btn_Login_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=ADMIN;Initial Catalog=TBT_DTB;Integrated Security=True";
+            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
             con.Open();
             string userid = txb_Account.Text;
             string password = txb_Pwd.Text;
@@ -72,14 +72,14 @@ namespace DoAn_CNPM_App
                 {
                     Properties.Settings.Default.Username = txb_Account.Text;
                     Properties.Settings.Default.Password = txb_Pwd.Text;
-                    Properties.Settings.Default.Checked = "true";
+                    Properties.Settings.Default.Checked = true;
                     Properties.Settings.Default.Save();
                 }
                 if (ckbx_Remember.Checked == false)
                 {
                     Properties.Settings.Default.Username = txb_Account.Text;
                     Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Checked = "false";
+                    Properties.Settings.Default.Checked = false;
                     Properties.Settings.Default.Save();
                 }
                 MainForm f = new MainForm();
@@ -111,6 +111,11 @@ namespace DoAn_CNPM_App
         }
 
         private void lb_DangNhap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txb_Account_Click(object sender, EventArgs e)
         {
 
         }

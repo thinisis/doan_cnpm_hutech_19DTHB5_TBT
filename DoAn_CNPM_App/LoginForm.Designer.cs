@@ -127,6 +127,7 @@ namespace DoAn_CNPM_App
             this.txb_Account.ThemeName = "MetroLite";
             this.txb_Account.UseSystemPasswordChar = false;
             this.txb_Account.WatermarkText = "Nhập tài khoản";
+            this.txb_Account.Click += new System.EventHandler(this.txb_Account_Click);
             // 
             // metroSetControlBox1
             // 

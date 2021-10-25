@@ -122,7 +122,7 @@
     <value>None</value>
   </data>
   <data name="lbl_MTitle.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: -4px;font-family: 'Open Sans'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: right; }</value>
+    <value>#bunifu-label { padding: 0px; margin: auto; padding-top: 0px;font-family: 'Open Sans'; font-size: 12pt; width: 100%; height: 100%; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(255, 255, 255); text-align: right; }</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lbl_MTitle.Font" type="System.Drawing.Font, System.Drawing">
@@ -135,7 +135,7 @@
     <value>No</value>
   </data>
   <data name="lbl_MTitle.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 19</value>
+    <value>129, 23</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lbl_MTitle.TabIndex" type="System.Int32, mscorlib">
@@ -274,11 +274,11 @@
   </data>
   <data name="txt_Pwd.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAACvSURBVEhL5ZHdDYIwFIU7hm7kg/PgBKzlMLqBPvkk5yM0gdDrLdQmoCf5kvb+Qk/Yis7iKp4D
-        nIl9Ra14G5ArEl/JoJe4iMMAZ2Lkiv6Ep2BI09+mIkaOmtV6CIYc+9tUxMhRs1oMAEte3lWVBSdxF7E5
-        F3rodXUTqQE50OsqFi9Vdt/vLojmW2YWLxibnzLT6pvJKqy+oPoTefqjBWMzl5Iyf6ZoZmrAJyzzd60Q
-        OreokR8GbJgyAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAK9JREFUSEvl
+        kd0NgjAUhTuGbuSD8+AErOUwuoE++STnIzSB0Ost1CagJ/mS9v5CT9iKzuIqngOciX1FrXgbkCsSX8mg
+        l7iIwwBnYuSK/oSnYEjT36YiRo6a1XoIhhz721TEyFGzWgwAS17eVZUFJ3EXsTkXeuh1dROpATnQ6yoW
+        L1V23+8uiOZbZhYvGJufMtPqm8kqrL6g+hN5+qMFYzOXkjJ/pmhmasAnLPN3rRA6t6iRHwZsmDIAAAAA
+        SUVORK5CYII=
 </value>
   </data>
   <data name="txt_Pwd.Location" type="System.Drawing.Point, System.Drawing">
@@ -321,11 +321,11 @@
   </data>
   <data name="txt_Account.IconLeft" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAC/SURBVEhL7ZI9DgFBGEDnADgBlcQR3EPlEq6hdQK1A2jUbqETBZ0QpYb3mGpDxmZ3EpvsS14y
-        +/3NZGZDS2Po4wpPUdfGasFBZ3wUNFbLJp7WgRt0oLo2Zq4yR3TY4PX1xrUxc5XJvkH2K3Jg1kcWB3na
-        LL9psxniDNe4wxt6/4cYM2dNaca4xeLDftNae35igne08YpLnOIIO1HXxsxd0Fp77E2yRxsW2DOQoItz
-        tMfeJBZWMcmnpjK2/BUhPAFpk2Q4Mu3T7gAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAL9JREFUSEvt
+        kj0OAUEYQOcAOAGVxBHcQ+USrqF1ArUDaNRuoRMFnRClhveYakPGZncSm+xLXjL7/c1kZkNLY+jjCk9R
+        18ZqwUFnfBQ0VssmntaBG3SgujZmrjJHdNjg9fXGtTFzlcm+QfYrcmDWRxYHedosv2mzGeIM17jDG3r/
+        hxgzZ01pxrjF4sN+01p7fmKCd7Txikuc4gg7UdfGzF3QWnvsTbJHGxbYM5Cgi3O0x94kFlYxyaemMrb8
+        FSE8AWmTZDgy7dPuAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="txt_Account.Location" type="System.Drawing.Point, System.Drawing">

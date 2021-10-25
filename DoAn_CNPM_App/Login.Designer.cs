@@ -29,6 +29,7 @@ namespace DoAn_CNPM_App
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -37,20 +38,19 @@ namespace DoAn_CNPM_App
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.pnl_Login = new System.Windows.Forms.Panel();
-            this.lbl_SPTBT = new System.Windows.Forms.Label();
+            this.lbl_MTitle = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl_TBT = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pnl_LoginForm = new System.Windows.Forms.Panel();
+            this.lbl_Title = new Bunifu.UI.WinForms.BunifuLabel();
             this.txt_Pwd = new Bunifu.UI.WinForms.BunifuTextBox();
             this.txt_Account = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.lbl_SPTBT = new System.Windows.Forms.Label();
             this.ckbx_RememberPwd = new System.Windows.Forms.CheckBox();
             this.lbl_Forgot = new System.Windows.Forms.Label();
             this.btn_Quit = new FontAwesome.Sharp.IconButton();
             this.btn_Login = new FontAwesome.Sharp.IconButton();
-            this.lbl_Title = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lbl_MTitle = new Bunifu.UI.WinForms.BunifuLabel();
             this.pnl_Login.SuspendLayout();
             this.pnl_LoginForm.SuspendLayout();
             this.SuspendLayout();
@@ -66,12 +66,17 @@ namespace DoAn_CNPM_App
             this.pnl_Login.Name = "pnl_Login";
             this.pnl_Login.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_Login_Paint);
             // 
-            // lbl_SPTBT
+            // lbl_MTitle
             // 
-            resources.ApplyResources(this.lbl_SPTBT, "lbl_SPTBT");
-            this.lbl_SPTBT.ForeColor = System.Drawing.Color.White;
-            this.lbl_SPTBT.Name = "lbl_SPTBT";
-            this.lbl_SPTBT.Click += new System.EventHandler(this.lbl_SPTBT_Click);
+            this.lbl_MTitle.AllowParentOverrides = false;
+            resources.ApplyResources(this.lbl_MTitle, "lbl_MTitle");
+            this.lbl_MTitle.AutoEllipsis = false;
+            this.lbl_MTitle.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_MTitle.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_MTitle.ForeColor = System.Drawing.Color.White;
+            this.lbl_MTitle.Name = "lbl_MTitle";
+            this.lbl_MTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_MTitle.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // lbl_TBT
             // 
@@ -103,6 +108,17 @@ namespace DoAn_CNPM_App
             this.pnl_LoginForm.Controls.Add(this.btn_Login);
             this.pnl_LoginForm.Name = "pnl_LoginForm";
             this.pnl_LoginForm.Paint += new System.Windows.Forms.PaintEventHandler(this.pnl_LoginForm_Paint);
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.AllowParentOverrides = false;
+            resources.ApplyResources(this.lbl_Title, "lbl_Title");
+            this.lbl_Title.AutoEllipsis = false;
+            this.lbl_Title.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_Title.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_Title.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // txt_Pwd
             // 
@@ -245,6 +261,13 @@ namespace DoAn_CNPM_App
             this.txt_Account.WordWrap = true;
             this.txt_Account.TextChanged += new System.EventHandler(this.txt_Account_TextChanged);
             // 
+            // lbl_SPTBT
+            // 
+            resources.ApplyResources(this.lbl_SPTBT, "lbl_SPTBT");
+            this.lbl_SPTBT.ForeColor = System.Drawing.Color.White;
+            this.lbl_SPTBT.Name = "lbl_SPTBT";
+            this.lbl_SPTBT.Click += new System.EventHandler(this.lbl_SPTBT_Click);
+            // 
             // ckbx_RememberPwd
             // 
             resources.ApplyResources(this.ckbx_RememberPwd, "ckbx_RememberPwd");
@@ -285,27 +308,6 @@ namespace DoAn_CNPM_App
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
-            // lbl_Title
-            // 
-            this.lbl_Title.AllowParentOverrides = false;
-            resources.ApplyResources(this.lbl_Title, "lbl_Title");
-            this.lbl_Title.AutoEllipsis = false;
-            this.lbl_Title.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_Title.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // lbl_MTitle
-            // 
-            this.lbl_MTitle.AllowParentOverrides = false;
-            resources.ApplyResources(this.lbl_MTitle, "lbl_MTitle");
-            this.lbl_MTitle.AutoEllipsis = false;
-            this.lbl_MTitle.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbl_MTitle.ForeColor = System.Drawing.Color.White;
-            this.lbl_MTitle.Name = "lbl_MTitle";
-            this.lbl_MTitle.TextAlignment = System.Drawing.ContentAlignment.MiddleRight;
-            this.lbl_MTitle.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
             // Login
             // 
             resources.ApplyResources(this, "$this");
@@ -314,6 +316,7 @@ namespace DoAn_CNPM_App
             this.Controls.Add(this.pnl_Login);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.MaximizeBox = false;
             this.Name = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
             this.pnl_Login.ResumeLayout(false);

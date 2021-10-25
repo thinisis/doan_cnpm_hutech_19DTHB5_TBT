@@ -17,7 +17,6 @@ namespace DoAn_CNPM_App
 
         private Form activeForm;
         int userLevel;
-        int userID;
         String userName;
         String nameOfUser;
         String maNV;
@@ -31,6 +30,7 @@ namespace DoAn_CNPM_App
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            WindowState = FormWindowState.Maximized;
             GetInfoUser();
             StartTimer();
             lbl_Time.Visible = true;
@@ -68,7 +68,6 @@ namespace DoAn_CNPM_App
                     foreach (DataRow dr in dt.Rows)
                     {
                         int.TryParse(dr["lv"].ToString(), out userLevel);
-                        int.TryParse(dr["id"].ToString(), out userID);
                         nameOfUser = dr["TenNV"].ToString();
                         maNV = dr["MaNV"].ToString();
                         userName = dr["username"].ToString();

@@ -17,50 +17,80 @@ namespace DoAn_CNPM_App.ChildForm
     {
         EntityFramework dbContext = new EntityFramework();
         List<NHANVIEN> nvs = new List<NHANVIEN>();
+        List<NHANVIEN> dsnv = new List<NHANVIEN>();
+        List<ACCOUNT> accss = new List<ACCOUNT>();
+        String thisAccount;
         int accHopLe;
+        bool LoadedNVCS = false;
+        bool LoadedTKCS = false;
         public HeThong()
         {
             InitializeComponent();
         }
 
-
-
         private void HeThong_Load(object sender, EventArgs e)
         {
             List<ACCOUNTLV> acclv = dbContext.ACCOUNTLVs.ToList();
+            accss = dbContext.ACCOUNTs.ToList();
+            dsnv = dbContext.NHANVIENs.ToList();
             FillDataCBX(acclv);
             lbl_TTH_SoLuongHang.Text = dbContext.LINHKIENs.Count(a => a.MaLK != null).ToString();
-            ResizeTbx();
-
+            tabCtrl_HeThong.SelectedTab = tab_QLTK;
         }
-        void ResizeTbx()
+        #region HeThong_Page
+        private void btn_QLTK_TTK_Click(object sender, EventArgs e)
         {
-            txt_TTK_userName.Size = new Size (210, 30);
-            txt_TTK_MSNV.Size = new Size(210, 30);
-            txt_TTK_Pwd.Size = new Size(210, 30);
-            txt_TTK_reEnterPWD.Size = new Size(210, 30);
-        }
-        void FillDataCBX(List<ACCOUNTLV> acclv)
-        {
-            cbx_TTK_lv.DataSource = acclv;
-            cbx_TTK_lv.DisplayMember = "Quyen";
-            cbx_TTK_lv.ValueMember = "lv";
+            page_QLTK.SetPage("QLTK", false);
+            this.Select();
         }
 
-      
+        private void btn_QLTK_ChinhSua_Click(object sender, EventArgs e)
+        {
+            LoadedTKCS = false;
+            page_QLTK.SetPage("EDIT", false);
+            FillDGVCS(accss);
+            lbl_QLTK_CS_Count.Text = accss.Count.ToString();
+            FillCBXCS();
+            LoadedTKCS = true;
+            this.Select();
+        }
+
+        private void btn_QLNV_TNV_Click(object sender, EventArgs e)
+        {
+            page_QLNV.SetPage("TNV", false);
+            this.Select();
+        }
+
+        private void btn_QLNV_ChinhSuaNV_Click(object sender, EventArgs e)
+        {
+            LoadedNVCS = false;
+            QLNV_CS_FillDGV(dsnv);
+            txt_QLNV_CS_CountSL.Text = dsnv.Count.ToString();
+            page_QLNV.SetPage("EDIT", false);
+            LoadedNVCS = true;
+            this.Select();
+        }
+        #endregion
         #region ThemTaiKhoan
         private void CheckUserName()
         {
             String username = txt_TTK_userName.Text;
             if(username == "")
             {
-                lbl_TTK_checkuserName.Text = "Không thể để trống tên người dùng!";
+                lbl_TTK_checkuserName.Text = "Không thể để trống tên người dùng !";
                 lbl_TTK_checkuserName.ForeColor = Color.Red;
                 lbl_TTK_checkuserName.Visible = true;
                 accHopLe = -1;
             }
             else
             {
+                if(Regex.IsMatch(username, @"(!|@|#)"))
+                {
+                    lbl_TTK_checkuserName.Text = "Tên người dùng không được có kí tự đặc biệt!";
+                    lbl_TTK_checkuserName.ForeColor = Color.Red;
+                    lbl_TTK_checkuserName.Visible = true;
+                    accHopLe = -1;
+                }
                 ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username.CompareTo(username) == 0);
                 if (acc == null)
                 {
@@ -78,6 +108,12 @@ namespace DoAn_CNPM_App.ChildForm
                 }
             }
             
+        }
+        void FillDataCBX(List<ACCOUNTLV> acclv)
+        {
+            cbx_TTK_lv.DataSource = acclv;
+            cbx_TTK_lv.DisplayMember = "Quyen";
+            cbx_TTK_lv.ValueMember = "lv";
         }
 
         private void txt_TTK_MSNV_TextChange(object sender, EventArgs e)
@@ -139,30 +175,21 @@ namespace DoAn_CNPM_App.ChildForm
         void TaoTK()
         {
             int dt = CheckAddAccount();
-            if (dt == 2)
+            switch (dt)
             {
-                MessageBox.Show("Không thể để trống tên người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                if (dt == 1)
-                {
+                case 1:
                     MessageBox.Show("Mật khẩu không trùng khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
-                else
-                {
-                    if (dt == 3)
-                    {
+                    break;
+                case 2:
+                MessageBox.Show("Không thể để trống tên người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+                case 3:
                         MessageBox.Show("Không thể để trống mã nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    }
-                    else
-                    {
-                        if(dt == 4)
-                        {
+                    break;
+                case 4:
                             MessageBox.Show("Không thể tìm thấy nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
+                    break;
+                default:
                             ACCOUNT acc = new ACCOUNT();
                             acc.username = txt_TTK_userName.Text;
                             acc.password = txt_TTK_Pwd.Text;
@@ -171,15 +198,202 @@ namespace DoAn_CNPM_App.ChildForm
                             dbContext.ACCOUNTs.Add(acc);
                             dbContext.SaveChanges();
                             MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
-                        }
-                        
-                    }
-                }
+                    break;
             }
+            
         }
         private void btn_TTK_Tao_Click(object sender, EventArgs e)
         {
             TaoTK();
+        }
+        #endregion // dont  
+        #region ChinhSuaTaiKhoan
+        void FillDGVCS(List<ACCOUNT> accs)
+        {
+            dgv_QLTK_CS.Rows.Clear();
+            for(int i = 0; i < accs.Count(); i++)
+            {
+                int index = dgv_QLTK_CS.Rows.Add();
+                dgv_QLTK_CS.Rows[i].Cells[0].Value = accs[i].username.ToString();
+                dgv_QLTK_CS.Rows[i].Cells[1].Value = accs[i].password.ToString();
+                dgv_QLTK_CS.Rows[i].Cells[2].Value = accs[i].NHANVIEN.TenNV.ToString();
+                dgv_QLTK_CS.Rows[i].Cells[3].Value = accs[i].MaNV.ToString();
+            }
+        }
+
+        void FillCBXCS()
+        {
+            cbx_QLTK_CS_Quyen.DataSource = dbContext.ACCOUNTLVs.ToList();
+            cbx_QLTK_CS_Quyen.DisplayMember = "Quyen";
+            cbx_QLTK_CS_Quyen.ValueMember = "lv";
+        }
+
+
+        void FindAcc()
+        {
+            String account = txt_QLTK_CS_userName.Text;
+            String mnv = txt_QLTK_CS_MaNV.Text;
+            String lv = cbx_QLTK_CS_Quyen.SelectedIndex.ToString();
+            List<ACCOUNT> fnvs = new List<ACCOUNT>();
+            if (string.IsNullOrEmpty(account) == false)
+            {
+                fnvs = dbContext.ACCOUNTs.Where(a => a.username == account & a.lv == lv).ToList();
+            }
+            else
+            {
+                fnvs = dbContext.ACCOUNTs.Where(a => a.lv == lv).ToList();
+            }
+            
+            FillDGVCS(fnvs);
+            String Messages = "Có " + fnvs.Count.ToString() + " kết quả phù hợp!";
+            lbl_QLTK_CS_Message.Text = Messages;
+        }
+
+        private void btn_QLTK_CS_Find_Click(object sender, EventArgs e)
+        {
+            LoadedTKCS = false;
+            FindAcc();
+            LoadedTKCS = true;
+        }
+
+        private void dgv_QLTK_CS_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+        void HideSelectedAccountLable()
+        {
+            lbl_QLTK_CS_userSelectedValue.Visible = false;
+            lbl_QLTK_CS_userSelectedTLable.Visible = false;
+            btn_QLTK_CS_BoChon.Visible = false;
+        }
+
+        bool QLTK_KTTK(String manv)
+        {
+            NHANVIEN temp = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == manv);
+            if(temp == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        void ClearTextBox()
+        {
+            txt_QLTK_CS_userName.Enabled = true;
+            txt_QLNV_CS_TenNV.Text = "";
+            txt_QLTK_CS_MaNV.Text = "";
+            txt_QLTK_CS_Pwd.Text = "";
+            txt_QLTK_CS_userName.Text = "";
+            cbx_QLTK_CS_Quyen.SelectedIndex = 0;
+        }
+
+        void QLTK_CS_Edit()
+        {
+
+            String user = lbl_QLTK_CS_userSelectedValue.Text; 
+            ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == user);
+            if (acc != null)
+            {
+                NHANVIEN tempnv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == txt_QLTK_CS_MaNV.Text);
+                ACCOUNTLV templv = dbContext.ACCOUNTLVs.FirstOrDefault(a => a.lv == cbx_QLTK_CS_Quyen.SelectedIndex.ToString());
+                if(QLTK_KTTK(txt_QLTK_CS_MaNV.Text) == true)
+                {
+                    String mess = "Thay đổi thông tin thành:\nTên tài khoản: "+txt_QLTK_CS_userName.Text
+                                    + "\nMật khẩu: "+txt_QLTK_CS_Pwd.Text
+                                    +"\nTên nhân viên: "+tempnv.TenNV.ToString()
+                                    +"\nMã nhân viên: "+txt_QLTK_CS_MaNV.Text
+                                    +"\nQuyền: "+templv.Quyen.ToString();
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.OK)
+                    {
+                        acc.password = txt_QLTK_CS_Pwd.Text;
+                        acc.MaNV = txt_QLTK_CS_MaNV.Text;
+                        acc.lv = cbx_QLTK_CS_Quyen.SelectedIndex.ToString();
+                        dbContext.SaveChanges();
+                        accss = dbContext.ACCOUNTs.ToList();
+                        FillDGVCS(accss);
+                        ClearTextBox();
+                        HideSelectedAccountLable();
+                        MessageBox.Show("Thay đổi thành công", "Thông báo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ bỏ thao tác", "Thông báo");
+                    }
+                    
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng điền đúng mã nhân viên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+           
+        }
+
+        void QLTK_DisableOrEnableBTN(bool kt)
+        {
+            btn_QLTK_CS_Edit.Enabled = kt;
+            btn_QLTK_CS_Xoa.Enabled = kt;
+            btn_QLTK_CS_BoChon.Visible = kt;
+        }
+
+        private void dgv_QLTK_CS_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv_QLTK_CS.Rows.Count > 0 && LoadedTKCS == true)
+            {
+                QLTK_DisableOrEnableBTN(true);
+                txt_QLTK_CS_userName.Enabled = false;
+                txt_QLTK_CS_MaNV.Text = dgv_QLTK_CS.SelectedRows[0].Cells[3].Value?.ToString();
+                txt_QLTK_CS_userName.Text = dgv_QLTK_CS.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLTK_CS_Pwd.Text = dgv_QLTK_CS.SelectedRows[0].Cells[1].Value?.ToString();
+                ACCOUNT temp = new ACCOUNT();
+                temp = dbContext.ACCOUNTs.FirstOrDefault(a => a.MaNV == txt_QLTK_CS_MaNV.Text);
+                cbx_QLTK_CS_Quyen.SelectedIndex = int.Parse(temp.lv.ToString());
+                lbl_QLTK_CS_userSelectedValue.Text = temp.username.ToString();
+                lbl_QLTK_CS_userSelectedValue.Visible = true;
+                if(string.IsNullOrEmpty(lbl_QLTK_CS_userSelectedValue.Text) == false)
+                {
+                    lbl_QLTK_CS_userSelectedTLable.Visible = true;
+                }
+            }
+        }
+
+        private void btn_QLTK_CS_Edit_Click(object sender, EventArgs e)
+        {
+            LoadedTKCS = false;
+            QLTK_CS_Edit();
+            LoadedTKCS = true;
+            txt_QLTK_CS_userName.Enabled = true;
+        }
+
+        void QLTK_CS_Delete()
+        {
+            String user = txt_QLTK_CS_userName.Text;
+            ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == user);
+            if(acc != null)
+            {
+                dbContext.ACCOUNTs.Remove(acc);
+                dbContext.SaveChanges();
+            }
+            accss = dbContext.ACCOUNTs.ToList();
+            FillDGVCS(accss);
+            ClearTextBox();
+            HideSelectedAccountLable();
+        }
+
+        private void btn_QLTK_CS_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedTKCS = false;
+            QLTK_CS_Delete();
+            LoadedTKCS = true;
+        }
+
+        private void btn_QLTK_CS_BoChon_Click(object sender, EventArgs e)
+        {
+            ClearTextBox();
+            HideSelectedAccountLable();
+            QLTK_DisableOrEnableBTN(false);
         }
         #endregion
         #region ThemNhanVien
@@ -300,6 +514,7 @@ namespace DoAn_CNPM_App.ChildForm
             tnv_DGV_Add.Rows.Clear();
             for(int i = 0; i < nv.Count(); i++)
             {
+                int index = tnv_DGV_Add.Rows.Add();
                 tnv_DGV_Add.Rows[i].Cells[0].Value = nv[i].MaNV;
                 tnv_DGV_Add.Rows[i].Cells[1].Value = nv[i].TenNV;
                 tnv_DGV_Add.Rows[i].Cells[2].Value = nv[i].DiaChi;
@@ -347,6 +562,7 @@ namespace DoAn_CNPM_App.ChildForm
                         dbContext.SaveChanges();
                         TNV_FillDGV(nvs);
                         btn_TNV_TongNVDaThem_Disable.Text = nvs.Count.ToString();
+                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -384,6 +600,7 @@ namespace DoAn_CNPM_App.ChildForm
             if (nvs.Count > 0)
             {
                 btn_TNV_Sua.Enabled = true;
+                txt_TTK_MSNV.Enabled = false;
                 txt_TNV_MaNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[0].Value.ToString();
                 txt_TNV_TenNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[1].Value.ToString();
                 txt_TNV_SDT.Text = tnv_DGV_Add.SelectedRows[0].Cells[3].Value.ToString();
@@ -433,6 +650,8 @@ namespace DoAn_CNPM_App.ChildForm
                         TNV_FillDGV(nvs);
                         btn_TNV_TongNVDaThem_Disable.Text = nvs.Count.ToString();
                         btn_TNV_Sua.Enabled = false;
+                        txt_TTK_MSNV.Enabled = true;
+                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
@@ -485,16 +704,126 @@ namespace DoAn_CNPM_App.ChildForm
 
 
         #endregion
-
-        private void btn_QLTK_TTK_Click(object sender, EventArgs e)
+        #region ChinhSuaNhanVien
+        void QLNV_CS_FillDGV(List<NHANVIEN> nv)
         {
-            page_QLTK.SetPage("QLTK",false);
+            EnableOrDisable_TextBox_Find_CSNV(true);
+            dgv_QLNV_CS.Rows.Clear();
+            for (int i = 0; i < nv.Count(); i++)
+            {
+                int index = dgv_QLNV_CS.Rows.Add();
+                dgv_QLNV_CS.Rows[i].Cells[0].Value = (i+1).ToString();
+                dgv_QLNV_CS.Rows[i].Cells[1].Value = nv[i].MaNV;
+                dgv_QLNV_CS.Rows[i].Cells[2].Value = nv[i].TenNV;
+                dgv_QLNV_CS.Rows[i].Cells[3].Value = nv[i].DiaChi;
+                dgv_QLNV_CS.Rows[i].Cells[4].Value = nv[i].SDT;
+                dgv_QLNV_CS.Rows[i].Cells[5].Value = nv[i].Email;
+                if (nv[i].Phai == true)
+                {
+                    dgv_QLNV_CS.Rows[i].Cells[6].Value = "Nữ";
+                }
+                else
+                {
+                    dgv_QLNV_CS.Rows[i].Cells[6].Value = "Nam";
+                }
+                dgv_QLNV_CS.Rows[i].Cells[7].Value = nv[i].ChucVu;
+            }
         }
 
-        private void btn_QLTK_ChinhSua_Click(object sender, EventArgs e)
+        
+
+        void EnableOrDisableButtonCSNV(bool value)
         {
-            page_QLTK.SetPage("EDIT", false);
+            btn_QLNV_CS_ChinhSua.Enabled = value;
+            btn_QLNV_CS_Xoa.Enabled = value;
         }
+
+        void EnableOrDisable_TextBox_Find_CSNV(bool value)
+        {
+            txt_QLNV_CS_Email.Enabled = value;
+            txt_QLNV_CS_DiaChi.Enabled = value;
+            txt_QLNV_CS_ChucVu.Enabled = value;
+        }
+
+        int QLNV_CS_SearchResult_Data_Filter()
+        {
+            if (string.IsNullOrEmpty(txt_QLNV_CS_MaNV.Text) == false & string.IsNullOrEmpty(txt_QLNV_CS_TenNV.Text) == true)
+            {
+                return 1; //Chi tim kiem  manv
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_QLNV_CS_MaNV.Text) == true & string.IsNullOrEmpty(txt_QLNV_CS_TenNV.Text) == false)
+                {
+                    return 2; //chi tim kiem tennv
+                }
+            }
+            return 0;
+        }
+
+        private void dgv_QLNV_CS_SelectionChanged(object sender, EventArgs e)
+        {
+            EnableOrDisable_TextBox_Find_CSNV(true);
+            EnableOrDisableButtonCSNV(true);
+            if (dgv_QLNV_CS.SelectedRows.Count > 0 && LoadedNVCS == true)
+            {
+                txt_QLNV_CS_MaNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
+                txt_QLNV_CS_TenNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[2].Value?.ToString();
+                txt_QLNV_CS_SDT.Text = dgv_QLNV_CS.SelectedRows[0].Cells[4].Value?.ToString();
+                txt_QLNV_CS_Email.Text = dgv_QLNV_CS.SelectedRows[0].Cells[5].Value?.ToString();
+                txt_QLNV_CS_DiaChi.Text = dgv_QLNV_CS.SelectedRows[0].Cells[3].Value?.ToString();
+                txt_QLNV_CS_ChucVu.Text = dgv_QLNV_CS.SelectedRows[0].Cells[7].Value?.ToString();
+
+                if (dgv_QLNV_CS.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
+                {
+                    rdb_QLNV_CS_Nam.Checked = true;
+                    rdb_TNV_Nu.Checked = false;
+                }
+                else
+                {
+                    rdb_QLNV_CS_Nu.Checked = true;
+                    rdb_TNV_Nam.Checked = false;
+                }
+            }
+        }
+
+        void QLNV_CS_Find()
+        {
+            List<NHANVIEN> nvf = new List<NHANVIEN>();
+            int findoption = QLNV_CS_SearchResult_Data_Filter();
+            switch (findoption)
+            {
+                case 0:
+                    nvf = dbContext.NHANVIENs.Where(a => a.MaNV == txt_QLNV_CS_MaNV.Text & a.TenNV == txt_QLNV_CS_TenNV.Text).ToList();
+                    QLNV_CS_FillDGV(nvf);
+                    break;
+                case 1:
+                    nvf = dbContext.NHANVIENs.Where(a => a.MaNV == txt_QLNV_CS_MaNV.Text).ToList();
+                    QLNV_CS_FillDGV(nvf);
+                    break;
+                case 2:
+                    nvf = dbContext.NHANVIENs.Where(a => a.TenNV == txt_QLNV_CS_TenNV.Text).ToList();
+                    QLNV_CS_FillDGV(nvf);
+                    break;
+            }
+        }
+
+        private void btn_QLNV_CS_TimKiem_Click(object sender, EventArgs e)
+        {
+            QLNV_CS_Find();
+        }
+
+        private void btn_QLNV_CS_ChinhSua_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+
+
+
+        #endregion
+
+        
     }
 }
 

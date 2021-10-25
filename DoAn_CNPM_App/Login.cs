@@ -40,14 +40,14 @@ namespace DoAn_CNPM_App
                 {
                     Properties.Settings.Default.Username = txt_Account.Text;
                     Properties.Settings.Default.Password = txt_Pwd.Text;
-                    Properties.Settings.Default.Checked = "true";
+                    Properties.Settings.Default.Checked = true;
                     Properties.Settings.Default.Save();
                 }
                 if (ckbx_RememberPwd.Checked == false)
                 {
                     Properties.Settings.Default.Username = txt_Account.Text;
                     Properties.Settings.Default.Password = "";
-                    Properties.Settings.Default.Checked = "false";
+                    Properties.Settings.Default.Checked = false;
                     Properties.Settings.Default.Save();
                 }
                 MainForm f = new MainForm();
@@ -79,7 +79,7 @@ namespace DoAn_CNPM_App
             con.Open();
             txt_Account.Text = Properties.Settings.Default.Username;
             txt_Pwd.Text = Properties.Settings.Default.Password;
-            if (Properties.Settings.Default.Checked == "true")
+            if (Properties.Settings.Default.Checked == true)
             {
                 ckbx_RememberPwd.Checked = true;
             }

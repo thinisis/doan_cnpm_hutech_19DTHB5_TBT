@@ -10,17 +10,13 @@ namespace DoAn_CNPM_App
     public partial class ACCOUNT
     {
         [Key]
-        [Column(Order = 0)]
-        public int id { get; set; }
-
         [StringLength(20)]
         public string username { get; set; }
 
         [StringLength(50)]
         public string password { get; set; }
 
-        [Key]
-        [Column(Order = 1)]
+        [Required]
         [StringLength(10)]
         public string lv { get; set; }
 
@@ -28,5 +24,7 @@ namespace DoAn_CNPM_App
         public string MaNV { get; set; }
 
         public virtual ACCOUNTLV ACCOUNTLV { get; set; }
+
+        public virtual NHANVIEN NHANVIEN { get; set; }
     }
 }
