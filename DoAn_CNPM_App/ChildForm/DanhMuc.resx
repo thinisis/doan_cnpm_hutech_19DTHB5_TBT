@@ -147,6 +147,13 @@
         rkJggg==
 </value>
   </data>
+  <data name="btn_QLNCC_BoTim.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAD4AAAAWCAYAAACYPi8fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABHSURBVFhH7c8xAQAgDMAwlGAZ/CFj/wYCULD2yNWrY+48
+        c1ex5Hnjv9Cf4zSO0zhO4ziN4zSO0zhO4ziN4zTg8ZXxC62tjAtdmzzdV8ihAgAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="btn_QLNCC_BoChon.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAD4AAAAWCAYAAACYPi8fAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8

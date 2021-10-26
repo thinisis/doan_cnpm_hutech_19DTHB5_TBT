@@ -32,10 +32,11 @@ namespace DoAn_CNPM_App.ChildForm
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDanhMuc));
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -62,6 +63,12 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.page_NhaCungCap = new Bunifu.UI.WinForms.BunifuPages();
             this.page_QLNCC = new System.Windows.Forms.TabPage();
+            this.btn_QLNCC_BoChon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.lbl_QLNCC_SelectedNCCValue = new System.Windows.Forms.Label();
+            this.lbl_QLNCC_SelectedNCCLabel = new System.Windows.Forms.Label();
+            this.txt_QLNCC_CountNCCValue = new System.Windows.Forms.TextBox();
+            this.lbl_QLNCC_CountNCCLabel = new Bunifu.UI.WinForms.BunifuLabel();
+            this.lbl_QLNCC_CheckNCC_Result = new Bunifu.UI.WinForms.BunifuLabel();
             this.btn_QLNCC_TimKiem = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btn_QLNCC_Xoa = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btn_QLNCC_Sua = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
@@ -79,12 +86,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbl_QLNCC_CheckNCC_Result = new Bunifu.UI.WinForms.BunifuLabel();
-            this.lbl_QLNCC_CountNCCLabel = new Bunifu.UI.WinForms.BunifuLabel();
-            this.txt_QLNCC_CountNCCValue = new System.Windows.Forms.TextBox();
-            this.btn_QLNCC_BoChon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.lbl_QLNCC_SelectedNCCValue = new System.Windows.Forms.Label();
-            this.lbl_QLNCC_SelectedNCCLabel = new System.Windows.Forms.Label();
+            this.btn_QLNCC_BoTim = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.tabCtrl_HeThong.SuspendLayout();
             this.tabpage_QLNCC.SuspendLayout();
             this.pnl_QLNCC.SuspendLayout();
@@ -282,6 +284,7 @@ namespace DoAn_CNPM_App.ChildForm
             // page_QLNCC
             // 
             this.page_QLNCC.BackColor = System.Drawing.Color.White;
+            this.page_QLNCC.Controls.Add(this.btn_QLNCC_BoTim);
             this.page_QLNCC.Controls.Add(this.btn_QLNCC_BoChon);
             this.page_QLNCC.Controls.Add(this.lbl_QLNCC_SelectedNCCValue);
             this.page_QLNCC.Controls.Add(this.lbl_QLNCC_SelectedNCCLabel);
@@ -308,11 +311,175 @@ namespace DoAn_CNPM_App.ChildForm
             this.page_QLNCC.TabIndex = 1;
             this.page_QLNCC.Text = "page_QLNCC";
             // 
+            // btn_QLNCC_BoChon
+            // 
+            this.btn_QLNCC_BoChon.AllowAnimations = true;
+            this.btn_QLNCC_BoChon.AllowMouseEffects = true;
+            this.btn_QLNCC_BoChon.AllowToggling = false;
+            this.btn_QLNCC_BoChon.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_QLNCC_BoChon.AnimationSpeed = 200;
+            this.btn_QLNCC_BoChon.AutoGenerateColors = false;
+            this.btn_QLNCC_BoChon.AutoRoundBorders = false;
+            this.btn_QLNCC_BoChon.AutoSizeLeftIcon = true;
+            this.btn_QLNCC_BoChon.AutoSizeRightIcon = true;
+            this.btn_QLNCC_BoChon.BackColor = System.Drawing.Color.Transparent;
+            this.btn_QLNCC_BoChon.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btn_QLNCC_BoChon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_QLNCC_BoChon.BackgroundImage")));
+            this.btn_QLNCC_BoChon.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoChon.ButtonText = "Bỏ chọn";
+            this.btn_QLNCC_BoChon.ButtonTextMarginLeft = 0;
+            this.btn_QLNCC_BoChon.ColorContrastOnClick = 45;
+            this.btn_QLNCC_BoChon.ColorContrastOnHover = 45;
+            this.btn_QLNCC_BoChon.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges3.BottomLeft = true;
+            borderEdges3.BottomRight = true;
+            borderEdges3.TopLeft = true;
+            borderEdges3.TopRight = true;
+            this.btn_QLNCC_BoChon.CustomizableEdges = borderEdges3;
+            this.btn_QLNCC_BoChon.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_QLNCC_BoChon.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_QLNCC_BoChon.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoChon.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoChon.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btn_QLNCC_BoChon.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_QLNCC_BoChon.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoChon.IconLeft = null;
+            this.btn_QLNCC_BoChon.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QLNCC_BoChon.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btn_QLNCC_BoChon.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btn_QLNCC_BoChon.IconMarginLeft = 11;
+            this.btn_QLNCC_BoChon.IconPadding = 10;
+            this.btn_QLNCC_BoChon.IconRight = null;
+            this.btn_QLNCC_BoChon.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_QLNCC_BoChon.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btn_QLNCC_BoChon.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btn_QLNCC_BoChon.IconSize = 25;
+            this.btn_QLNCC_BoChon.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoChon.IdleBorderRadius = 0;
+            this.btn_QLNCC_BoChon.IdleBorderThickness = 0;
+            this.btn_QLNCC_BoChon.IdleFillColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoChon.IdleIconLeftImage = null;
+            this.btn_QLNCC_BoChon.IdleIconRightImage = null;
+            this.btn_QLNCC_BoChon.IndicateFocus = false;
+            this.btn_QLNCC_BoChon.Location = new System.Drawing.Point(311, 354);
+            this.btn_QLNCC_BoChon.Name = "btn_QLNCC_BoChon";
+            this.btn_QLNCC_BoChon.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_QLNCC_BoChon.OnDisabledState.BorderRadius = 1;
+            this.btn_QLNCC_BoChon.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoChon.OnDisabledState.BorderThickness = 1;
+            this.btn_QLNCC_BoChon.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btn_QLNCC_BoChon.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btn_QLNCC_BoChon.OnDisabledState.IconLeftImage = null;
+            this.btn_QLNCC_BoChon.OnDisabledState.IconRightImage = null;
+            this.btn_QLNCC_BoChon.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btn_QLNCC_BoChon.onHoverState.BorderRadius = 1;
+            this.btn_QLNCC_BoChon.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoChon.onHoverState.BorderThickness = 1;
+            this.btn_QLNCC_BoChon.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btn_QLNCC_BoChon.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoChon.onHoverState.IconLeftImage = null;
+            this.btn_QLNCC_BoChon.onHoverState.IconRightImage = null;
+            this.btn_QLNCC_BoChon.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btn_QLNCC_BoChon.OnIdleState.BorderRadius = 1;
+            this.btn_QLNCC_BoChon.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoChon.OnIdleState.BorderThickness = 1;
+            this.btn_QLNCC_BoChon.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btn_QLNCC_BoChon.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoChon.OnIdleState.IconLeftImage = null;
+            this.btn_QLNCC_BoChon.OnIdleState.IconRightImage = null;
+            this.btn_QLNCC_BoChon.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btn_QLNCC_BoChon.OnPressedState.BorderRadius = 1;
+            this.btn_QLNCC_BoChon.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoChon.OnPressedState.BorderThickness = 1;
+            this.btn_QLNCC_BoChon.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btn_QLNCC_BoChon.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoChon.OnPressedState.IconLeftImage = null;
+            this.btn_QLNCC_BoChon.OnPressedState.IconRightImage = null;
+            this.btn_QLNCC_BoChon.Size = new System.Drawing.Size(62, 22);
+            this.btn_QLNCC_BoChon.TabIndex = 76;
+            this.btn_QLNCC_BoChon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_QLNCC_BoChon.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_QLNCC_BoChon.TextMarginLeft = 0;
+            this.btn_QLNCC_BoChon.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btn_QLNCC_BoChon.UseDefaultRadiusAndThickness = true;
+            this.btn_QLNCC_BoChon.Visible = false;
+            this.btn_QLNCC_BoChon.Click += new System.EventHandler(this.btn_QLNCC_BoChon_Click);
+            // 
+            // lbl_QLNCC_SelectedNCCValue
+            // 
+            this.lbl_QLNCC_SelectedNCCValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QLNCC_SelectedNCCValue.AutoSize = true;
+            this.lbl_QLNCC_SelectedNCCValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLNCC_SelectedNCCValue.Location = new System.Drawing.Point(221, 357);
+            this.lbl_QLNCC_SelectedNCCValue.Name = "lbl_QLNCC_SelectedNCCValue";
+            this.lbl_QLNCC_SelectedNCCValue.Size = new System.Drawing.Size(84, 19);
+            this.lbl_QLNCC_SelectedNCCValue.TabIndex = 75;
+            this.lbl_QLNCC_SelectedNCCValue.Text = "MaNCC1234";
+            this.lbl_QLNCC_SelectedNCCValue.Visible = false;
+            // 
+            // lbl_QLNCC_SelectedNCCLabel
+            // 
+            this.lbl_QLNCC_SelectedNCCLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QLNCC_SelectedNCCLabel.AutoSize = true;
+            this.lbl_QLNCC_SelectedNCCLabel.Font = new System.Drawing.Font("Open Sans", 9.75F);
+            this.lbl_QLNCC_SelectedNCCLabel.Location = new System.Drawing.Point(54, 357);
+            this.lbl_QLNCC_SelectedNCCLabel.Name = "lbl_QLNCC_SelectedNCCLabel";
+            this.lbl_QLNCC_SelectedNCCLabel.Size = new System.Drawing.Size(161, 19);
+            this.lbl_QLNCC_SelectedNCCLabel.TabIndex = 74;
+            this.lbl_QLNCC_SelectedNCCLabel.Text = "Mã nhà cung cấp đã chọn";
+            this.lbl_QLNCC_SelectedNCCLabel.Visible = false;
+            // 
+            // txt_QLNCC_CountNCCValue
+            // 
+            this.txt_QLNCC_CountNCCValue.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_QLNCC_CountNCCValue.Enabled = false;
+            this.txt_QLNCC_CountNCCValue.Location = new System.Drawing.Point(789, 357);
+            this.txt_QLNCC_CountNCCValue.Name = "txt_QLNCC_CountNCCValue";
+            this.txt_QLNCC_CountNCCValue.Size = new System.Drawing.Size(36, 23);
+            this.txt_QLNCC_CountNCCValue.TabIndex = 15;
+            this.txt_QLNCC_CountNCCValue.Text = "0";
+            // 
+            // lbl_QLNCC_CountNCCLabel
+            // 
+            this.lbl_QLNCC_CountNCCLabel.AllowParentOverrides = false;
+            this.lbl_QLNCC_CountNCCLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QLNCC_CountNCCLabel.AutoEllipsis = false;
+            this.lbl_QLNCC_CountNCCLabel.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLNCC_CountNCCLabel.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLNCC_CountNCCLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.lbl_QLNCC_CountNCCLabel.Location = new System.Drawing.Point(654, 365);
+            this.lbl_QLNCC_CountNCCLabel.Name = "lbl_QLNCC_CountNCCLabel";
+            this.lbl_QLNCC_CountNCCLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_QLNCC_CountNCCLabel.Size = new System.Drawing.Size(122, 15);
+            this.lbl_QLNCC_CountNCCLabel.TabIndex = 14;
+            this.lbl_QLNCC_CountNCCLabel.Text = "Số lượng nhà cung cấp";
+            this.lbl_QLNCC_CountNCCLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_QLNCC_CountNCCLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
+            // lbl_QLNCC_CheckNCC_Result
+            // 
+            this.lbl_QLNCC_CheckNCC_Result.AllowParentOverrides = false;
+            this.lbl_QLNCC_CheckNCC_Result.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QLNCC_CheckNCC_Result.AutoEllipsis = false;
+            this.lbl_QLNCC_CheckNCC_Result.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLNCC_CheckNCC_Result.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLNCC_CheckNCC_Result.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_QLNCC_CheckNCC_Result.Location = new System.Drawing.Point(282, 174);
+            this.lbl_QLNCC_CheckNCC_Result.Name = "lbl_QLNCC_CheckNCC_Result";
+            this.lbl_QLNCC_CheckNCC_Result.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_QLNCC_CheckNCC_Result.Size = new System.Drawing.Size(196, 17);
+            this.lbl_QLNCC_CheckNCC_Result.TabIndex = 13;
+            this.lbl_QLNCC_CheckNCC_Result.Text = "Không thể để trống mã nhà cung cấp";
+            this.lbl_QLNCC_CheckNCC_Result.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_QLNCC_CheckNCC_Result.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbl_QLNCC_CheckNCC_Result.Visible = false;
+            // 
             // btn_QLNCC_TimKiem
             // 
             this.btn_QLNCC_TimKiem.AllowAnimations = true;
             this.btn_QLNCC_TimKiem.AllowMouseEffects = true;
             this.btn_QLNCC_TimKiem.AllowToggling = false;
+            this.btn_QLNCC_TimKiem.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_QLNCC_TimKiem.AnimationSpeed = 200;
             this.btn_QLNCC_TimKiem.AutoGenerateColors = false;
             this.btn_QLNCC_TimKiem.AutoRoundBorders = false;
@@ -327,11 +494,11 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_TimKiem.ColorContrastOnClick = 45;
             this.btn_QLNCC_TimKiem.ColorContrastOnHover = 45;
             this.btn_QLNCC_TimKiem.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges3.BottomLeft = true;
-            borderEdges3.BottomRight = true;
-            borderEdges3.TopLeft = true;
-            borderEdges3.TopRight = true;
-            this.btn_QLNCC_TimKiem.CustomizableEdges = borderEdges3;
+            borderEdges4.BottomLeft = true;
+            borderEdges4.BottomRight = true;
+            borderEdges4.TopLeft = true;
+            borderEdges4.TopRight = true;
+            this.btn_QLNCC_TimKiem.CustomizableEdges = borderEdges4;
             this.btn_QLNCC_TimKiem.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_QLNCC_TimKiem.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QLNCC_TimKiem.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -403,6 +570,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_Xoa.AllowAnimations = true;
             this.btn_QLNCC_Xoa.AllowMouseEffects = true;
             this.btn_QLNCC_Xoa.AllowToggling = false;
+            this.btn_QLNCC_Xoa.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_QLNCC_Xoa.AnimationSpeed = 200;
             this.btn_QLNCC_Xoa.AutoGenerateColors = false;
             this.btn_QLNCC_Xoa.AutoRoundBorders = false;
@@ -417,11 +585,11 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_Xoa.ColorContrastOnClick = 45;
             this.btn_QLNCC_Xoa.ColorContrastOnHover = 45;
             this.btn_QLNCC_Xoa.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges4.BottomLeft = true;
-            borderEdges4.BottomRight = true;
-            borderEdges4.TopLeft = true;
-            borderEdges4.TopRight = true;
-            this.btn_QLNCC_Xoa.CustomizableEdges = borderEdges4;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.btn_QLNCC_Xoa.CustomizableEdges = borderEdges5;
             this.btn_QLNCC_Xoa.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_QLNCC_Xoa.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QLNCC_Xoa.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -493,6 +661,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_Sua.AllowAnimations = true;
             this.btn_QLNCC_Sua.AllowMouseEffects = true;
             this.btn_QLNCC_Sua.AllowToggling = false;
+            this.btn_QLNCC_Sua.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_QLNCC_Sua.AnimationSpeed = 200;
             this.btn_QLNCC_Sua.AutoGenerateColors = false;
             this.btn_QLNCC_Sua.AutoRoundBorders = false;
@@ -507,11 +676,11 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_Sua.ColorContrastOnClick = 45;
             this.btn_QLNCC_Sua.ColorContrastOnHover = 45;
             this.btn_QLNCC_Sua.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.btn_QLNCC_Sua.CustomizableEdges = borderEdges5;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.btn_QLNCC_Sua.CustomizableEdges = borderEdges6;
             this.btn_QLNCC_Sua.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_QLNCC_Sua.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QLNCC_Sua.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -583,6 +752,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_ThemNCC.AllowAnimations = true;
             this.btn_QLNCC_ThemNCC.AllowMouseEffects = true;
             this.btn_QLNCC_ThemNCC.AllowToggling = false;
+            this.btn_QLNCC_ThemNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_QLNCC_ThemNCC.AnimationSpeed = 200;
             this.btn_QLNCC_ThemNCC.AutoGenerateColors = false;
             this.btn_QLNCC_ThemNCC.AutoRoundBorders = false;
@@ -597,11 +767,11 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNCC_ThemNCC.ColorContrastOnClick = 45;
             this.btn_QLNCC_ThemNCC.ColorContrastOnHover = 45;
             this.btn_QLNCC_ThemNCC.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.btn_QLNCC_ThemNCC.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.btn_QLNCC_ThemNCC.CustomizableEdges = borderEdges7;
             this.btn_QLNCC_ThemNCC.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_QLNCC_ThemNCC.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_QLNCC_ThemNCC.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -671,6 +841,7 @@ namespace DoAn_CNPM_App.ChildForm
             // lbl_QLNCC_SĐT
             // 
             this.lbl_QLNCC_SĐT.AllowParentOverrides = false;
+            this.lbl_QLNCC_SĐT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QLNCC_SĐT.AutoEllipsis = false;
             this.lbl_QLNCC_SĐT.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_QLNCC_SĐT.CursorType = System.Windows.Forms.Cursors.Default;
@@ -688,6 +859,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             this.txt_QLNCC_SDT.AcceptsReturn = false;
             this.txt_QLNCC_SDT.AcceptsTab = false;
+            this.txt_QLNCC_SDT.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_QLNCC_SDT.AnimationSpeed = 200;
             this.txt_QLNCC_SDT.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_QLNCC_SDT.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -762,6 +934,7 @@ namespace DoAn_CNPM_App.ChildForm
             // lbl_QLNCC_Email
             // 
             this.lbl_QLNCC_Email.AllowParentOverrides = false;
+            this.lbl_QLNCC_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QLNCC_Email.AutoEllipsis = false;
             this.lbl_QLNCC_Email.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_QLNCC_Email.CursorType = System.Windows.Forms.Cursors.Default;
@@ -779,6 +952,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             this.txt_QLNCC_Email.AcceptsReturn = false;
             this.txt_QLNCC_Email.AcceptsTab = false;
+            this.txt_QLNCC_Email.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_QLNCC_Email.AnimationSpeed = 200;
             this.txt_QLNCC_Email.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_QLNCC_Email.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -853,6 +1027,7 @@ namespace DoAn_CNPM_App.ChildForm
             // lbl_QLNCC_TenNCC
             // 
             this.lbl_QLNCC_TenNCC.AllowParentOverrides = false;
+            this.lbl_QLNCC_TenNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QLNCC_TenNCC.AutoEllipsis = false;
             this.lbl_QLNCC_TenNCC.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_QLNCC_TenNCC.CursorType = System.Windows.Forms.Cursors.Default;
@@ -870,6 +1045,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             this.txt_QLNCC_TenNCC.AcceptsReturn = false;
             this.txt_QLNCC_TenNCC.AcceptsTab = false;
+            this.txt_QLNCC_TenNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_QLNCC_TenNCC.AnimationSpeed = 200;
             this.txt_QLNCC_TenNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_QLNCC_TenNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -944,6 +1120,7 @@ namespace DoAn_CNPM_App.ChildForm
             // lbl_QLNCC_MaNCC
             // 
             this.lbl_QLNCC_MaNCC.AllowParentOverrides = false;
+            this.lbl_QLNCC_MaNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_QLNCC_MaNCC.AutoEllipsis = false;
             this.lbl_QLNCC_MaNCC.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_QLNCC_MaNCC.CursorType = System.Windows.Forms.Cursors.Default;
@@ -961,6 +1138,7 @@ namespace DoAn_CNPM_App.ChildForm
             // 
             this.txt_QLNCC_MaNCC.AcceptsReturn = false;
             this.txt_QLNCC_MaNCC.AcceptsTab = false;
+            this.txt_QLNCC_MaNCC.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_QLNCC_MaNCC.AnimationSpeed = 200;
             this.txt_QLNCC_MaNCC.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.txt_QLNCC_MaNCC.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -1082,17 +1260,18 @@ namespace DoAn_CNPM_App.ChildForm
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_QLNCC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_QLNCC.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgv_QLNCC.EnableHeadersVisualStyles = false;
             this.dgv_QLNCC.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
             this.dgv_QLNCC.HeaderBackColor = System.Drawing.Color.DodgerBlue;
             this.dgv_QLNCC.HeaderBgColor = System.Drawing.Color.Empty;
             this.dgv_QLNCC.HeaderForeColor = System.Drawing.Color.White;
-            this.dgv_QLNCC.Location = new System.Drawing.Point(0, 386);
+            this.dgv_QLNCC.Location = new System.Drawing.Point(3, 389);
             this.dgv_QLNCC.Name = "dgv_QLNCC";
             this.dgv_QLNCC.RowHeadersVisible = false;
             this.dgv_QLNCC.RowTemplate.Height = 40;
             this.dgv_QLNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_QLNCC.Size = new System.Drawing.Size(1014, 194);
+            this.dgv_QLNCC.Size = new System.Drawing.Size(1011, 194);
             this.dgv_QLNCC.TabIndex = 0;
             this.dgv_QLNCC.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgv_QLNCC.SelectionChanged += new System.EventHandler(this.dgv_QLNCC_SelectionChanged);
@@ -1117,163 +1296,99 @@ namespace DoAn_CNPM_App.ChildForm
             this.Column4.HeaderText = "Email";
             this.Column4.Name = "Column4";
             // 
-            // lbl_QLNCC_CheckNCC_Result
+            // btn_QLNCC_BoTim
             // 
-            this.lbl_QLNCC_CheckNCC_Result.AllowParentOverrides = false;
-            this.lbl_QLNCC_CheckNCC_Result.AutoEllipsis = false;
-            this.lbl_QLNCC_CheckNCC_Result.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbl_QLNCC_CheckNCC_Result.Font = new System.Drawing.Font("Open Sans", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QLNCC_CheckNCC_Result.Location = new System.Drawing.Point(282, 174);
-            this.lbl_QLNCC_CheckNCC_Result.Name = "lbl_QLNCC_CheckNCC_Result";
-            this.lbl_QLNCC_CheckNCC_Result.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_QLNCC_CheckNCC_Result.Size = new System.Drawing.Size(196, 17);
-            this.lbl_QLNCC_CheckNCC_Result.TabIndex = 13;
-            this.lbl_QLNCC_CheckNCC_Result.Text = "Không thể để trống mã nhà cung cấp";
-            this.lbl_QLNCC_CheckNCC_Result.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_QLNCC_CheckNCC_Result.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            this.lbl_QLNCC_CheckNCC_Result.Visible = false;
-            // 
-            // lbl_QLNCC_CountNCCLabel
-            // 
-            this.lbl_QLNCC_CountNCCLabel.AllowParentOverrides = false;
-            this.lbl_QLNCC_CountNCCLabel.AutoEllipsis = false;
-            this.lbl_QLNCC_CountNCCLabel.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbl_QLNCC_CountNCCLabel.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.lbl_QLNCC_CountNCCLabel.Location = new System.Drawing.Point(654, 365);
-            this.lbl_QLNCC_CountNCCLabel.Name = "lbl_QLNCC_CountNCCLabel";
-            this.lbl_QLNCC_CountNCCLabel.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_QLNCC_CountNCCLabel.Size = new System.Drawing.Size(122, 15);
-            this.lbl_QLNCC_CountNCCLabel.TabIndex = 14;
-            this.lbl_QLNCC_CountNCCLabel.Text = "Số lượng nhà cung cấp";
-            this.lbl_QLNCC_CountNCCLabel.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_QLNCC_CountNCCLabel.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // txt_QLNCC_CountNCCValue
-            // 
-            this.txt_QLNCC_CountNCCValue.Enabled = false;
-            this.txt_QLNCC_CountNCCValue.Location = new System.Drawing.Point(789, 357);
-            this.txt_QLNCC_CountNCCValue.Name = "txt_QLNCC_CountNCCValue";
-            this.txt_QLNCC_CountNCCValue.Size = new System.Drawing.Size(36, 23);
-            this.txt_QLNCC_CountNCCValue.TabIndex = 15;
-            this.txt_QLNCC_CountNCCValue.Text = "0";
-            // 
-            // btn_QLNCC_BoChon
-            // 
-            this.btn_QLNCC_BoChon.AllowAnimations = true;
-            this.btn_QLNCC_BoChon.AllowMouseEffects = true;
-            this.btn_QLNCC_BoChon.AllowToggling = false;
-            this.btn_QLNCC_BoChon.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btn_QLNCC_BoChon.AnimationSpeed = 200;
-            this.btn_QLNCC_BoChon.AutoGenerateColors = false;
-            this.btn_QLNCC_BoChon.AutoRoundBorders = false;
-            this.btn_QLNCC_BoChon.AutoSizeLeftIcon = true;
-            this.btn_QLNCC_BoChon.AutoSizeRightIcon = true;
-            this.btn_QLNCC_BoChon.BackColor = System.Drawing.Color.Transparent;
-            this.btn_QLNCC_BoChon.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
-            this.btn_QLNCC_BoChon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_QLNCC_BoChon.BackgroundImage")));
-            this.btn_QLNCC_BoChon.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btn_QLNCC_BoChon.ButtonText = "Bỏ chọn";
-            this.btn_QLNCC_BoChon.ButtonTextMarginLeft = 0;
-            this.btn_QLNCC_BoChon.ColorContrastOnClick = 45;
-            this.btn_QLNCC_BoChon.ColorContrastOnHover = 45;
-            this.btn_QLNCC_BoChon.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btn_QLNCC_BoTim.AllowAnimations = true;
+            this.btn_QLNCC_BoTim.AllowMouseEffects = true;
+            this.btn_QLNCC_BoTim.AllowToggling = false;
+            this.btn_QLNCC_BoTim.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_QLNCC_BoTim.AnimationSpeed = 200;
+            this.btn_QLNCC_BoTim.AutoGenerateColors = false;
+            this.btn_QLNCC_BoTim.AutoRoundBorders = false;
+            this.btn_QLNCC_BoTim.AutoSizeLeftIcon = true;
+            this.btn_QLNCC_BoTim.AutoSizeRightIcon = true;
+            this.btn_QLNCC_BoTim.BackColor = System.Drawing.Color.Transparent;
+            this.btn_QLNCC_BoTim.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(122)))), ((int)(((byte)(183)))));
+            this.btn_QLNCC_BoTim.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_QLNCC_BoTim.BackgroundImage")));
+            this.btn_QLNCC_BoTim.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoTim.ButtonText = "Bỏ tìm";
+            this.btn_QLNCC_BoTim.ButtonTextMarginLeft = 0;
+            this.btn_QLNCC_BoTim.ColorContrastOnClick = 45;
+            this.btn_QLNCC_BoTim.ColorContrastOnHover = 45;
+            this.btn_QLNCC_BoTim.Cursor = System.Windows.Forms.Cursors.Default;
             borderEdges2.BottomLeft = true;
             borderEdges2.BottomRight = true;
             borderEdges2.TopLeft = true;
             borderEdges2.TopRight = true;
-            this.btn_QLNCC_BoChon.CustomizableEdges = borderEdges2;
-            this.btn_QLNCC_BoChon.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.btn_QLNCC_BoChon.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btn_QLNCC_BoChon.DisabledFillColor = System.Drawing.Color.Empty;
-            this.btn_QLNCC_BoChon.DisabledForecolor = System.Drawing.Color.Empty;
-            this.btn_QLNCC_BoChon.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.btn_QLNCC_BoChon.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btn_QLNCC_BoChon.ForeColor = System.Drawing.Color.White;
-            this.btn_QLNCC_BoChon.IconLeft = null;
-            this.btn_QLNCC_BoChon.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_QLNCC_BoChon.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.btn_QLNCC_BoChon.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.btn_QLNCC_BoChon.IconMarginLeft = 11;
-            this.btn_QLNCC_BoChon.IconPadding = 10;
-            this.btn_QLNCC_BoChon.IconRight = null;
-            this.btn_QLNCC_BoChon.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_QLNCC_BoChon.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.btn_QLNCC_BoChon.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.btn_QLNCC_BoChon.IconSize = 25;
-            this.btn_QLNCC_BoChon.IdleBorderColor = System.Drawing.Color.Empty;
-            this.btn_QLNCC_BoChon.IdleBorderRadius = 0;
-            this.btn_QLNCC_BoChon.IdleBorderThickness = 0;
-            this.btn_QLNCC_BoChon.IdleFillColor = System.Drawing.Color.Empty;
-            this.btn_QLNCC_BoChon.IdleIconLeftImage = null;
-            this.btn_QLNCC_BoChon.IdleIconRightImage = null;
-            this.btn_QLNCC_BoChon.IndicateFocus = false;
-            this.btn_QLNCC_BoChon.Location = new System.Drawing.Point(311, 354);
-            this.btn_QLNCC_BoChon.Name = "btn_QLNCC_BoChon";
-            this.btn_QLNCC_BoChon.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.btn_QLNCC_BoChon.OnDisabledState.BorderRadius = 1;
-            this.btn_QLNCC_BoChon.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btn_QLNCC_BoChon.OnDisabledState.BorderThickness = 1;
-            this.btn_QLNCC_BoChon.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.btn_QLNCC_BoChon.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.btn_QLNCC_BoChon.OnDisabledState.IconLeftImage = null;
-            this.btn_QLNCC_BoChon.OnDisabledState.IconRightImage = null;
-            this.btn_QLNCC_BoChon.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.btn_QLNCC_BoChon.onHoverState.BorderRadius = 1;
-            this.btn_QLNCC_BoChon.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btn_QLNCC_BoChon.onHoverState.BorderThickness = 1;
-            this.btn_QLNCC_BoChon.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
-            this.btn_QLNCC_BoChon.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.btn_QLNCC_BoChon.onHoverState.IconLeftImage = null;
-            this.btn_QLNCC_BoChon.onHoverState.IconRightImage = null;
-            this.btn_QLNCC_BoChon.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btn_QLNCC_BoChon.OnIdleState.BorderRadius = 1;
-            this.btn_QLNCC_BoChon.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btn_QLNCC_BoChon.OnIdleState.BorderThickness = 1;
-            this.btn_QLNCC_BoChon.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
-            this.btn_QLNCC_BoChon.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.btn_QLNCC_BoChon.OnIdleState.IconLeftImage = null;
-            this.btn_QLNCC_BoChon.OnIdleState.IconRightImage = null;
-            this.btn_QLNCC_BoChon.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btn_QLNCC_BoChon.OnPressedState.BorderRadius = 1;
-            this.btn_QLNCC_BoChon.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.btn_QLNCC_BoChon.OnPressedState.BorderThickness = 1;
-            this.btn_QLNCC_BoChon.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.btn_QLNCC_BoChon.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.btn_QLNCC_BoChon.OnPressedState.IconLeftImage = null;
-            this.btn_QLNCC_BoChon.OnPressedState.IconRightImage = null;
-            this.btn_QLNCC_BoChon.Size = new System.Drawing.Size(62, 22);
-            this.btn_QLNCC_BoChon.TabIndex = 76;
-            this.btn_QLNCC_BoChon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btn_QLNCC_BoChon.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.btn_QLNCC_BoChon.TextMarginLeft = 0;
-            this.btn_QLNCC_BoChon.TextPadding = new System.Windows.Forms.Padding(0);
-            this.btn_QLNCC_BoChon.UseDefaultRadiusAndThickness = true;
-            this.btn_QLNCC_BoChon.Visible = false;
-            this.btn_QLNCC_BoChon.Click += new System.EventHandler(this.btn_QLNCC_BoChon_Click);
-            // 
-            // lbl_QLNCC_SelectedNCCValue
-            // 
-            this.lbl_QLNCC_SelectedNCCValue.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_QLNCC_SelectedNCCValue.AutoSize = true;
-            this.lbl_QLNCC_SelectedNCCValue.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_QLNCC_SelectedNCCValue.Location = new System.Drawing.Point(221, 357);
-            this.lbl_QLNCC_SelectedNCCValue.Name = "lbl_QLNCC_SelectedNCCValue";
-            this.lbl_QLNCC_SelectedNCCValue.Size = new System.Drawing.Size(84, 19);
-            this.lbl_QLNCC_SelectedNCCValue.TabIndex = 75;
-            this.lbl_QLNCC_SelectedNCCValue.Text = "MaNCC1234";
-            this.lbl_QLNCC_SelectedNCCValue.Visible = false;
-            // 
-            // lbl_QLNCC_SelectedNCCLabel
-            // 
-            this.lbl_QLNCC_SelectedNCCLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_QLNCC_SelectedNCCLabel.AutoSize = true;
-            this.lbl_QLNCC_SelectedNCCLabel.Font = new System.Drawing.Font("Open Sans", 9.75F);
-            this.lbl_QLNCC_SelectedNCCLabel.Location = new System.Drawing.Point(54, 357);
-            this.lbl_QLNCC_SelectedNCCLabel.Name = "lbl_QLNCC_SelectedNCCLabel";
-            this.lbl_QLNCC_SelectedNCCLabel.Size = new System.Drawing.Size(161, 19);
-            this.lbl_QLNCC_SelectedNCCLabel.TabIndex = 74;
-            this.lbl_QLNCC_SelectedNCCLabel.Text = "Mã nhà cung cấp đã chọn";
-            this.lbl_QLNCC_SelectedNCCLabel.Visible = false;
+            this.btn_QLNCC_BoTim.CustomizableEdges = borderEdges2;
+            this.btn_QLNCC_BoTim.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btn_QLNCC_BoTim.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_QLNCC_BoTim.DisabledFillColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoTim.DisabledForecolor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoTim.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.btn_QLNCC_BoTim.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btn_QLNCC_BoTim.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoTim.IconLeft = null;
+            this.btn_QLNCC_BoTim.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_QLNCC_BoTim.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.btn_QLNCC_BoTim.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.btn_QLNCC_BoTim.IconMarginLeft = 11;
+            this.btn_QLNCC_BoTim.IconPadding = 10;
+            this.btn_QLNCC_BoTim.IconRight = null;
+            this.btn_QLNCC_BoTim.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_QLNCC_BoTim.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.btn_QLNCC_BoTim.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.btn_QLNCC_BoTim.IconSize = 25;
+            this.btn_QLNCC_BoTim.IdleBorderColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoTim.IdleBorderRadius = 0;
+            this.btn_QLNCC_BoTim.IdleBorderThickness = 0;
+            this.btn_QLNCC_BoTim.IdleFillColor = System.Drawing.Color.Empty;
+            this.btn_QLNCC_BoTim.IdleIconLeftImage = null;
+            this.btn_QLNCC_BoTim.IdleIconRightImage = null;
+            this.btn_QLNCC_BoTim.IndicateFocus = false;
+            this.btn_QLNCC_BoTim.Location = new System.Drawing.Point(379, 354);
+            this.btn_QLNCC_BoTim.Name = "btn_QLNCC_BoTim";
+            this.btn_QLNCC_BoTim.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.btn_QLNCC_BoTim.OnDisabledState.BorderRadius = 1;
+            this.btn_QLNCC_BoTim.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoTim.OnDisabledState.BorderThickness = 1;
+            this.btn_QLNCC_BoTim.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.btn_QLNCC_BoTim.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.btn_QLNCC_BoTim.OnDisabledState.IconLeftImage = null;
+            this.btn_QLNCC_BoTim.OnDisabledState.IconRightImage = null;
+            this.btn_QLNCC_BoTim.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btn_QLNCC_BoTim.onHoverState.BorderRadius = 1;
+            this.btn_QLNCC_BoTim.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoTim.onHoverState.BorderThickness = 1;
+            this.btn_QLNCC_BoTim.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(150)))), ((int)(((byte)(255)))));
+            this.btn_QLNCC_BoTim.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoTim.onHoverState.IconLeftImage = null;
+            this.btn_QLNCC_BoTim.onHoverState.IconRightImage = null;
+            this.btn_QLNCC_BoTim.OnIdleState.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btn_QLNCC_BoTim.OnIdleState.BorderRadius = 1;
+            this.btn_QLNCC_BoTim.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoTim.OnIdleState.BorderThickness = 1;
+            this.btn_QLNCC_BoTim.OnIdleState.FillColor = System.Drawing.Color.DodgerBlue;
+            this.btn_QLNCC_BoTim.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoTim.OnIdleState.IconLeftImage = null;
+            this.btn_QLNCC_BoTim.OnIdleState.IconRightImage = null;
+            this.btn_QLNCC_BoTim.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btn_QLNCC_BoTim.OnPressedState.BorderRadius = 1;
+            this.btn_QLNCC_BoTim.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.btn_QLNCC_BoTim.OnPressedState.BorderThickness = 1;
+            this.btn_QLNCC_BoTim.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.btn_QLNCC_BoTim.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.btn_QLNCC_BoTim.OnPressedState.IconLeftImage = null;
+            this.btn_QLNCC_BoTim.OnPressedState.IconRightImage = null;
+            this.btn_QLNCC_BoTim.Size = new System.Drawing.Size(62, 22);
+            this.btn_QLNCC_BoTim.TabIndex = 77;
+            this.btn_QLNCC_BoTim.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btn_QLNCC_BoTim.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btn_QLNCC_BoTim.TextMarginLeft = 0;
+            this.btn_QLNCC_BoTim.TextPadding = new System.Windows.Forms.Padding(0);
+            this.btn_QLNCC_BoTim.UseDefaultRadiusAndThickness = true;
+            this.btn_QLNCC_BoTim.Visible = false;
+            this.btn_QLNCC_BoTim.Click += new System.EventHandler(this.btn_QLNCC_BoTim_Click);
             // 
             // frmDanhMuc
             // 
@@ -1326,5 +1441,6 @@ namespace DoAn_CNPM_App.ChildForm
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btn_QLNCC_BoChon;
         private System.Windows.Forms.Label lbl_QLNCC_SelectedNCCValue;
         private System.Windows.Forms.Label lbl_QLNCC_SelectedNCCLabel;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton btn_QLNCC_BoTim;
     }
 }

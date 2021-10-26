@@ -31,6 +31,7 @@ namespace DoAn_CNPM_App.ChildForm
         }
 
         #region QuanLyNhaCungCap
+
         #region HamKiemTra
         void QLNCC_Button_Auth(int lv, bool value) //Phan quyen chuc nang nguoi dung
         {
@@ -136,6 +137,7 @@ namespace DoAn_CNPM_App.ChildForm
         }
         void QLNCC_FillDGV(List<NHACUNGCAP> ncc)
         {
+            txt_QLNCC_CountNCCValue.Text = ncc.Count.ToString();
             dgv_QLNCC.Rows.Clear();
             for (int i = 0; i < ncc.Count(); i++)
             {
@@ -149,24 +151,7 @@ namespace DoAn_CNPM_App.ChildForm
         }
         #endregion
         #region TruyVan
-        private void dgv_QLNCC_SelectionChanged(object sender, EventArgs e)
-        {
-
-            if (dgv_QLNCC.SelectedRows.Count > 0 && LoadedQLNCC == true)
-            {
-                QLNCC_Button_Auth(lv, true);
-                txt_QLNCC_MaNCC.Enabled = false;
-                lbl_QLNCC_SelectedNCCValue.Text = dgv_QLNCC.SelectedRows[0].Cells[0].Value?.ToString();
-                txt_QLNCC_MaNCC.Text = dgv_QLNCC.SelectedRows[0].Cells[0].Value?.ToString();
-                txt_QLNCC_TenNCC.Text = dgv_QLNCC.SelectedRows[0].Cells[1].Value?.ToString();
-                txt_QLNCC_SDT.Text = dgv_QLNCC.SelectedRows[0].Cells[2].Value?.ToString();
-                txt_QLNCC_Email.Text = dgv_QLNCC.SelectedRows[0].Cells[3].Value?.ToString();
-                if(string.IsNullOrEmpty(lbl_QLNCC_SelectedNCCValue.Text) == false)
-                {
-                    QLNCC_ShowOrHide_SelectedValue(true);
-                }
-            }
-        }
+       
         void QLNCC_Them()
         {
             int c = QLNCC_CheckValid();
@@ -411,17 +396,26 @@ namespace DoAn_CNPM_App.ChildForm
                         break;
                     case 1:
                         fncc = dbContext.NHACUNGCAPs.Where(a => a.MaNCC == mancc).ToList();
+                        QLNCC_FillDGV(fncc);
+                        btn_QLNCC_BoTim.Visible = true;
+                        mess = "Tìm kiếm thành công, có " + fncc.Count + " kết quả trùng khớp!";
+                        MessageBox.Show(mess, "Thông báo");
                         break;
                     case 2:
                         fncc = dbContext.NHACUNGCAPs.Where(a => a.TenNCC == mancc).ToList();
+                        QLNCC_FillDGV(fncc);
+                        btn_QLNCC_BoTim.Visible = true;
+                        mess = "Tìm kiếm thành công, có " + fncc.Count + " kết quả trùng khớp!";
+                        MessageBox.Show(mess, "Thông báo");
                         break;
                     case 3:
                         fncc = dbContext.NHACUNGCAPs.Where(a => a.MaNCC == mancc && a.TenNCC == mancc).ToList();
+                        QLNCC_FillDGV(fncc);
+                        btn_QLNCC_BoTim.Visible = true;
+                        mess = "Tìm kiếm thành công, có " + fncc.Count + " kết quả trùng khớp!";
+                        MessageBox.Show(mess, "Thông báo");
                         break;
                 }
-                QLNCC_FillDGV(fncc);
-                mess = "Tìm kiếm thành công, có" + fncc.Count + " kết quả trùng khớp!";
-                MessageBox.Show(mess, "Thông báo");
             }
             catch(Exception ex)
             {
@@ -430,18 +424,40 @@ namespace DoAn_CNPM_App.ChildForm
             
         }
         #endregion
-        #region Button&LabelEvent
+        #region Event
+        private void dgv_QLNCC_SelectionChanged(object sender, EventArgs e)
+        {
+
+            if (dgv_QLNCC.SelectedRows.Count > 0 && LoadedQLNCC == true)
+            {
+                btn_QLNCC_BoChon.Visible = true;
+                QLNCC_Button_Auth(lv, true);
+                txt_QLNCC_MaNCC.Enabled = false;
+                lbl_QLNCC_SelectedNCCValue.Text = dgv_QLNCC.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLNCC_MaNCC.Text = dgv_QLNCC.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLNCC_TenNCC.Text = dgv_QLNCC.SelectedRows[0].Cells[1].Value?.ToString();
+                txt_QLNCC_SDT.Text = dgv_QLNCC.SelectedRows[0].Cells[2].Value?.ToString();
+                txt_QLNCC_Email.Text = dgv_QLNCC.SelectedRows[0].Cells[3].Value?.ToString();
+                if (string.IsNullOrEmpty(lbl_QLNCC_SelectedNCCValue.Text) == false)
+                {
+                    QLNCC_ShowOrHide_SelectedValue(true);
+                }
+            }
+        }
         private void btn_QLNCC_BoChon_Click(object sender, EventArgs e)
         {
+            QLNCC_Button_Auth(lv, false);
             QLNCC_ShowOrHide_SelectedValue(false);
             QLNCC_ClearTextBox();
             txt_QLNCC_MaNCC.Enabled = true;
+            btn_QLNCC_BoChon.Visible = false;
         }
 
         private void btn_QLNCC_TimKiem_Click(object sender, EventArgs e)
         {
             LoadedQLNCC = false;
             QLNCC_Find();
+            
             LoadedQLNCC = true;
         }
 
@@ -468,6 +484,17 @@ namespace DoAn_CNPM_App.ChildForm
             QLNCC_Xoa();
             LoadedQLNCC = true;
 
+        }
+
+        private void btn_QLNCC_BoTim_Click(object sender, EventArgs e)
+        {
+            LoadedQLNCC = false;
+            QLNCC_FillDGV(nccs);
+            LoadedQLNCC = true;
+            QLNCC_ClearTextBox();
+            QLNCC_ShowOrHide_SelectedValue(false);
+            QLNCC_Button_Auth(lv, true);
+            btn_QLNCC_BoTim.Visible = false;
         }
 
         #endregion
