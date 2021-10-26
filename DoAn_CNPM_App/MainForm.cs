@@ -108,7 +108,7 @@ namespace DoAn_CNPM_App
 
         private void btn_DanhMuc_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.DanhMuc(), sender);
+            OpenChildForm(new ChildForm.frmDanhMuc(), sender);
         }
 
         private void pbx_LogoMain_Click(object sender, EventArgs e)
@@ -173,7 +173,7 @@ namespace DoAn_CNPM_App
 
         private void btn_DanhMuc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.DanhMuc(), sender);
+            OpenChildForm(new ChildForm.frmDanhMuc(), sender);
         }
 
         private void btn_BaoCao_Click(object sender, EventArgs e)

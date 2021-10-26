@@ -1024,5 +1024,7 @@ namespace DoAn_CNPM_App.ChildForm
             LoadedNVCS = true;
         }
         #endregion
+
+
     }
 }
