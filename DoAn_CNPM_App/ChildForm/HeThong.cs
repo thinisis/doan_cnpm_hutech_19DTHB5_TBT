@@ -21,6 +21,7 @@ namespace DoAn_CNPM_App.ChildForm
         List<ACCOUNT> accss = new List<ACCOUNT>();
         String thisAccount;
         int accHopLe;
+        bool LoadedNVAdd = false;
         bool LoadedNVCS = false;
         bool LoadedTKCS = false;
         public HeThong()
@@ -41,7 +42,6 @@ namespace DoAn_CNPM_App.ChildForm
         private void btn_QLTK_TTK_Click(object sender, EventArgs e)
         {
             page_QLTK.SetPage("QLTK", false);
-            this.Select();
         }
 
         private void btn_QLTK_ChinhSua_Click(object sender, EventArgs e)
@@ -52,13 +52,11 @@ namespace DoAn_CNPM_App.ChildForm
             lbl_QLTK_CS_Count.Text = accss.Count.ToString();
             FillCBXCS();
             LoadedTKCS = true;
-            this.Select();
         }
 
         private void btn_QLNV_TNV_Click(object sender, EventArgs e)
         {
             page_QLNV.SetPage("TNV", false);
-            this.Select();
         }
 
         private void btn_QLNV_ChinhSuaNV_Click(object sender, EventArgs e)
@@ -68,14 +66,14 @@ namespace DoAn_CNPM_App.ChildForm
             txt_QLNV_CS_CountSL.Text = dsnv.Count.ToString();
             page_QLNV.SetPage("EDIT", false);
             LoadedNVCS = true;
-            this.Select();
+ 
         }
         #endregion
         #region ThemTaiKhoan
         private void CheckUserName()
         {
             String username = txt_TTK_userName.Text;
-            if(username == "")
+            if (username == "")
             {
                 lbl_TTK_checkuserName.Text = "Không thể để trống tên người dùng !";
                 lbl_TTK_checkuserName.ForeColor = Color.Red;
@@ -84,7 +82,7 @@ namespace DoAn_CNPM_App.ChildForm
             }
             else
             {
-                if(Regex.IsMatch(username, @"(!|@|#)"))
+                if (Regex.IsMatch(username, @"(!|@|#)"))
                 {
                     lbl_TTK_checkuserName.Text = "Tên người dùng không được có kí tự đặc biệt!";
                     lbl_TTK_checkuserName.ForeColor = Color.Red;
@@ -107,7 +105,7 @@ namespace DoAn_CNPM_App.ChildForm
                     accHopLe = 1;
                 }
             }
-            
+
         }
         void FillDataCBX(List<ACCOUNTLV> acclv)
         {
@@ -136,7 +134,7 @@ namespace DoAn_CNPM_App.ChildForm
             }
             String mnv = txt_TTK_MSNV.Text;
             NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV.CompareTo(mnv) == 0);
-            if(nv == null)
+            if (nv == null)
             {
                 return 4;
             }
@@ -147,7 +145,7 @@ namespace DoAn_CNPM_App.ChildForm
         {
             String mnv = txt_TTK_MSNV.Text;
             NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV.CompareTo(mnv) == 0);
-                if (nv != null)
+            if (nv != null)
             {
                 lbl_TTK_checkMSNV.Text = nv.TenNV.ToString();
                 lbl_TTK_checkMSNV.Visible = true;
@@ -165,7 +163,7 @@ namespace DoAn_CNPM_App.ChildForm
         }
         private void btn_TTK_CheckuserName_Click_1(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txt_TTK_MSNV_TextChanged(object sender, EventArgs e)
@@ -181,26 +179,26 @@ namespace DoAn_CNPM_App.ChildForm
                     MessageBox.Show("Mật khẩu không trùng khớp!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case 2:
-                MessageBox.Show("Không thể để trống tên người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không thể để trống tên người dùng!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case 3:
-                        MessageBox.Show("Không thể để trống mã nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không thể để trống mã nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case 4:
-                            MessageBox.Show("Không thể tìm thấy nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Không thể tìm thấy nhân viên!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 default:
-                            ACCOUNT acc = new ACCOUNT();
-                            acc.username = txt_TTK_userName.Text;
-                            acc.password = txt_TTK_Pwd.Text;
-                            acc.lv = cbx_TTK_lv.SelectedValue.ToString();
-                            acc.MaNV = txt_TTK_MSNV.Text;
-                            dbContext.ACCOUNTs.Add(acc);
-                            dbContext.SaveChanges();
-                            MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
+                    ACCOUNT acc = new ACCOUNT();
+                    acc.username = txt_TTK_userName.Text;
+                    acc.password = txt_TTK_Pwd.Text;
+                    acc.lv = cbx_TTK_lv.SelectedValue.ToString();
+                    acc.MaNV = txt_TTK_MSNV.Text;
+                    dbContext.ACCOUNTs.Add(acc);
+                    dbContext.SaveChanges();
+                    MessageBox.Show("Thêm thành công", "Thông báo", MessageBoxButtons.OK);
                     break;
             }
-            
+
         }
         private void btn_TTK_Tao_Click(object sender, EventArgs e)
         {
@@ -211,7 +209,7 @@ namespace DoAn_CNPM_App.ChildForm
         void FillDGVCS(List<ACCOUNT> accs)
         {
             dgv_QLTK_CS.Rows.Clear();
-            for(int i = 0; i < accs.Count(); i++)
+            for (int i = 0; i < accs.Count(); i++)
             {
                 int index = dgv_QLTK_CS.Rows.Add();
                 dgv_QLTK_CS.Rows[i].Cells[0].Value = accs[i].username.ToString();
@@ -243,7 +241,7 @@ namespace DoAn_CNPM_App.ChildForm
             {
                 fnvs = dbContext.ACCOUNTs.Where(a => a.lv == lv).ToList();
             }
-            
+
             FillDGVCS(fnvs);
             String Messages = "Có " + fnvs.Count.ToString() + " kết quả phù hợp!";
             lbl_QLTK_CS_Message.Text = Messages;
@@ -270,7 +268,7 @@ namespace DoAn_CNPM_App.ChildForm
         bool QLTK_KTTK(String manv)
         {
             NHANVIEN temp = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == manv);
-            if(temp == null)
+            if (temp == null)
             {
                 return false;
             }
@@ -290,19 +288,19 @@ namespace DoAn_CNPM_App.ChildForm
         void QLTK_CS_Edit()
         {
 
-            String user = lbl_QLTK_CS_userSelectedValue.Text; 
+            String user = lbl_QLTK_CS_userSelectedValue.Text;
             ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == user);
             if (acc != null)
             {
                 NHANVIEN tempnv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == txt_QLTK_CS_MaNV.Text);
                 ACCOUNTLV templv = dbContext.ACCOUNTLVs.FirstOrDefault(a => a.lv == cbx_QLTK_CS_Quyen.SelectedIndex.ToString());
-                if(QLTK_KTTK(txt_QLTK_CS_MaNV.Text) == true)
+                if (QLTK_KTTK(txt_QLTK_CS_MaNV.Text) == true)
                 {
-                    String mess = "Thay đổi thông tin thành:\nTên tài khoản: "+txt_QLTK_CS_userName.Text
-                                    + "\nMật khẩu: "+txt_QLTK_CS_Pwd.Text
-                                    +"\nTên nhân viên: "+tempnv.TenNV.ToString()
-                                    +"\nMã nhân viên: "+txt_QLTK_CS_MaNV.Text
-                                    +"\nQuyền: "+templv.Quyen.ToString();
+                    String mess = "Thay đổi thông tin thành:\nTên tài khoản: " + txt_QLTK_CS_userName.Text
+                                    + "\nMật khẩu: " + txt_QLTK_CS_Pwd.Text
+                                    + "\nTên nhân viên: " + tempnv.TenNV.ToString()
+                                    + "\nMã nhân viên: " + txt_QLTK_CS_MaNV.Text
+                                    + "\nQuyền: " + templv.Quyen.ToString();
                     DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                     if (dr == DialogResult.OK)
@@ -321,14 +319,14 @@ namespace DoAn_CNPM_App.ChildForm
                     {
                         MessageBox.Show("Đã huỷ bỏ thao tác", "Thông báo");
                     }
-                    
+
                 }
                 else
                 {
                     MessageBox.Show("Vui lòng điền đúng mã nhân viên hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-           
+
         }
 
         void QLTK_DisableOrEnableBTN(bool kt)
@@ -340,7 +338,7 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void dgv_QLTK_CS_SelectionChanged(object sender, EventArgs e)
         {
-            if(dgv_QLTK_CS.Rows.Count > 0 && LoadedTKCS == true)
+            if (dgv_QLTK_CS.Rows.Count > 0 && LoadedTKCS == true)
             {
                 QLTK_DisableOrEnableBTN(true);
                 txt_QLTK_CS_userName.Enabled = false;
@@ -352,7 +350,7 @@ namespace DoAn_CNPM_App.ChildForm
                 cbx_QLTK_CS_Quyen.SelectedIndex = int.Parse(temp.lv.ToString());
                 lbl_QLTK_CS_userSelectedValue.Text = temp.username.ToString();
                 lbl_QLTK_CS_userSelectedValue.Visible = true;
-                if(string.IsNullOrEmpty(lbl_QLTK_CS_userSelectedValue.Text) == false)
+                if (string.IsNullOrEmpty(lbl_QLTK_CS_userSelectedValue.Text) == false)
                 {
                     lbl_QLTK_CS_userSelectedTLable.Visible = true;
                 }
@@ -371,7 +369,7 @@ namespace DoAn_CNPM_App.ChildForm
         {
             String user = txt_QLTK_CS_userName.Text;
             ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == user);
-            if(acc != null)
+            if (acc != null)
             {
                 dbContext.ACCOUNTs.Remove(acc);
                 dbContext.SaveChanges();
@@ -417,11 +415,11 @@ namespace DoAn_CNPM_App.ChildForm
 
         bool IsValidNumber(String sdt)
         {
-            if(sdt.Length <= 9 | sdt.Length > 12)
+            if (sdt.Length <= 9 | sdt.Length > 12)
             {
                 return false;
             }
-            if(int.TryParse(sdt, out _) == false)
+            if (int.TryParse(sdt, out _) == false)
             {
                 return false;
             }
@@ -432,7 +430,7 @@ namespace DoAn_CNPM_App.ChildForm
         {
             String email = txt_TNV_Email.Text;
             bool valid = IsValidEmail(email);
-            if(valid == false)
+            if (valid == false)
             {
                 lbl_TNV_ValidEmail.Text = "Email không hợp lệ!";
                 lbl_TNV_ValidEmail.ForeColor = Color.Red;
@@ -502,17 +500,17 @@ namespace DoAn_CNPM_App.ChildForm
             }
             String mnv = txt_TNV_MaNV.Text;
             NHANVIEN nvf = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV.CompareTo(mnv) == 0);
-            if(nvf != null)
+            if (nvf != null)
             {
                 return 7; //da co nhan vien tren he thong
             }
             return 0; //Khong co loi
-            
+
         }
         void TNV_FillDGV(List<NHANVIEN> nv)
         {
             tnv_DGV_Add.Rows.Clear();
-            for(int i = 0; i < nv.Count(); i++)
+            for (int i = 0; i < nv.Count(); i++)
             {
                 int index = tnv_DGV_Add.Rows.Add();
                 tnv_DGV_Add.Rows[i].Cells[0].Value = nv[i].MaNV;
@@ -520,7 +518,7 @@ namespace DoAn_CNPM_App.ChildForm
                 tnv_DGV_Add.Rows[i].Cells[2].Value = nv[i].DiaChi;
                 tnv_DGV_Add.Rows[i].Cells[3].Value = nv[i].SDT;
                 tnv_DGV_Add.Rows[i].Cells[4].Value = nv[i].Email;
-                if(nv[i].Phai == true)
+                if (nv[i].Phai == true)
                 {
                     tnv_DGV_Add.Rows[i].Cells[5].Value = "Nữ";
                 }
@@ -531,7 +529,7 @@ namespace DoAn_CNPM_App.ChildForm
                 tnv_DGV_Add.Rows[i].Cells[6].Value = nv[i].ChucVu;
             }
         }
-        
+
         void TNV_ThemNV()
         {
             int c = TNV_CheckValid(1);
@@ -540,8 +538,6 @@ namespace DoAn_CNPM_App.ChildForm
                 case 0:
                     try
                     {
-
-
                         NHANVIEN nv = new NHANVIEN();
                         nv.MaNV = txt_TNV_MaNV.Text;
                         nv.TenNV = txt_TNV_TenNV.Text;
@@ -596,19 +592,19 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void tnv_DGV_Add_SelectionChanged(object sender, EventArgs e)
         {
-
-            if (nvs.Count > 0)
+            btn_TNV_Sua.Enabled = true;
+            if (LoadedNVAdd == true && tnv_DGV_Add.SelectedRows.Count > 0 && string.IsNullOrEmpty(tnv_DGV_Add.SelectedRows[0].Cells[0].Value?.ToString()) == false)
             {
-                btn_TNV_Sua.Enabled = true;
-                txt_TTK_MSNV.Enabled = false;
-                txt_TNV_MaNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[0].Value.ToString();
-                txt_TNV_TenNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[1].Value.ToString();
-                txt_TNV_SDT.Text = tnv_DGV_Add.SelectedRows[0].Cells[3].Value.ToString();
-                txt_TNV_Email.Text = tnv_DGV_Add.SelectedRows[0].Cells[4].Value.ToString();
-                txt_TNV_DiaChi.Text = tnv_DGV_Add.SelectedRows[0].Cells[2].Value.ToString();
-                txt_TNV_ChucVu.Text = tnv_DGV_Add.SelectedRows[0].Cells[6].Value.ToString();
 
-                if (tnv_DGV_Add.SelectedRows[0].Cells[6].Value.ToString() == "Nam")
+                txt_TTK_MSNV.Enabled = false;
+                txt_TNV_MaNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_TNV_TenNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[1].Value?.ToString();
+                txt_TNV_SDT.Text = tnv_DGV_Add.SelectedRows[0].Cells[3].Value?.ToString();
+                txt_TNV_Email.Text = tnv_DGV_Add.SelectedRows[0].Cells[4].Value?.ToString();
+                txt_TNV_DiaChi.Text = tnv_DGV_Add.SelectedRows[0].Cells[2].Value?.ToString();
+                txt_TNV_ChucVu.Text = tnv_DGV_Add.SelectedRows[0].Cells[6].Value?.ToString();
+
+                if (tnv_DGV_Add.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
                 {
                     rdb_TNV_Nam.Checked = true;
                     rdb_TNV_Nu.Checked = false;
@@ -659,7 +655,7 @@ namespace DoAn_CNPM_App.ChildForm
                     }
                     break;
                 case 1:
-                    
+
                     break;
                 case 2:
                     MessageBox.Show("SĐT không hợp lệ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -684,10 +680,12 @@ namespace DoAn_CNPM_App.ChildForm
         }
         private void btn_TNV_Them_Click(object sender, EventArgs e)
         {
+            LoadedNVAdd = false;
             TNV_ThemNV();
+            LoadedNVAdd = true;
         }
 
-        
+
         private void btn_TNV_Sua_Click(object sender, EventArgs e)
         {
             TNV_SuaNVDaThem();
@@ -712,7 +710,7 @@ namespace DoAn_CNPM_App.ChildForm
             for (int i = 0; i < nv.Count(); i++)
             {
                 int index = dgv_QLNV_CS.Rows.Add();
-                dgv_QLNV_CS.Rows[i].Cells[0].Value = (i+1).ToString();
+                dgv_QLNV_CS.Rows[i].Cells[0].Value = (i + 1).ToString();
                 dgv_QLNV_CS.Rows[i].Cells[1].Value = nv[i].MaNV;
                 dgv_QLNV_CS.Rows[i].Cells[2].Value = nv[i].TenNV;
                 dgv_QLNV_CS.Rows[i].Cells[3].Value = nv[i].DiaChi;
@@ -730,7 +728,7 @@ namespace DoAn_CNPM_App.ChildForm
             }
         }
 
-        
+
 
         void EnableOrDisableButtonCSNV(bool value)
         {
@@ -763,17 +761,17 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void dgv_QLNV_CS_SelectionChanged(object sender, EventArgs e)
         {
-            EnableOrDisable_TextBox_Find_CSNV(true);
-            EnableOrDisableButtonCSNV(true);
             if (dgv_QLNV_CS.SelectedRows.Count > 0 && LoadedNVCS == true)
             {
+                txt_QLNV_CS_MaNV.Enabled = false;
+                EnableOrDisable_TextBox_Find_CSNV(true);
+                EnableOrDisableButtonCSNV(true);
                 txt_QLNV_CS_MaNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
                 txt_QLNV_CS_TenNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[2].Value?.ToString();
                 txt_QLNV_CS_SDT.Text = dgv_QLNV_CS.SelectedRows[0].Cells[4].Value?.ToString();
                 txt_QLNV_CS_Email.Text = dgv_QLNV_CS.SelectedRows[0].Cells[5].Value?.ToString();
                 txt_QLNV_CS_DiaChi.Text = dgv_QLNV_CS.SelectedRows[0].Cells[3].Value?.ToString();
                 txt_QLNV_CS_ChucVu.Text = dgv_QLNV_CS.SelectedRows[0].Cells[7].Value?.ToString();
-
                 if (dgv_QLNV_CS.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
                 {
                     rdb_QLNV_CS_Nam.Checked = true;
@@ -783,6 +781,11 @@ namespace DoAn_CNPM_App.ChildForm
                 {
                     rdb_QLNV_CS_Nu.Checked = true;
                     rdb_TNV_Nam.Checked = false;
+                }
+                lbl_QLNV_CS_SelectedMaNVValue.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
+                if (string.IsNullOrEmpty(lbl_QLNV_CS_SelectedMaNVValue.Text) == false)
+                {
+                    ShowOrHide_SelectedMaNV_QLNVCS(true);
                 }
             }
         }
@@ -808,22 +811,218 @@ namespace DoAn_CNPM_App.ChildForm
             }
         }
 
+        int CheckValid_Edit_QLNV_CS()
+        {
+            String temp_mnv = lbl_QLNV_CS_SelectedMaNVValue.Text; //Lay ma nhan vien da nhap
+            NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == temp_mnv);
+            if (nv != null)
+            {
+                if (string.IsNullOrEmpty(txt_QLNV_CS_ChucVu.Text) == true |
+                    string.IsNullOrEmpty(txt_QLNV_CS_TenNV.Text) == true |
+                    string.IsNullOrEmpty(txt_QLNV_CS_SDT.Text) == true |
+                    string.IsNullOrEmpty(txt_QLNV_CS_Email.Text) == true |
+                    string.IsNullOrEmpty(txt_QLNV_CS_ChucVu.Text) == true)
+                {
+                    return 3; //Co textbox bi trong
+                }
+                if (IsValidEmail(txt_QLNV_CS_Email.Text) == false)
+                {
+                    return 1; //Email khong hop le
+                }
+                else
+                {
+                    if (IsValidNumber(txt_QLNV_CS_SDT.Text) == false)
+                    {
+                        return 2; //SDT khong hop le
+                    }
+                }
+
+            }
+            return 0;
+        }
+
         private void btn_QLNV_CS_TimKiem_Click(object sender, EventArgs e)
         {
             QLNV_CS_Find();
         }
 
-        private void btn_QLNV_CS_ChinhSua_Click(object sender, EventArgs e)
+        void ClearTextBox_QLNVCS()
         {
-            
+            txt_QLNV_CS_MaNV.Text = "";
+            txt_QLNV_CS_TenNV.Text = "";
+            txt_QLNV_CS_Email.Text = "";
+            txt_QLNV_CS_SDT.Text = "";
+            txt_QLNV_CS_DiaChi.Text = "";
+            txt_QLNV_CS_ChucVu.Text = "";
         }
 
+        void ShowOrHide_SelectedMaNV_QLNVCS(bool value)
+        {
+            lbl_QLNV_CS_SelectedMaNVValue.Visible = value;
+            lbl_QLNV_CS_SelectedMaNVLable.Visible = value;
+            btn_QLNV_CS_BoChon.Visible = value;
+        }
+        private void btn_QLNV_CS_BoChon_Click(object sender, EventArgs e)
+        {
+            ShowOrHide_SelectedMaNV_QLNVCS(false);
+            ClearTextBox_QLNVCS();
+            EnableOrDisableButtonCSNV(false);
+            txt_QLNV_CS_MaNV.Enabled = true;
+        }
 
+        void QLNV_CS_EditNV()
+        {
+            int check = CheckValid_Edit_QLNV_CS();
+            switch (check)
+            {
+                case 0:
+                    try
+                    {
+                        String manv = lbl_QLNV_CS_SelectedMaNVValue.Text;
+                        String gioitinh;
+                        if (rdb_QLNV_CS_Nam.Checked == true)
+                        {
+                            gioitinh = "Nữ";
+                        }
+                        else
+                        {
+                            gioitinh = "Nam";
+                        }
+                        String mess = "Thay đổi thông tin thành:"
+                                    + "\nMã nhân viên: " + txt_QLNV_CS_MaNV.Text
+                                    + "\nTên nhân viên: " + txt_QLNV_CS_TenNV.Text
+                                    + "\nĐịa chỉ: " + txt_QLNV_CS_DiaChi.Text
+                                    + "\nEmail: " + txt_QLNV_CS_Email.Text
+                                    + "\nSDT: " + txt_QLNV_CS_SDT.Text
+                                    + "\nChức vụ: " + txt_QLNV_CS_ChucVu.Text
+                                    + "\nGiới tính: " + gioitinh;
+                        DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (dr == DialogResult.OK)
+                        {
+                            NHANVIEN tempnv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == manv);
+                            tempnv.TenNV = txt_QLNV_CS_TenNV.Text;
+                            tempnv.DiaChi = txt_QLNV_CS_DiaChi.Text;
+                            tempnv.SDT = txt_QLNV_CS_SDT.Text;
+                            tempnv.ChucVu = txt_QLNV_CS_ChucVu.Text;
+                            tempnv.Email = txt_QLNV_CS_Email.Text;
+                            if (rdb_QLNV_CS_Nam.Checked == true)
+                            {
+                                tempnv.Phai = false;
+                            }
+                            else
+                            {
+                                tempnv.Phai = true;
+                            }
+                            dbContext.SaveChanges();
+                            dsnv = dbContext.NHANVIENs.ToList();
+                            QLNV_CS_FillDGV(dsnv);
+                            ShowOrHide_SelectedMaNV_QLNVCS(false);
+                            txt_QLNV_CS_MaNV.Enabled = true;
+                            ClearTextBox_QLNVCS();
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                        }
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Lỗi");
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Email không hợp lệ!", "Cảnh báo");
+                    break;
+                case 2:
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Cảnh báo");
+                    break;
+                case 3:
+                    MessageBox.Show("Vui lòng điền đầy đủ các ô trống!", "Cảnh báo");
+                    break;
+            }
+        }
 
+        private void btn_QLNV_CS_ChinhSua_Click(object sender, EventArgs e)
+        {
+            LoadedNVCS = false;
+            QLNV_CS_EditNV();
+            LoadedNVCS = true;        }
 
+        int CheckXoaNV_QLNV()
+        {
+            String mnv = txt_QLNV_CS_MaNV.Text;
+            ACCOUNT tempacc = dbContext.ACCOUNTs.FirstOrDefault(a => a.MaNV == mnv);
+            if(tempacc != null)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
+        void XoaNV_CSNV()
+        {
+            int check = CheckXoaNV_QLNV();
+            try
+            {
+                switch (check)
+                {
+                    case 0:
+                        String gioitinh;
+                        if (rdb_QLNV_CS_Nam.Checked == true)
+                        {
+                            gioitinh = "Nữ";
+                        }
+                        else
+                        {
+                            gioitinh = "Nam";
+                        }
+                        String mess = "Bạn chắc chắn muốn xoá nhân viên này:"
+                                    + "\nMã nhân viên: " + txt_QLNV_CS_MaNV.Text
+                                    + "\nTên nhân viên: " + txt_QLNV_CS_TenNV.Text
+                                    + "\nĐịa chỉ: " + txt_QLNV_CS_DiaChi.Text
+                                    + "\nEmail: " + txt_QLNV_CS_Email.Text
+                                    + "\nSDT: " + txt_QLNV_CS_SDT.Text
+                                    + "\nChức vụ: " + txt_QLNV_CS_ChucVu.Text
+                                    + "\nGiới tính: " + gioitinh;
+                        DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (dr == DialogResult.OK)
+                        {
+                            String manv = txt_QLNV_CS_MaNV.Text;
+                            NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == manv);
+                            dbContext.NHANVIENs.Remove(nv);
+                            dsnv = dbContext.NHANVIENs.ToList();
+                            QLNV_CS_FillDGV(dsnv);
+                            ShowOrHide_SelectedMaNV_QLNVCS(false);
+                            txt_QLNV_CS_MaNV.Enabled = true;
+                            ClearTextBox_QLNVCS();
+                            MessageBox.Show("Xoá thành công!", "Thông báo", MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã huỷ thao tác!", "Thông báo", MessageBoxButtons.OK);
+                        }
+                        break;
+                    case 1:
+                        MessageBox.Show("Nhân viên đã có tài khoản!\n " +
+                                        "Để xoá nhân viên vui lòng xoá tài khoản trước!", "Thông báo", MessageBoxButtons.OK);
+                        break;
+                }
+                
+                
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Lỗi");
+            }
+        }
+
+        private void btn_QLNV_CS_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedNVCS = false;
+            XoaNV_CSNV();
+            LoadedNVCS = true;
+        }
         #endregion
-
-        
     }
 }
-
