@@ -408,5 +408,11 @@
   <ItemGroup>
     <None Include="Resources\baseline_search_white_24dp.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_manage_accounts_white_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\baseline_check_circle_white_24dp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

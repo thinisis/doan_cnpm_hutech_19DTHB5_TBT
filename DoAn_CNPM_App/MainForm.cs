@@ -218,5 +218,21 @@ namespace DoAn_CNPM_App
         {
 
         }
+
+        private void btn_DangXuat_Click(object sender, EventArgs e)
+        {
+            String mess = "Bạn sẽ đăng xuất, tiếp tục?";
+            DialogResult dr = MessageBox.Show(mess, "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if(dr == DialogResult.OK)
+            {
+                this.Close();
+            }
+        }
+
+        private void btn_userSetting_Click_1(object sender, EventArgs e)
+        {
+            userSettingForm form = new userSettingForm();
+            form.ShowDialog();
+        }
     }
 }

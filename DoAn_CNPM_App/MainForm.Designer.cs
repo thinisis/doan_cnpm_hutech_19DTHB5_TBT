@@ -50,6 +50,8 @@ namespace DoAn_CNPM_App
             this.lbl_HelloUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_GioiThieu = new System.Windows.Forms.Label();
+            this.pnl_Logout = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btn_DangXuat = new FontAwesome.Sharp.IconButton();
             this.btn_TroGiup = new FontAwesome.Sharp.IconButton();
             this.btn_BaoHanh = new FontAwesome.Sharp.IconButton();
             this.btn_TimKiem = new FontAwesome.Sharp.IconButton();
@@ -58,16 +60,19 @@ namespace DoAn_CNPM_App
             this.btn_DanhMuc = new FontAwesome.Sharp.IconButton();
             this.btn_HeThong = new FontAwesome.Sharp.IconButton();
             this.btn_TrangChu = new FontAwesome.Sharp.IconButton();
+            this.btn_userSetting = new FontAwesome.Sharp.IconButton();
             this.pl_Menu.SuspendLayout();
             this.lbl_Title.SuspendLayout();
             this.pnl_Account.SuspendLayout();
             this.pannel_Main.SuspendLayout();
             this.lbl_Home.SuspendLayout();
+            this.pnl_Logout.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_Menu
             // 
             this.pl_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(29)))), ((int)(((byte)(55)))), ((int)(((byte)(82)))));
+            this.pl_Menu.Controls.Add(this.pnl_Logout);
             this.pl_Menu.Controls.Add(this.lbl_cpt);
             this.pl_Menu.Controls.Add(this.lbl_Logo);
             this.pl_Menu.Controls.Add(this.btn_TroGiup);
@@ -82,7 +87,7 @@ namespace DoAn_CNPM_App
             this.pl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pl_Menu.Location = new System.Drawing.Point(0, 0);
             this.pl_Menu.Name = "pl_Menu";
-            this.pl_Menu.Size = new System.Drawing.Size(200, 634);
+            this.pl_Menu.Size = new System.Drawing.Size(200, 657);
             this.pl_Menu.TabIndex = 0;
             // 
             // lbl_cpt
@@ -110,9 +115,10 @@ namespace DoAn_CNPM_App
             // 
             // lb_Copyright
             // 
+            this.lb_Copyright.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lb_Copyright.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lb_Copyright.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lb_Copyright.Location = new System.Drawing.Point(0, 619);
+            this.lb_Copyright.Location = new System.Drawing.Point(-3, 633);
             this.lb_Copyright.Name = "lb_Copyright";
             this.lb_Copyright.Size = new System.Drawing.Size(197, 15);
             this.lb_Copyright.TabIndex = 1;
@@ -133,13 +139,14 @@ namespace DoAn_CNPM_App
             this.lbl_Title.Dock = System.Windows.Forms.DockStyle.Top;
             this.lbl_Title.Location = new System.Drawing.Point(200, 0);
             this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(879, 82);
+            this.lbl_Title.Size = new System.Drawing.Size(893, 82);
             this.lbl_Title.TabIndex = 1;
             this.lbl_Title.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_Title_Paint);
             // 
             // pnl_Account
             // 
             this.pnl_Account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Account.Controls.Add(this.btn_userSetting);
             this.pnl_Account.Controls.Add(this.label3);
             this.pnl_Account.Controls.Add(this.pnl_Gach);
             this.pnl_Account.Controls.Add(this.lbl_UserHello);
@@ -147,7 +154,7 @@ namespace DoAn_CNPM_App
             this.pnl_Account.Controls.Add(this.lbl_Day);
             this.pnl_Account.Dock = System.Windows.Forms.DockStyle.Right;
             this.pnl_Account.ForeColor = System.Drawing.Color.Transparent;
-            this.pnl_Account.Location = new System.Drawing.Point(704, 0);
+            this.pnl_Account.Location = new System.Drawing.Point(718, 0);
             this.pnl_Account.Name = "pnl_Account";
             this.pnl_Account.Size = new System.Drawing.Size(175, 82);
             this.pnl_Account.TabIndex = 5;
@@ -155,7 +162,7 @@ namespace DoAn_CNPM_App
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 61);
+            this.label3.Location = new System.Drawing.Point(21, 41);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 13);
             this.label3.TabIndex = 7;
@@ -176,7 +183,7 @@ namespace DoAn_CNPM_App
             // 
             this.lbl_UserHello.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_UserHello.ForeColor = System.Drawing.Color.White;
-            this.lbl_UserHello.Location = new System.Drawing.Point(79, 57);
+            this.lbl_UserHello.Location = new System.Drawing.Point(79, 37);
             this.lbl_UserHello.Name = "lbl_UserHello";
             this.lbl_UserHello.Size = new System.Drawing.Size(77, 15);
             this.lbl_UserHello.TabIndex = 1;
@@ -225,7 +232,7 @@ namespace DoAn_CNPM_App
             this.pannel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pannel_Main.Location = new System.Drawing.Point(200, 82);
             this.pannel_Main.Name = "pannel_Main";
-            this.pannel_Main.Size = new System.Drawing.Size(879, 552);
+            this.pannel_Main.Size = new System.Drawing.Size(893, 575);
             this.pannel_Main.TabIndex = 2;
             // 
             // lbl_Home
@@ -238,7 +245,7 @@ namespace DoAn_CNPM_App
             this.lbl_Home.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbl_Home.Location = new System.Drawing.Point(0, 0);
             this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(879, 552);
+            this.lbl_Home.Size = new System.Drawing.Size(893, 575);
             this.lbl_Home.TabIndex = 2;
             // 
             // label1
@@ -248,7 +255,7 @@ namespace DoAn_CNPM_App
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(420, 269);
+            this.label1.Location = new System.Drawing.Point(427, 280);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(57, 15);
             this.label1.TabIndex = 22;
@@ -259,7 +266,7 @@ namespace DoAn_CNPM_App
             this.lbl_HelloUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_HelloUsername.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold);
             this.lbl_HelloUsername.ForeColor = System.Drawing.Color.Black;
-            this.lbl_HelloUsername.Location = new System.Drawing.Point(264, 174);
+            this.lbl_HelloUsername.Location = new System.Drawing.Point(271, 185);
             this.lbl_HelloUsername.Name = "lbl_HelloUsername";
             this.lbl_HelloUsername.Size = new System.Drawing.Size(383, 26);
             this.lbl_HelloUsername.TabIndex = 2;
@@ -273,7 +280,7 @@ namespace DoAn_CNPM_App
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Open Sans Condensed ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(401, 215);
+            this.label2.Location = new System.Drawing.Point(408, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 69);
             this.label2.TabIndex = 21;
@@ -284,13 +291,51 @@ namespace DoAn_CNPM_App
             this.lbl_GioiThieu.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_GioiThieu.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_GioiThieu.ForeColor = System.Drawing.Color.Black;
-            this.lbl_GioiThieu.Location = new System.Drawing.Point(268, 310);
+            this.lbl_GioiThieu.Location = new System.Drawing.Point(275, 321);
             this.lbl_GioiThieu.Name = "lbl_GioiThieu";
             this.lbl_GioiThieu.Size = new System.Drawing.Size(379, 25);
             this.lbl_GioiThieu.TabIndex = 1;
             this.lbl_GioiThieu.Text = "Chọn chức năng theo danh sách bên trái";
             this.lbl_GioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_GioiThieu.Click += new System.EventHandler(this.lbl_GioiThieu_Click);
+            // 
+            // pnl_Logout
+            // 
+            this.pnl_Logout.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pnl_Logout.BackgroundColor = System.Drawing.Color.Transparent;
+            this.pnl_Logout.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pnl_Logout.BackgroundImage")));
+            this.pnl_Logout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnl_Logout.BorderColor = System.Drawing.Color.White;
+            this.pnl_Logout.BorderRadius = 4;
+            this.pnl_Logout.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Logout.BorderThickness = 4;
+            this.pnl_Logout.Controls.Add(this.btn_DangXuat);
+            this.pnl_Logout.Location = new System.Drawing.Point(0, 568);
+            this.pnl_Logout.Name = "pnl_Logout";
+            this.pnl_Logout.ShowBorders = true;
+            this.pnl_Logout.Size = new System.Drawing.Size(200, 62);
+            this.pnl_Logout.TabIndex = 21;
+            // 
+            // btn_DangXuat
+            // 
+            this.btn_DangXuat.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_DangXuat.FlatAppearance.BorderSize = 0;
+            this.btn_DangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DangXuat.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_DangXuat.ForeColor = System.Drawing.Color.White;
+            this.btn_DangXuat.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt;
+            this.btn_DangXuat.IconColor = System.Drawing.Color.White;
+            this.btn_DangXuat.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_DangXuat.IconSize = 30;
+            this.btn_DangXuat.Location = new System.Drawing.Point(11, 8);
+            this.btn_DangXuat.Name = "btn_DangXuat";
+            this.btn_DangXuat.Size = new System.Drawing.Size(172, 42);
+            this.btn_DangXuat.TabIndex = 19;
+            this.btn_DangXuat.Text = "Đăng xuất";
+            this.btn_DangXuat.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_DangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_DangXuat.UseVisualStyleBackColor = true;
+            this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
             // 
             // btn_TroGiup
             // 
@@ -452,11 +497,30 @@ namespace DoAn_CNPM_App
             this.btn_TrangChu.UseVisualStyleBackColor = true;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click_1);
             // 
+            // btn_userSetting
+            // 
+            this.btn_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_userSetting.ForeColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btn_userSetting.IconColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_userSetting.IconSize = 20;
+            this.btn_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_userSetting.Location = new System.Drawing.Point(28, 57);
+            this.btn_userSetting.Name = "btn_userSetting";
+            this.btn_userSetting.Size = new System.Drawing.Size(119, 23);
+            this.btn_userSetting.TabIndex = 23;
+            this.btn_userSetting.Text = "Cài đặt tài khoản";
+            this.btn_userSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_userSetting.UseVisualStyleBackColor = true;
+            this.btn_userSetting.Click += new System.EventHandler(this.btn_userSetting_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1079, 634);
+            this.ClientSize = new System.Drawing.Size(1093, 657);
             this.Controls.Add(this.pannel_Main);
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.pl_Menu);
@@ -474,6 +538,7 @@ namespace DoAn_CNPM_App
             this.pannel_Main.ResumeLayout(false);
             this.lbl_Home.ResumeLayout(false);
             this.lbl_Home.PerformLayout();
+            this.pnl_Logout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -507,5 +572,8 @@ namespace DoAn_CNPM_App
         private System.Windows.Forms.Panel pnl_Account;
         private System.Windows.Forms.Label pnl_Gach;
         private System.Windows.Forms.Label label3;
+        private Bunifu.UI.WinForms.BunifuPanel pnl_Logout;
+        private FontAwesome.Sharp.IconButton btn_DangXuat;
+        private FontAwesome.Sharp.IconButton btn_userSetting;
     }
 }

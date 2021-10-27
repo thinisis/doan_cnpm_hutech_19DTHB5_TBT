@@ -402,14 +402,14 @@ namespace DoAn_CNPM_App.ChildForm
                         MessageBox.Show(mess, "Thông báo");
                         break;
                     case 2:
-                        fncc = dbContext.NHACUNGCAPs.Where(a => a.TenNCC == mancc).ToList();
+                        fncc = dbContext.NHACUNGCAPs.Where(a => a.TenNCC == tenncc).ToList();
                         QLNCC_FillDGV(fncc);
                         btn_QLNCC_BoTim.Visible = true;
                         mess = "Tìm kiếm thành công, có " + fncc.Count + " kết quả trùng khớp!";
                         MessageBox.Show(mess, "Thông báo");
                         break;
                     case 3:
-                        fncc = dbContext.NHACUNGCAPs.Where(a => a.MaNCC == mancc && a.TenNCC == mancc).ToList();
+                        fncc = dbContext.NHACUNGCAPs.Where(a => a.MaNCC == mancc && a.TenNCC == tenncc).ToList();
                         QLNCC_FillDGV(fncc);
                         btn_QLNCC_BoTim.Visible = true;
                         mess = "Tìm kiếm thành công, có " + fncc.Count + " kết quả trùng khớp!";
