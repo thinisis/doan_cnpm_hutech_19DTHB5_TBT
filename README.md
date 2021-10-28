@@ -43,9 +43,9 @@
     <br />
     <a href="https://www.facebook.com/thinnguyen.vn/">Design - Developed by thinnguyenvn</a>
     ·
-    <a href="t.me/thinnguyenvn">Telegram</a>
+    <a href="https://t.me/thinnguyenvn/">Telegram</a>
     ·
-    <a href="https://discord.io/thangthiencave">Discord Server</a>
+    <a href="https://discord.io/thangthiencave/">Discord Server</a>
   </p>
 </div>
 
@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Về dự án
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot][product-screenshot]](https://i.ibb.co/mtZGwXq/Screenshot-2021-10-28-154040.png)
 
 Là một sản phẩm quản lý - quản lý linh kiện máy tính cho công ty TBT
 
