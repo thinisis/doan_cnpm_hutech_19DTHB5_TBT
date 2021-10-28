@@ -3186,7 +3186,6 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNV_CS_Xoa.DisabledBorderColor = System.Drawing.Color.Silver;
             this.btn_QLNV_CS_Xoa.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btn_QLNV_CS_Xoa.DisabledForecolor = System.Drawing.Color.Silver;
-            this.btn_QLNV_CS_Xoa.Enabled = false;
             this.btn_QLNV_CS_Xoa.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btn_QLNV_CS_Xoa.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_QLNV_CS_Xoa.ForeColor = System.Drawing.Color.White;
@@ -3278,7 +3277,6 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLNV_CS_ChinhSua.DisabledBorderColor = System.Drawing.Color.Silver;
             this.btn_QLNV_CS_ChinhSua.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
             this.btn_QLNV_CS_ChinhSua.DisabledForecolor = System.Drawing.Color.Silver;
-            this.btn_QLNV_CS_ChinhSua.Enabled = false;
             this.btn_QLNV_CS_ChinhSua.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton2.ButtonStates.Pressed;
             this.btn_QLNV_CS_ChinhSua.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btn_QLNV_CS_ChinhSua.ForeColor = System.Drawing.Color.White;
@@ -4576,7 +4574,7 @@ namespace DoAn_CNPM_App.ChildForm
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1049, 700);
             this.Controls.Add(this.tabCtrl_HeThong);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "HeThong";
             this.Text = "HỆ THỐNG";
             this.Load += new System.EventHandler(this.HeThong_Load);

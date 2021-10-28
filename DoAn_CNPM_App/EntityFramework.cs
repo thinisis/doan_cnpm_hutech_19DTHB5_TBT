@@ -26,6 +26,7 @@ namespace DoAn_CNPM_App
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THEKHACHHANG> THEKHACHHANGs { get; set; }
+        public virtual DbSet<TINHTRANGLK> TINHTRANGLKs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -154,10 +155,6 @@ namespace DoAn_CNPM_App
                 .IsUnicode(false);
 
             modelBuilder.Entity<LINHKIEN>()
-                .Property(e => e.DonGia)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<LINHKIEN>()
                 .Property(e => e.MaKho)
                 .IsUnicode(false);
 
@@ -211,6 +208,14 @@ namespace DoAn_CNPM_App
             modelBuilder.Entity<THEKHACHHANG>()
                 .Property(e => e.MaKH)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<TINHTRANGLK>()
+                .Property(e => e.MaLK)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<TINHTRANGLK>()
+                .HasOptional(e => e.LINHKIEN)
+                .WithRequired(e => e.TINHTRANGLK);
         }
     }
 }

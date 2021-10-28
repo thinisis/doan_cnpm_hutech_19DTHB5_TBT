@@ -30,10 +30,9 @@ namespace DoAn_CNPM_App
         public string Serial { get; set; }
 
         [StringLength(50)]
-        public string NoiSanXuat { get; set; }
+        public string XuatXu { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? DonGia { get; set; }
+        public double? DonGia { get; set; }
 
         [StringLength(50)]
         public string MaKho { get; set; }
@@ -43,6 +42,9 @@ namespace DoAn_CNPM_App
 
         [StringLength(10)]
         public string MaHang { get; set; }
+
+        [Column(TypeName = "smalldatetime")]
+        public DateTime? NgayNhap { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDONHANG> CTDONHANGs { get; set; }
@@ -54,5 +56,8 @@ namespace DoAn_CNPM_App
         public virtual LOAILINHKIEN LOAILINHKIEN { get; set; }
 
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
+
+        public virtual TINHTRANGLK TINHTRANGLK { get; set; }
     }
 }
+

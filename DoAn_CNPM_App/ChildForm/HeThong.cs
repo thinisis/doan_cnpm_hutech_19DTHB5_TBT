@@ -31,12 +31,13 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void HeThong_Load(object sender, EventArgs e)
         {
+            tabCtrl_HeThong.SelectedTab = tab_QLTK;
             List<ACCOUNTLV> acclv = dbContext.ACCOUNTLVs.ToList();
             accss = dbContext.ACCOUNTs.ToList();
             dsnv = dbContext.NHANVIENs.ToList();
             FillDataCBX(acclv);
             lbl_TTH_SoLuongHang.Text = dbContext.LINHKIENs.Count(a => a.MaLK != null).ToString();
-            tabCtrl_HeThong.SelectedTab = tab_QLTK;
+            
         }
         #region HeThong_Page
         private void btn_QLTK_TTK_Click(object sender, EventArgs e)
@@ -706,6 +707,7 @@ namespace DoAn_CNPM_App.ChildForm
         void QLNV_CS_FillDGV(List<NHANVIEN> nv)
         {
             EnableOrDisable_TextBox_Find_CSNV(true);
+            EnableOrDisableButtonCSNV(false);
             dgv_QLNV_CS.Rows.Clear();
             for (int i = 0; i < nv.Count(); i++)
             {

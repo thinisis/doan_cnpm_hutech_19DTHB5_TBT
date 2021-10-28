@@ -15,8 +15,12 @@ namespace DoAn_CNPM_App.ChildForm
         EntityFramework dbContext = new EntityFramework();
         List<NHACUNGCAP> nccs = new List<NHACUNGCAP>();
         List<KHO> khos = new List<KHO>();
+        List<LINHKIEN> lks = new List<LINHKIEN>();
         bool LoadedQLNCC = false;
         bool LoadedQLKho = false;
+        bool LoadedQLLK_LKien = false;
+        bool LoadedQLLK_LoaiLK = false;
+        bool LoadedQLLK_Hang = false;
         int lv;
         public frmDanhMuc()
         {
@@ -25,12 +29,15 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void frmDanhMuc_Load(object sender, EventArgs e)
         {
+            tabCtrl_DanhMuc.SelectedTab = tabpage_QLNCC;
             ACCOUNT thisAccount = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == Properties.Settings.Default.Username.ToString()); //Truyen du lieu username vao tu Properties
             lv = int.Parse(thisAccount.lv);
             nccs = dbContext.NHACUNGCAPs.ToList();
             khos = dbContext.KHOes.ToList();
+            lks = dbContext.LINHKIENs.ToList();
             QLNCC_FillDGV(nccs);
             QLKho_FillDGV(khos);
+            QLLK_LKien_FillDGV(lks);
             LoadedQLNCC = true;
             LoadedQLKho = true;
         }
@@ -526,6 +533,30 @@ namespace DoAn_CNPM_App.ChildForm
             }
             return 0; //Khong co loi
         }
+
+        private int QLKho_CheckFind()
+        {
+            if(string.IsNullOrEmpty(txt_QLKho_MaKho.Text) == true && string.IsNullOrEmpty(txt_QLKho_TenKho.Text) == true)
+            {
+                return 1; //de trong ca 2 text box
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_QLKho_MaKho.Text) == false && string.IsNullOrEmpty(txt_QLKho_TenKho.Text) == true)
+                {
+                    return 2; //tim theo ma kho
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(txt_QLKho_MaKho.Text) == true && string.IsNullOrEmpty(txt_QLKho_TenKho.Text) == false)
+                    {
+                        return 3; //tim theo ten kho
+                    }
+                }
+            }
+            return 0;
+            
+        }
         #endregion
 
         #region ThucThi
@@ -555,9 +586,62 @@ namespace DoAn_CNPM_App.ChildForm
             lbl_QLKho_SelectedKhoLabel.Visible = value;
             lbl_QLKho_SelectedKhoValue.Visible = value;
         }
+
+        void QLKho_BoTim()
+        {
+            QLKho_FillDGV(khos);
+            QLKho_ClearTextbox();
+            QLKho_ShowOrHide_SelectedKho(false);
+            QLNCC_Button_Auth(lv, false);
+        }
+
         #endregion
 
         #region TruyVan
+
+        void QLKho_Find()
+        {
+            String makho = txt_QLKho_MaKho.Text;
+            String mess;
+            String tenkho = txt_QLKho_TenKho.Text;
+            List<KHO> fkho = new List<KHO>();
+            int check = QLKho_CheckFind();
+            switch (check)
+            {
+                case 0:
+                    fkho = dbContext.KHOes.Where(a => a.MaKho == makho && a.TenKho == tenkho).ToList();
+                    QLKho_FillDGV(fkho);
+                    QLKho_ClearTextbox();
+                    QLNCC_Button_Auth(lv, false);
+                    btn_QLKho_BoTim.Visible = true;
+                    mess = "Có " + fkho.Count + " kết quả phù hợp!";
+                    MessageBox.Show(mess, "Thông báo");
+
+                    break;
+                case 1:
+                    mess = "Phải tìm kiếm theo\nMã kho\nTên kho\nMã kho và tên kho";
+                    MessageBox.Show(mess, "Thông báo");
+                    break;
+                case 2:
+                    fkho = dbContext.KHOes.Where(a => a.MaKho == makho).ToList();
+                    QLKho_FillDGV(fkho);
+                    QLKho_ClearTextbox();
+                    QLNCC_Button_Auth(lv, false);
+                    btn_QLKho_BoTim.Visible = true;
+                    mess = "Có " + fkho.Count + " kết quả phù hợp!";
+                    MessageBox.Show(mess, "Thông báo");
+                    break;
+                case 3:
+                    fkho = dbContext.KHOes.Where(a => a.TenKho == tenkho).ToList();
+                    QLKho_FillDGV(fkho);
+                    QLKho_ClearTextbox();
+                    QLNCC_Button_Auth(lv, false);
+                    btn_QLKho_BoTim.Visible = true;
+                    mess = "Có " + fkho.Count + " kết quả phù hợp!";
+                    MessageBox.Show(mess, "Thông báo");
+                    break;
+            }
+        }
         void QLKho_Them()
         {
             int check = QLKho_Check();
@@ -604,11 +688,23 @@ namespace DoAn_CNPM_App.ChildForm
                     break;
             }
         }
-        #endregion
+
+        int QLKho_CheckXoa()
+        {
+            String makho = txt_QLKho_MaKho.Text;
+            LINHKIEN templk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaKho == makho);
+            if(templk != null)
+            {
+                return 1;
+            }
+            return 0;
+        }
+
         void QLKho_FillDGV(List<KHO> khos)
         {
+            dgv_QLKho.Rows.Clear();
             QLKho_ButtonAuth(lv, false);
-            for(int i = 0; i < khos.Count(); i++)
+            for (int i = 0; i < khos.Count(); i++)
             {
                 int index = dgv_QLKho.Rows.Add();
                 dgv_QLKho.Rows[i].Cells[0].Value = khos[i].MaKho;
@@ -619,15 +715,100 @@ namespace DoAn_CNPM_App.ChildForm
             }
         }
 
+        void QLKho_Sua()
+        {
+            String tenkho = txt_QLKho_TenKho.Text;
+            String makho = txt_QLKho_MaKho.Text;
+            KHO tempkho = dbContext.KHOes.FirstOrDefault(a => a.MaKho == makho);
+            String mess = "Xác nhận thay đổi thông tin:"
+                           + "\n Mã kho: " + txt_QLKho_MaKho.Text
+                           + "\n Tên kho: " + txt_QLKho_TenKho.Text;
+            DialogResult dr = MessageBox.Show(mess, "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (dr == DialogResult.OK)
+            {
+                if (string.IsNullOrEmpty(tenkho) == false)
+                {
+                    try
+                    {
+                        tempkho.TenKho = tenkho;
+                        dbContext.SaveChanges();
+                        khos = dbContext.KHOes.ToList();
+                        QLKho_FillDGV(khos);
+                        QLKho_ShowOrHide_SelectedKho(false);
+                        QLNCC_Button_Auth(lv, false);
+                        QLNCC_ClearTextBox();
+                        txt_QLKho_MaKho.Enabled = true;
+                        MessageBox.Show("Thao tác thành công!", "Thông báo");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Lỗi");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không thể để trống tên kho!", "Thông báo");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+            }
+        }
+
+        void QLKho_Xoa()
+        {
+            int check = QLKho_CheckXoa();
+            switch (check)
+            {
+                case 0:
+                    String mess = "Xác nhận xoá kho:"
+                           + "\n Mã kho: " + txt_QLKho_MaKho.Text
+                           + "\n Tên kho: " + txt_QLKho_TenKho.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Xác nhận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            String makho = txt_QLKho_MaKho.Text;
+                            KHO tempkho = dbContext.KHOes.FirstOrDefault(a => a.MaKho == makho);
+                            dbContext.KHOes.Remove(tempkho);
+                            dbContext.SaveChanges();
+                            khos = dbContext.KHOes.ToList();
+                            QLKho_FillDGV(khos);
+                            QLKho_ShowOrHide_SelectedKho(false);
+                            QLNCC_Button_Auth(lv, false);
+                            QLNCC_ClearTextBox();
+                            txt_QLKho_MaKho.Enabled = true;
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Trong kho vẫn còn hàng! Vui lòng xoá hàng trước!", "Thông báo");
+                    break;
+            }
+        }
+        #endregion
+
+        #region Event
         private void dgv_QLKho_SelectionChanged(object sender, EventArgs e)
         {
             if (dgv_QLKho.SelectedRows.Count > 0 && LoadedQLKho == true)
             {
                 btn_QLKho_BoChon.Visible = true;
                 txt_QLKho_MaKho.Enabled = false;
-                txt_QLKho_MaKho.Text = dgv_QLKho.SelectedRows[0].Cells[0].Value.ToString();
-                txt_QLKho_TenKho.Text = dgv_QLKho.SelectedRows[0].Cells[1].Value.ToString();
-                txt_QLKho_SLHangValue.Text = dgv_QLKho.SelectedRows[0].Cells[2].Value.ToString();
+                txt_QLKho_MaKho.Text = dgv_QLKho.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLKho_TenKho.Text = dgv_QLKho.SelectedRows[0].Cells[1].Value?.ToString();
+                txt_QLKho_SLHangValue.Text = dgv_QLKho.SelectedRows[0].Cells[2].Value?.ToString();
                 QLKho_ButtonAuth(lv, true);
                 lbl_QLKho_SelectedKhoValue.Text = txt_QLKho_MaKho.Text;
                 if(string.IsNullOrEmpty(lbl_QLKho_SelectedKhoValue.Text) == false)
@@ -653,6 +834,115 @@ namespace DoAn_CNPM_App.ChildForm
             btn_QLKho_BoChon.Visible = false;
         }
 
+        private void btn_QLKho_Sua_Click(object sender, EventArgs e)
+        {
+            LoadedQLKho = false;
+            QLKho_Sua();
+            LoadedQLKho = true;
+        }
+
+        private void btn_QLKho_BoTim_Click(object sender, EventArgs e)
+        {
+            LoadedQLKho = false;
+            QLKho_BoTim();
+            LoadedQLKho = true;
+            btn_QLKho_BoTim.Visible = false;
+        }
+
+        private void btn_QLKho_TimKiem_Click(object sender, EventArgs e)
+        {
+            LoadedQLKho = false;
+            QLKho_Find();
+            LoadedQLKho = true;
+        }
+
+        private void btn_QLKho_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedQLKho = false;
+            QLKho_Xoa();
+            LoadedQLKho = true;
+        }
+
+        #endregion
+
+        #endregion
+
+        #region QuanLyLinhKien
+        #region TabPage
+        private void btn_QLLK_SelectpageLoaiLKien_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LoaiLK = false;
+            page_QuanLyLK.SelectedTab = tabpage_QLLK_LoaiLK;
+        }
+
+        private void btn_QLLK_SelectpageHang_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_Hang = false;
+            page_QuanLyLK.SelectedTab = tabpage_QLLK_Hang;
+        }
+
+        private void btn_QLLK_SelectpageLKien_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LKien = false;
+            page_QuanLyLK.SelectedTab = tabpage_QLLK_LKien;
+        }
+        #endregion
+        #region LinhKien
+        #region ThucThi
+        void QLLK_LKien_ClearTextBox()
+        {
+            txt_QLLK_LKien_DonGia.Text = "";
+            txt_QLLK_LKien_MaHang.Text = "";
+            txt_QLLK_LKien_MaKho.Text = "";
+            txt_QLLK_LKien_MaLK.Text = "";
+            txt_QLLK_LKien_MaLoai.Text = "";
+            txt_QLLK_LKien_NhaCungCap.Text = "";
+            txt_QLLK_LKien_TenLK.Text = "";
+            txt_QLLK_LKien_XuatXu.Text = "";
+            cbx_QLLK_LKien_TinhTrang.SelectedIndex = 0;
+            dpick_QLLK_LKien_NgayNhapKho.Value = DateTime.Today;
+
+        }
+        #endregion
+        #region KiemTra
+
+        #endregion
+        #region TruyVan
+        void QLLK_LKien_FillDGV(List<LINHKIEN> lk)
+        {
+            dgv_QLLK_LKien_ColumnNgayNhap.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            dgv_QLLK_LKien.Rows.Clear();
+            if(lk.Count > 0)
+            {
+                for(int i = 0; i < lk.Count; i++)
+                {
+                    int index = dgv_QLLK_LKien.Rows.Add();
+                    dgv_QLLK_LKien.Rows[i].Cells[0].Value = lk[i].MaLK;
+                    dgv_QLLK_LKien.Rows[i].Cells[1].Value = lk[i].MaLoai;
+                    dgv_QLLK_LKien.Rows[i].Cells[2].Value = lk[i].TenLK;
+                    dgv_QLLK_LKien.Rows[i].Cells[3].Value = lk[i].NgayNhap;
+                    dgv_QLLK_LKien.Rows[i].Cells[4].Value = lk[i].DonGia;
+                    dgv_QLLK_LKien.Rows[i].Cells[5].Value = lk[i].XuatXu;
+                    dgv_QLLK_LKien.Rows[i].Cells[6].Value = lk[i].MaKho;
+                    dgv_QLLK_LKien.Rows[i].Cells[7].Value = lk[i].MaNCC;
+                    dgv_QLLK_LKien.Rows[i].Cells[8].Value = lk[i].MaHang;
+                    if(lk[i].TINHTRANGLK.TinhTrang == true)
+                    {
+                        dgv_QLLK_LKien.Rows[i].Cells[9].Value = "Còn trong kho";
+                    }
+                    else
+                    {
+                        dgv_QLLK_LKien.Rows[i].Cells[9].Value = "Đã bán";
+                    }
+                    
+                }
+            }
+        }
+        #endregion
+
+        #region Event
+        #endregion
+        #endregion
         #endregion
 
 
