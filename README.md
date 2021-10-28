@@ -82,7 +82,7 @@
 <!-- ABOUT THE PROJECT -->
 ## Về dự án
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
+[![Product Name Screen Shot]<img src="https://i.ibb.co/mtZGwXq/Screenshot-2021-10-28-154040.png" alt="Images" width="802" height="484">](https://example.com)
 
 Là một sản phẩm quản lý - quản lý linh kiện máy tính cho công ty TBT
 
