@@ -1,4 +1,4 @@
-namespace DoAn_CNPM_App
+﻿namespace DoAn_CNPM_App
 {
     using System;
     using System.Collections.Generic;
@@ -6,24 +6,22 @@ namespace DoAn_CNPM_App
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("LOAILINHKIEN")]
-    public partial class LOAILINHKIEN
+    public partial class TINHTRANGLK_GIATRI
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LOAILINHKIEN()
+        public TINHTRANGLK_GIATRI()
         {
             LINHKIENs = new HashSet<LINHKIEN>();
         }
 
         [Key]
-        [StringLength(50)]
-        public string MaLoai { get; set; }
+        public bool TinhTrang { get; set; }
 
-        [StringLength(50)]
-        public string TenLoai { get; set; }
+        [Required]
+        [StringLength(20)]
+        public string GiaTri { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<LINHKIEN> LINHKIENs { get; set; }
     }
 }
-

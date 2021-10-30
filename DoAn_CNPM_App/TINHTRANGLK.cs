@@ -19,5 +19,8 @@
         public DateTime? NgayBan { get; set; }
 
         public virtual LINHKIEN LINHKIEN { get; set; }
+
+        public virtual TINHTRANGLK_GIATRI TINHTRANGLK_GIATRI { get; set; }
     }
 }
+

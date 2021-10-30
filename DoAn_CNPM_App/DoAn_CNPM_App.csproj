@@ -270,6 +270,7 @@
     <Compile Include="sysdiagram.cs" />
     <Compile Include="THEKHACHHANG.cs" />
     <Compile Include="TINHTRANGLK.cs" />
+    <Compile Include="TINHTRANGLK_GIATRI.cs" />
     <Compile Include="userSetting.cs">
       <SubType>Form</SubType>
     </Compile>

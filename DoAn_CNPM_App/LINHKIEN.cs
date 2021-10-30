@@ -23,28 +23,36 @@ namespace DoAn_CNPM_App
         [StringLength(50)]
         public string MaLoai { get; set; }
 
+        [Required]
         [StringLength(100)]
         public string TenLK { get; set; }
 
+        [Required]
         [StringLength(20)]
         public string Serial { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string XuatXu { get; set; }
 
-        public double? DonGia { get; set; }
+        public double DonGia { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string MaKho { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string MaNCC { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string MaHang { get; set; }
 
         [Column(TypeName = "smalldatetime")]
-        public DateTime? NgayNhap { get; set; }
+        public DateTime NgayNhap { get; set; }
+
+        public bool TinhTrang { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDONHANG> CTDONHANGs { get; set; }
@@ -57,7 +65,7 @@ namespace DoAn_CNPM_App
 
         public virtual NHACUNGCAP NHACUNGCAP { get; set; }
 
-        public virtual TINHTRANGLK TINHTRANGLK { get; set; }
+        public virtual TINHTRANGLK_GIATRI TINHTRANGLK_GIATRI { get; set; }
     }
 }
 

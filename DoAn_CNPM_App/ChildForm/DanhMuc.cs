@@ -16,6 +16,8 @@ namespace DoAn_CNPM_App.ChildForm
         List<NHACUNGCAP> nccs = new List<NHACUNGCAP>();
         List<KHO> khos = new List<KHO>();
         List<LINHKIEN> lks = new List<LINHKIEN>();
+        List<LOAILINHKIEN> llks = new List<LOAILINHKIEN>();
+        List<TINHTRANGLK_GIATRI> ttlks = new List<TINHTRANGLK_GIATRI>();
         bool LoadedQLNCC = false;
         bool LoadedQLKho = false;
         bool LoadedQLLK_LKien = false;
@@ -29,15 +31,18 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void frmDanhMuc_Load(object sender, EventArgs e)
         {
-            tabCtrl_DanhMuc.SelectedTab = tabpage_QLNCC;
+            tabCtrl_DanhMuc.SelectedTab = tab_QLNCC;
             ACCOUNT thisAccount = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == Properties.Settings.Default.Username.ToString()); //Truyen du lieu username vao tu Properties
             lv = int.Parse(thisAccount.lv);
             nccs = dbContext.NHACUNGCAPs.ToList();
             khos = dbContext.KHOes.ToList();
             lks = dbContext.LINHKIENs.ToList();
+            QLLK_LKien_FillAllCBX();
             QLNCC_FillDGV(nccs);
             QLKho_FillDGV(khos);
             QLLK_LKien_FillDGV(lks);
+            dpick_QLLK_LKien_NgayNhapKho.Format = DateTimePickerFormat.Custom;
+            dpick_QLLK_LKien_NgayNhapKho.CustomFormat = "dd/MM/yyyy"; 
             LoadedQLNCC = true;
             LoadedQLKho = true;
         }
@@ -149,11 +154,12 @@ namespace DoAn_CNPM_App.ChildForm
         }
         void QLNCC_FillDGV(List<NHACUNGCAP> ncc)
         {
+            QLNCC_Button_Auth(lv, false);
             txt_QLNCC_CountNCCValue.Text = ncc.Count.ToString();
             dgv_QLNCC.Rows.Clear();
             for (int i = 0; i < ncc.Count(); i++)
             {
-                QLNCC_Button_Auth(lv, false);
+
                 int index = dgv_QLNCC.Rows.Add();
                 dgv_QLNCC.Rows[i].Cells[0].Value = ncc[i].MaNCC;
                 dgv_QLNCC.Rows[i].Cells[1].Value = ncc[i].TenNCC;
@@ -163,7 +169,7 @@ namespace DoAn_CNPM_App.ChildForm
         }
         #endregion
         #region TruyVan
-       
+
         void QLNCC_Them()
         {
             int c = QLNCC_CheckValid();
@@ -868,83 +874,667 @@ namespace DoAn_CNPM_App.ChildForm
         #endregion
 
         #region QuanLyLinhKien
+
         #region TabPage
         private void btn_QLLK_SelectpageLoaiLKien_Click(object sender, EventArgs e)
         {
             LoadedQLLK_LoaiLK = false;
+            llks = dbContext.LOAILINHKIENs.ToList();
+            QLLK_LoaiLK_FillDGV(llks);
             page_QuanLyLK.SelectedTab = tabpage_QLLK_LoaiLK;
         }
 
         private void btn_QLLK_SelectpageHang_Click(object sender, EventArgs e)
         {
-            LoadedQLLK_Hang = false;
             page_QuanLyLK.SelectedTab = tabpage_QLLK_Hang;
         }
 
         private void btn_QLLK_SelectpageLKien_Click(object sender, EventArgs e)
         {
-            LoadedQLLK_LKien = false;
-            page_QuanLyLK.SelectedTab = tabpage_QLLK_LKien;
+            page_QuanLyLK.SelectedTab = tabpage_QLLK_LinhKien;
         }
         #endregion
+
+
         #region LinhKien
         #region ThucThi
+        void QLLK_LKien_ButtonAuth(int lv, bool value)
+        {
+            if(lv != 2)
+            {
+                btn_QLLK_LKien_Sua.Enabled = value;
+                btn_QLLK_LKien_Xoa.Enabled = value;
+            }
+            else
+            {
+                btn_QLLK_LKien_Them.Enabled = false;
+                btn_QLLK_LKien_Sua.Enabled = false;
+                btn_QLLK_LKien_Xoa.Enabled = false;
+            }
+        }
+
+        void QLLK_LKien_ShowOrHide_SelectedMaLK(bool value)
+        {
+            lbl_QLLK_LKien_SelectedLKienLabel.Visible = value;
+            lbl_QLLK_LKien_SelectedMaLKValue.Visible = value;
+        }
+
+
         void QLLK_LKien_ClearTextBox()
         {
             txt_QLLK_LKien_DonGia.Text = "";
-            txt_QLLK_LKien_MaHang.Text = "";
-            txt_QLLK_LKien_MaKho.Text = "";
+            cbx_QLLK_LKien_Hang.SelectedIndex = 0;
+            cbx_QLLK_LKien_Kho.SelectedIndex = 0;
             txt_QLLK_LKien_MaLK.Text = "";
-            txt_QLLK_LKien_MaLoai.Text = "";
-            txt_QLLK_LKien_NhaCungCap.Text = "";
+            cbx_QLLK_LKien_LoaiLK.SelectedIndex = 0;
+            cbx_QLLK_LKien_NCC.SelectedIndex = 0;
             txt_QLLK_LKien_TenLK.Text = "";
             txt_QLLK_LKien_XuatXu.Text = "";
+            txt_QLLK_LKien_Serial.Text = "";
             cbx_QLLK_LKien_TinhTrang.SelectedIndex = 0;
             dpick_QLLK_LKien_NgayNhapKho.Value = DateTime.Today;
 
         }
-        #endregion
-        #region KiemTra
 
-        #endregion
-        #region TruyVan
+        void QLLK_LKien_FillAllCBX()
+        {
+            List<TINHTRANGLK_GIATRI> ttlk = dbContext.TINHTRANGLK_GIATRI.ToList();
+            QLLK_LKien_FillCBX_TTrang(ttlk);
+            List<LOAILINHKIEN> llk = dbContext.LOAILINHKIENs.ToList();
+            QLLK_LKien_FillCBX_LoaiLK(llk);
+            List<KHO> kho = dbContext.KHOes.ToList();
+            QLLK_LKien_FillCBX_Kho(kho);
+            List<HANG> hang = dbContext.HANGs.ToList();
+            QLLK_LKien_FillCBX_Hang(hang);
+            List<NHACUNGCAP> ncc = dbContext.NHACUNGCAPs.ToList();
+            QLLK_LKien_FillCBX_NCC(ncc);
+        }
+
+        void QLLK_LKien_FillCBX_TTrang(List<TINHTRANGLK_GIATRI> ttlk)
+        {
+            cbx_QLLK_LKien_TinhTrang.DataSource = ttlk;
+            cbx_QLLK_LKien_TinhTrang.ValueMember = "TinhTrang";
+            cbx_QLLK_LKien_TinhTrang.DisplayMember = "GiaTri";
+        }
+
+        void QLLK_LKien_FillCBX_LoaiLK(List<LOAILINHKIEN> llk)
+        {
+            cbx_QLLK_LKien_LoaiLK.DataSource = llk;
+            cbx_QLLK_LKien_LoaiLK.ValueMember = "MaLoai";
+            cbx_QLLK_LKien_LoaiLK.DisplayMember = "TenLoai";
+        }
+
+        void QLLK_LKien_FillCBX_Kho(List<KHO> kho)
+        {
+            cbx_QLLK_LKien_Kho.DataSource = kho;
+            cbx_QLLK_LKien_Kho.ValueMember = "MaKho";
+            cbx_QLLK_LKien_Kho.DisplayMember = "TenKho";
+        }
+
+        void QLLK_LKien_FillCBX_Hang(List<HANG> hang)
+        {
+            cbx_QLLK_LKien_Hang.DataSource = hang;
+            cbx_QLLK_LKien_Hang.ValueMember = "MaHang";
+            cbx_QLLK_LKien_Hang.DisplayMember = "TenHang";
+        }
+
+        void QLLK_LKien_FillCBX_NCC(List<NHACUNGCAP> ncc)
+        {
+            cbx_QLLK_LKien_NCC.DataSource = ncc;
+            cbx_QLLK_LKien_NCC.ValueMember = "MaNCC";
+            cbx_QLLK_LKien_NCC.DisplayMember = "TenNCC";
+        }
+
         void QLLK_LKien_FillDGV(List<LINHKIEN> lk)
         {
-            dgv_QLLK_LKien_ColumnNgayNhap.DefaultCellStyle.Format = "dd/MM/yyyy HH:mm";
+            QLLK_LKien_ButtonAuth(lv, false);
+            LoadedQLLK_LKien = false;
+            dgv_QLLK_LKien_ColumnNgayNhap.DefaultCellStyle.Format = "dd/MM/yyyy";
             dgv_QLLK_LKien.Rows.Clear();
-            if(lk.Count > 0)
+            if (lk.Count > 0)
             {
-                for(int i = 0; i < lk.Count; i++)
+                for (int i = 0; i < lk.Count; i++)
                 {
+                    txt_QLNCC_CountNCCValue.Text = lk.Count.ToString();
                     int index = dgv_QLLK_LKien.Rows.Add();
                     dgv_QLLK_LKien.Rows[i].Cells[0].Value = lk[i].MaLK;
-                    dgv_QLLK_LKien.Rows[i].Cells[1].Value = lk[i].MaLoai;
+                    dgv_QLLK_LKien.Rows[i].Cells[1].Value = lk[i].LOAILINHKIEN.TenLoai;
                     dgv_QLLK_LKien.Rows[i].Cells[2].Value = lk[i].TenLK;
-                    dgv_QLLK_LKien.Rows[i].Cells[3].Value = lk[i].NgayNhap;
-                    dgv_QLLK_LKien.Rows[i].Cells[4].Value = lk[i].DonGia;
-                    dgv_QLLK_LKien.Rows[i].Cells[5].Value = lk[i].XuatXu;
-                    dgv_QLLK_LKien.Rows[i].Cells[6].Value = lk[i].MaKho;
-                    dgv_QLLK_LKien.Rows[i].Cells[7].Value = lk[i].MaNCC;
-                    dgv_QLLK_LKien.Rows[i].Cells[8].Value = lk[i].MaHang;
-                    if(lk[i].TINHTRANGLK.TinhTrang == true)
+                    dgv_QLLK_LKien.Rows[i].Cells[3].Value = lk[i].Serial;
+                    dgv_QLLK_LKien.Rows[i].Cells[4].Value = lk[i].NgayNhap.ToString();
+                    dgv_QLLK_LKien.Rows[i].Cells[5].Value = lk[i].DonGia;
+                    dgv_QLLK_LKien.Rows[i].Cells[6].Value = lk[i].XuatXu;
+                    dgv_QLLK_LKien.Rows[i].Cells[7].Value = lk[i].KHO.TenKho;
+                    dgv_QLLK_LKien.Rows[i].Cells[8].Value = lk[i].NHACUNGCAP.TenNCC;
+                    dgv_QLLK_LKien.Rows[i].Cells[9].Value = lk[i].HANG.TenHang;
+                    if (lk[i].TinhTrang == true)
                     {
-                        dgv_QLLK_LKien.Rows[i].Cells[9].Value = "Còn trong kho";
+                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Còn trong kho";
                     }
                     else
                     {
-                        dgv_QLLK_LKien.Rows[i].Cells[9].Value = "Đã bán";
+                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Đã bán";
                     }
-                    
+
+                }
+            }
+            LoadedQLLK_LKien = true;
+        }
+
+        #endregion
+        #region KiemTra
+        private int QLLK_LKien_CheckValid(int chucnang)
+        {
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_MaLK.Text) == true)
+            {
+                return 1; //trong ma lk
+            }
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_TenLK.Text) == true)
+            {
+                 return 2;//trong ten lk
+            }
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_Serial.Text) == true)
+            {
+                return 3; //De trong Serial
+            }
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_DonGia.Text) == true)
+            {
+                return 4; //de trong don gia
+            }
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_XuatXu.Text) == true)
+            {
+                return 5; //De trong xuat xu
+            }
+            String malk = txt_QLLK_LKien_MaLK.Text;
+            LINHKIEN lkf = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK.CompareTo(malk) == 0);
+            if (lkf != null && chucnang == 1)
+            {
+                return 6; //da co mã linh kiện tren he thong
+            }
+
+            return 0; //Khong co loi
+        }
+
+        int QLLK_LKien_FindCheck()
+        {
+            if(string.IsNullOrEmpty(txt_QLLK_LKien_MaLK.Text) == false && string.IsNullOrEmpty(txt_QLLK_LKien_TenLK.Text) == false)
+            {
+                return 1; //Tim theo ma lk va ten lk
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_QLLK_LKien_MaLK.Text) == false && string.IsNullOrEmpty(txt_QLLK_LKien_TenLK.Text) == true)
+                {
+                    return 2; //tim theo ma lk
+                }
+                else
+                {
+                    if(string.IsNullOrEmpty(txt_QLLK_LKien_MaLK.Text) == true && string.IsNullOrEmpty(txt_QLLK_LKien_TenLK.Text) == false)
+                    {
+                        return 3; // tim theo tenlk
+                    }
+                }
+
+            }
+            return 0; //khong co du lieu vao
+        }
+        #endregion
+        #region TruyVan
+       
+        void QLLK_LKien_ThemLK()
+        {
+            int check = QLLK_LKien_CheckValid(1);
+            switch (check)
+            {
+                case 0:
+                    try
+                    {
+
+                        String mess = "Đồng ý thêm mới linh kiện với thông tin:"
+                                    + "\nMã linh kiện: " + txt_QLLK_LKien_MaLK.Text
+                                    + "\nLoại: " + cbx_QLLK_LKien_LoaiLK.Text.ToString()
+                                    + "\nTên linh kiện: " + txt_QLLK_LKien_TenLK.Text
+                                    + "\nSerial: " + txt_QLLK_LKien_Serial.Text
+                                    + "\nNgày nhập: " + dpick_QLLK_LKien_NgayNhapKho.Text.ToString()
+                                    + "\nXuất xứ: " + txt_QLLK_LKien_XuatXu.Text
+                                    + "\nĐơn Giá: " + txt_QLLK_LKien_DonGia.Text
+                                    + "\nMã kho: " + cbx_QLLK_LKien_Kho.Text.ToString()
+                                    + "\nMã nhà cung cấp: " + cbx_QLLK_LKien_NCC.Text.ToString()
+                                    + "\nMã hàng: " + cbx_QLLK_LKien_Hang.Text.ToString()
+                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString();
+                        DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                        if (dr == DialogResult.OK)
+                        {
+                            TINHTRANGLK ttlk = new TINHTRANGLK();
+                            LINHKIEN lk = new LINHKIEN();
+                            lk.MaLK = txt_QLLK_LKien_MaLK.Text;
+                            lk.MaLoai = cbx_QLLK_LKien_LoaiLK.SelectedValue.ToString();
+                            lk.TenLK = txt_QLLK_LKien_TenLK.Text;
+                            lk.Serial = txt_QLLK_LKien_Serial.Text;
+                            lk.XuatXu = txt_QLLK_LKien_XuatXu.Text;
+                            lk.DonGia = float.Parse(txt_QLLK_LKien_DonGia.Text);
+                            lk.NgayNhap = DateTime.Parse(dpick_QLLK_LKien_NgayNhapKho.Value.ToString());
+                            lk.MaKho = cbx_QLLK_LKien_Kho.SelectedValue.ToString();
+                            lk.MaNCC = cbx_QLLK_LKien_NCC.SelectedValue.ToString();
+                            lk.MaHang = cbx_QLLK_LKien_Hang.SelectedValue.ToString();
+                            lk.TinhTrang = bool.Parse(cbx_QLLK_LKien_TinhTrang.SelectedValue.ToString());
+
+                            dbContext.LINHKIENs.Add(lk);
+                            dbContext.SaveChanges();
+
+                            lks = dbContext.LINHKIENs.ToList();
+                            QLLK_LKien_FillDGV(lks);
+                            txt_QLLK_LKien_LKCountValue.Text = lks.Count.ToString();
+                            QLLK_LKien_ClearTextBox();
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Đã huỷ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Lỗi");
+
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Không thể để trống mã linh kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 2:
+                    MessageBox.Show("Không thể để trống tên linh kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 3:
+                    MessageBox.Show("Không thể để trống Serial!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 4:
+                    MessageBox.Show("Không thể để trống đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 5:
+                    MessageBox.Show("Không thể để trống xuất xứ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 6:
+                    MessageBox.Show("Mã linh kiện đã có trên hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
+        }
+
+        void QLLK_LKien_SuaLK()
+        {
+            int check = QLLK_LKien_CheckValid(2);
+            switch (check)
+            {
+                case 0:
+                    try
+                    {
+
+                        String mess = "Đồng ý sửa linh kiện với thông tin:"
+                                    + "\nMã linh kiện: " + txt_QLLK_LKien_MaLK.Text
+                                    + "\nLoại: " + cbx_QLLK_LKien_LoaiLK.Text.ToString()
+                                    + "\nTên linh kiện: " + txt_QLLK_LKien_TenLK.Text
+                                    + "\nSerial: " + txt_QLLK_LKien_Serial.Text
+                                    + "\nNgày nhập: " + dpick_QLLK_LKien_NgayNhapKho.Text.ToString()
+                                    + "\nXuất xứ: " + txt_QLLK_LKien_XuatXu.Text
+                                    + "\nĐơn Giá: " + txt_QLLK_LKien_DonGia.Text
+                                    + "\nMã kho: " + cbx_QLLK_LKien_Kho.Text.ToString()
+                                    + "\nMã nhà cung cấp: " + cbx_QLLK_LKien_NCC.Text.ToString()
+                                    + "\nMã hàng: " + cbx_QLLK_LKien_Hang.Text.ToString()
+                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString();
+
+                        DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                        if (dr == DialogResult.OK)
+                        {
+                            String malk = txt_QLLK_LKien_MaLK.Text;
+                            LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == malk);
+                            lk.MaLoai = cbx_QLLK_LKien_LoaiLK.SelectedValue.ToString();
+                            lk.TenLK = txt_QLLK_LKien_TenLK.Text;
+                            lk.Serial = txt_QLLK_LKien_Serial.Text;
+                            lk.XuatXu = txt_QLLK_LKien_XuatXu.Text;
+                            lk.DonGia = float.Parse(txt_QLLK_LKien_DonGia.Text);
+                            lk.NgayNhap = DateTime.Parse(dpick_QLLK_LKien_NgayNhapKho.Value.ToString());
+                            lk.MaKho = cbx_QLLK_LKien_Kho.SelectedValue.ToString();
+                            lk.MaNCC = cbx_QLLK_LKien_NCC.SelectedValue.ToString();
+                            lk.MaHang = cbx_QLLK_LKien_Hang.SelectedValue.ToString();
+                            lk.TinhTrang = bool.Parse(cbx_QLLK_LKien_TinhTrang.SelectedValue.ToString());
+                            dbContext.SaveChanges();
+                            lks = dbContext.LINHKIENs.ToList();
+                            QLLK_LKien_FillDGV(lks);
+                            QLLK_LKien_ClearTextBox();
+                            btn_QLKho_BoChon.Visible = false;
+                            QLLK_LKien_ShowOrHide_SelectedMaLK(false);
+                            QLLK_LKien_ButtonAuth(lv, false);
+                            MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+
+                            MessageBox.Show("Đã huỷ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Lỗi");
+
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Không thể để trống mã linh kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 2:
+                    MessageBox.Show("Không thể để trống tên linh kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 3:
+                    MessageBox.Show("Không thể để trống Serial!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 4:
+                    MessageBox.Show("Không thể để trống đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 5:
+                    MessageBox.Show("Không thể để trống xuất xứ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
+        }
+
+        void QLLK_LKien_Xoa()
+        {
+            String malk = txt_QLLK_LKien_MaLK.Text;
+            LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == malk);
+            if (lk != null)
+            {
+                try
+                {
+                    String mess = "Đồng ý xoá linh kiện với thông tin:"
+                                    + "\nMã linh kiện: " + txt_QLLK_LKien_MaLK.Text;
+
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                    if (dr == DialogResult.OK)
+                    {
+                        dbContext.LINHKIENs.Remove(lk);
+                        dbContext.SaveChanges();
+                        lks = dbContext.LINHKIENs.ToList();
+                        QLLK_LKien_FillDGV(lks);
+                        QLLK_LKien_ClearTextBox();
+                        btn_QLKho_BoChon.Visible = false;
+                        QLLK_LKien_ShowOrHide_SelectedMaLK(false);
+                        QLLK_LKien_ButtonAuth(lv, false);
+                        MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Lỗi", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 }
             }
         }
+
+
+
+        void QLLK_LKien_TimKiem()
+        {
+            String malk = txt_QLLK_LKien_MaLK.Text;
+            String tenlk = txt_QLLK_LKien_TenLK.Text;
+            List<LINHKIEN> flk = new List<LINHKIEN>();
+            String mess;
+            int check = QLLK_LKien_FindCheck();
+            switch (check)
+            {
+                case 0:
+                   mess = "Vui lòng tìm kiếm theo:" 
+                                +"\nMã linh kiện + Tên linh kiện"
+                                + "\nMã linh kiện"
+                                + "\nTên linh kiện";
+                    MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 1:
+                    flk = dbContext.LINHKIENs.Where(a => a.MaLK.Contains(malk) && a.TenLK.Contains(tenlk)).ToList();
+                    if(flk.Count == 0)
+                    {
+                        mess = "Không có kết quả nào phù hợp";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        btn_QLLK_LKien_BoTim.Visible = true;
+                        QLLK_LKien_FillDGV(flk);
+                        mess = "Có "+flk.Count+" kết quả!";
+                        btn_QLKho_BoTim.Visible = true;
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    break;
+                case 2:
+                    flk = dbContext.LINHKIENs.Where(a => a.MaLK.Contains(malk)).ToList();
+                    if (flk.Count == 0)
+                    {
+                        mess = "Không có kết quả nào phù hợp";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        btn_QLLK_LKien_BoTim.Visible = true;
+                        QLLK_LKien_FillDGV(flk);
+                        mess = "Có " + flk.Count + " kết quả!";
+                        btn_QLKho_BoTim.Visible = true;
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    break;
+                case 3:
+                    flk = dbContext.LINHKIENs.Where(a => a.TenLK.Contains(tenlk)).ToList();
+                    if (flk.Count == 0)
+                    {
+                        mess = "Không có kết quả nào phù hợp";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        btn_QLLK_LKien_BoTim.Visible = true;
+                        QLLK_LKien_FillDGV(flk);
+                        mess = "Có " + flk.Count + " kết quả!";
+                        btn_QLKho_BoTim.Visible = true;
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    break;
+            }
+        }
+
+        #endregion
+        #region Event
+        private void dgv_QLLK_LKien_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_QLLK_LKien.SelectedRows.Count > 0 && LoadedQLLK_LKien == true)
+            {
+                btn_QLLK_LKien_Them.Enabled = false;
+                btn_QLLK_LKien_BoChon.Visible = true;
+                QLLK_LKien_ButtonAuth(lv, true);
+                txt_QLLK_LKien_MaLK.Enabled = false;
+                txt_QLLK_LKien_MaLK.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[0].Value?.ToString();
+                cbx_QLLK_LKien_LoaiLK.SelectedIndex = cbx_QLLK_LKien_LoaiLK.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[1].Value?.ToString());
+                txt_QLLK_LKien_TenLK.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[2].Value?.ToString();
+                txt_QLLK_LKien_Serial.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[3].Value?.ToString();
+                if(DateTime.TryParse(dgv_QLLK_LKien.SelectedRows[0].Cells[4].Value?.ToString(), out _) != false)
+                {
+                    dpick_QLLK_LKien_NgayNhapKho.Value = DateTime.Parse(dgv_QLLK_LKien.SelectedRows[0].Cells[4].Value?.ToString());
+                }
+                txt_QLLK_LKien_DonGia.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[5].Value?.ToString();
+                txt_QLLK_LKien_XuatXu.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[6].Value?.ToString();
+                cbx_QLLK_LKien_Kho.SelectedIndex = cbx_QLLK_LKien_Kho.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[7].Value?.ToString());
+                cbx_QLLK_LKien_NCC.SelectedIndex = cbx_QLLK_LKien_NCC.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[8].Value?.ToString());
+                cbx_QLLK_LKien_Hang.SelectedIndex = cbx_QLLK_LKien_Hang.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[9].Value?.ToString());
+                cbx_QLLK_LKien_TinhTrang.SelectedIndex = cbx_QLLK_LKien_TinhTrang.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[10].Value?.ToString());
+                lbl_QLLK_LKien_SelectedMaLKValue.Text = txt_QLLK_LKien_MaLK.Text;
+                if(string.IsNullOrEmpty(lbl_QLLK_LKien_SelectedMaLKValue.Text) == false)
+                {
+                    QLLK_LKien_ShowOrHide_SelectedMaLK(true);
+                }
+            }
+        }
+
+        private void btn_QLLK_LKien_BoChon_Click(object sender, EventArgs e)
+        {
+            btn_QLLK_LKien_Them.Enabled = true;
+            QLLK_LKien_ClearTextBox();
+            QLLK_LKien_ShowOrHide_SelectedMaLK(false);
+            QLLK_LKien_ButtonAuth(lv, false);
+            btn_QLLK_LKien_BoChon.Visible = false;
+            txt_QLLK_LKien_MaLK.Enabled = true;
+        }
+
+        private void btn_QLLK_LKien_Them_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LKien = false;
+            QLLK_LKien_ThemLK();
+            LoadedQLLK_LKien = true;
+        }
+
+        private void btn_QLLK_LKien_Sua_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LKien = false;
+            QLLK_LKien_SuaLK();
+            LoadedQLLK_LKien = true;
+        }
+        private void btn_QLLK_LKien_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LKien = false;
+            QLLK_LKien_Xoa();
+            LoadedQLLK_LKien = true;
+        }
+
+        private void btn_QLLK_LKien_TKiem_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LKien = false;
+            QLLK_LKien_TimKiem();
+            LoadedQLLK_LKien = true;
+        }
+
+        private void btn_QLLK_LKien_BoTim_Click(object sender, EventArgs e)
+        {
+            QLLK_LKien_ClearTextBox();
+            QLLK_LKien_ShowOrHide_SelectedMaLK(false);
+            QLLK_LKien_ButtonAuth(lv, false);
+            btn_QLLK_LKien_BoChon.Visible = false;
+            txt_QLLK_LKien_MaLK.Enabled = true;
+            btn_QLLK_LKien_BoTim.Visible = false;
+            QLLK_LKien_FillDGV(lks);
+        }
+
+
+        #endregion
+
+        #endregion
+
+        #region KiemTra
+
+        int QLLK_LoaiLK_CheckValid(int chucnang)
+        {
+            String mallk = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+            LOAILINHKIEN llk = dbContext.LOAILINHKIENs.FirstOrDefault(a => a.MaLoai == mallk);
+            if(string.IsNullOrEmpty(txt_QLLK_LoaiLK_MaLoaiLK.Text) == true | string.IsNullOrEmpty(txt_QLLK_LoaiLK_TenLoai.Text) == true)
+            {
+                return 1; // co text box khong co du lieu
+            }
+            else
+            {
+                if(llk != null && chucnang == 1)
+                {
+                    return 2;
+                }
+            }
+            return 0;
+        }
+
+        #endregion
+
+        #region ThucThi
+        void QLLK_LoaiLK_ClearTextbox()
+        {
+            txt_QLLK_LoaiLK_MaLoaiLK.Text = "";
+            txt_QLLK_LoaiLK_TenLoai.Text = "";
+        }
+
+        void QLLK_LoaiLK_ShowOrHide_SelectedMaLLK(bool value)
+        {
+            lbl_QLLK_LoaiLK_SelectedLoaiLKLabel.Visible = value;
+            lbl_QLLK_LoaiLK_SelectedLoaiLKValue.Visible = value;
+        }
+
+        void QLLK_LoaiLK_ButtonAuth(int lv, bool value)
+        {
+            if(lv != 2)
+            {
+                btn_QLLK_LoaiLK_Sua.Enabled = value;
+                btn_QLLK_LoaiLK_Xoa.Enabled = value;
+            }
+            else
+            {
+                btn_QLLK_LoaiLK_Them.Enabled = false;
+                btn_QLLK_LoaiLK_Sua.Enabled = false;
+                btn_QLLK_LoaiLK_Xoa.Enabled = false;
+            }
+        }
+
+        void QLLK_LoaiLK_FillDGV(List<LOAILINHKIEN> llk)
+        {
+            dgv_QLLK_LoaiLK.Rows.Clear();
+            if(llk.Count > 0)
+            {
+                for(int i = 0; i < llk.Count; i++)
+                {
+                    int index = dgv_QLLK_LoaiLK.Rows.Add();
+                    dgv_QLLK_LoaiLK.Rows[i].Cells[0].Value = llk[i].MaLoai;
+                    dgv_QLLK_LoaiLK.Rows[i].Cells[1].Value = llk[i].TenLoai;
+                }
+            }
+            LoadedQLLK_LoaiLK = true;
+            QLLK_LoaiLK_ButtonAuth(lv, false);
+        }
+        #endregion
+
+        #region TruyVan
+
         #endregion
 
         #region Event
-        #endregion
-        #endregion
+        private void dgv_QLLK_LoaiLK_SelectionChanged(object sender, EventArgs e)
+        {
+            if(dgv_QLLK_LoaiLK.SelectedRows.Count > 0 && LoadedQLLK_LoaiLK == true)
+            {
+                
+                btn_QLLK_LoaiLK_BoChon.Visible = true;
+                txt_QLLK_LoaiLK_MaLoaiLK.Enabled = false;
+                btn_QLLK_LoaiLK_Them.Enabled = false;
+                txt_QLLK_LoaiLK_MaLoaiLK.Text = dgv_QLLK_LoaiLK.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLLK_LoaiLK_TenLoai.Text = dgv_QLLK_LoaiLK.SelectedRows[0].Cells[1].Value?.ToString();
+                QLLK_LoaiLK_ButtonAuth(lv, true);
+                lbl_QLLK_LoaiLK_SelectedLoaiLKValue.Text = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+                if(string.IsNullOrEmpty(lbl_QLLK_LoaiLK_SelectedLoaiLKValue.Text) == false)
+                {
+                    QLLK_LoaiLK_ShowOrHide_SelectedMaLLK(true);
+                }
+            }
+        }
+
         #endregion
 
+        #endregion
 
+        private void btn_QLLK_LoaiLK_BoChon_Click(object sender, EventArgs e)
+        {
+            QLLK_LoaiLK_ClearTextbox();
+            QLLK_LoaiLK_ButtonAuth(lv, false);
+            QLLK_LoaiLK_ShowOrHide_SelectedMaLLK(false);
+            txt_QLLK_LoaiLK_MaLoaiLK.Enabled = true;
+            btn_QLLK_LoaiLK_Them.Enabled = true;
+            btn_QLLK_LoaiLK_BoChon.Visible = false;
+            
+        }
     }
 }

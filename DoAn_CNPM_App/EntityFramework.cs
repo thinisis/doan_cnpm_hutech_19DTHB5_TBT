@@ -26,7 +26,7 @@ namespace DoAn_CNPM_App
         public virtual DbSet<NHANVIEN> NHANVIENs { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THEKHACHHANG> THEKHACHHANGs { get; set; }
-        public virtual DbSet<TINHTRANGLK> TINHTRANGLKs { get; set; }
+        public virtual DbSet<TINHTRANGLK_GIATRI> TINHTRANGLK_GIATRI { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -79,14 +79,6 @@ namespace DoAn_CNPM_App
                 .Property(e => e.MaLK)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CTDONHANG>()
-                .Property(e => e.DonGia)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<CTDONHANG>()
-                .Property(e => e.GiamGia)
-                .HasPrecision(19, 4);
-
             modelBuilder.Entity<DONHANG>()
                 .Property(e => e.MaDH)
                 .IsUnicode(false);
@@ -109,7 +101,12 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<HANG>()
                 .Property(e => e.MaHang)
-                .IsFixedLength();
+                .IsUnicode(false);
+
+            modelBuilder.Entity<HANG>()
+                .HasMany(e => e.LINHKIENs)
+                .WithRequired(e => e.HANG)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<KHACHHANG>()
                 .Property(e => e.MaKH)
@@ -141,6 +138,11 @@ namespace DoAn_CNPM_App
                 .Property(e => e.MaKho)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<KHO>()
+                .HasMany(e => e.LINHKIENs)
+                .WithRequired(e => e.KHO)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<LINHKIEN>()
                 .Property(e => e.MaLK)
                 .IsUnicode(false);
@@ -151,7 +153,6 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<LINHKIEN>()
                 .Property(e => e.Serial)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<LINHKIEN>()
@@ -160,12 +161,11 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<LINHKIEN>()
                 .Property(e => e.MaNCC)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<LINHKIEN>()
                 .Property(e => e.MaHang)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<LOAILINHKIEN>()
                 .Property(e => e.MaLoai)
@@ -178,7 +178,6 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<NHACUNGCAP>()
                 .Property(e => e.MaNCC)
-                .IsFixedLength()
                 .IsUnicode(false);
 
             modelBuilder.Entity<NHACUNGCAP>()
@@ -188,6 +187,11 @@ namespace DoAn_CNPM_App
             modelBuilder.Entity<NHACUNGCAP>()
                 .Property(e => e.Email)
                 .IsUnicode(false);
+
+            modelBuilder.Entity<NHACUNGCAP>()
+                .HasMany(e => e.LINHKIENs)
+                .WithRequired(e => e.NHACUNGCAP)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<NHANVIEN>()
                 .Property(e => e.MaNV)
@@ -209,13 +213,10 @@ namespace DoAn_CNPM_App
                 .Property(e => e.MaKH)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<TINHTRANGLK>()
-                .Property(e => e.MaLK)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<TINHTRANGLK>()
-                .HasOptional(e => e.LINHKIEN)
-                .WithRequired(e => e.TINHTRANGLK);
+            modelBuilder.Entity<TINHTRANGLK_GIATRI>()
+                .HasMany(e => e.LINHKIENs)
+                .WithRequired(e => e.TINHTRANGLK_GIATRI)
+                .WillCascadeOnDelete(false);
         }
     }
 }
