@@ -84,10 +84,6 @@ namespace DoAn_CNPM_App
             }
         }
 
-        private void ResetButton()
-        {
-        }
-
         private void OpenChildForm (Form ChildForm, object btnSender)
         {
             if(activeForm != null)
@@ -106,15 +102,7 @@ namespace DoAn_CNPM_App
         }
 
 
-        private void btn_DanhMuc_Click_1(object sender, EventArgs e)
-        {
-            OpenChildForm(new ChildForm.frmDanhMuc(), sender);
-        }
 
-        private void pbx_LogoMain_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void lbl_GioiThieu_Click(object sender, EventArgs e)
         {
@@ -133,7 +121,7 @@ namespace DoAn_CNPM_App
 
         private void btn_XuLy_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.XuLy(), sender);
+            OpenChildForm(new ChildForm.DangXayDung(), sender);
         }
 
         private void btn_TrangChu_Click_1(object sender, EventArgs e)
@@ -147,12 +135,12 @@ namespace DoAn_CNPM_App
         void LoadingTime()
         {
             for (int i = 0; i <= 40; i++)
-                Thread.Sleep(10);
+                Thread.Sleep(40);
         }
 
         private void btn_HeThong_Click(object sender, EventArgs e)
         {
-            if(userLevel == 0)
+            if(userLevel != 2)
             {
                 using (Loading form = new Loading(LoadingTime))
                 {
@@ -173,7 +161,12 @@ namespace DoAn_CNPM_App
 
         private void btn_DanhMuc_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.frmDanhMuc(), sender);
+            using (Loading form = new Loading(LoadingTime))
+            {
+                form.ShowDialog(this);
+                OpenChildForm(new ChildForm.frmDanhMuc(), sender);
+            }
+            
         }
 
         private void btn_BaoCao_Click(object sender, EventArgs e)
@@ -191,15 +184,15 @@ namespace DoAn_CNPM_App
 
         private void btn_TimKiem_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.TimKiem(), sender);
+            OpenChildForm(new ChildForm.DangXayDung(), sender);
         }
 
         private void btn_BaoHanh_Click(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.BaoHanh(), sender);
+            OpenChildForm(new ChildForm.DangXayDung(), sender);
         }
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btn_TroGiup_Click(object sender, EventArgs e)
         {
             OpenChildForm(new ChildForm.TroGiup(), sender);
         }
@@ -234,5 +227,7 @@ namespace DoAn_CNPM_App
             userSettingForm form = new userSettingForm();
             form.ShowDialog();
         }
+
+        
     }
 }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace DoAn_CNPM_App.ChildForm
 {
-    public partial class TroGiup : Form
+    public partial class DangXayDung : Form
     {
-        public TroGiup()
+        public DangXayDung()
         {
             InitializeComponent();
-        }
-
-        private void lbl_ThongBao_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

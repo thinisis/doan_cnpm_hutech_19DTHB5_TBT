@@ -50,6 +50,7 @@ namespace DoAn_CNPM_App
             this.lbl_HelloUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_GioiThieu = new System.Windows.Forms.Label();
+            this.btn_userSetting = new FontAwesome.Sharp.IconButton();
             this.pnl_Logout = new Bunifu.UI.WinForms.BunifuPanel();
             this.btn_DangXuat = new FontAwesome.Sharp.IconButton();
             this.btn_TroGiup = new FontAwesome.Sharp.IconButton();
@@ -60,7 +61,6 @@ namespace DoAn_CNPM_App
             this.btn_DanhMuc = new FontAwesome.Sharp.IconButton();
             this.btn_HeThong = new FontAwesome.Sharp.IconButton();
             this.btn_TrangChu = new FontAwesome.Sharp.IconButton();
-            this.btn_userSetting = new FontAwesome.Sharp.IconButton();
             this.pl_Menu.SuspendLayout();
             this.lbl_Title.SuspendLayout();
             this.pnl_Account.SuspendLayout();
@@ -299,6 +299,25 @@ namespace DoAn_CNPM_App
             this.lbl_GioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbl_GioiThieu.Click += new System.EventHandler(this.lbl_GioiThieu_Click);
             // 
+            // btn_userSetting
+            // 
+            this.btn_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_userSetting.ForeColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btn_userSetting.IconColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_userSetting.IconSize = 20;
+            this.btn_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_userSetting.Location = new System.Drawing.Point(28, 57);
+            this.btn_userSetting.Name = "btn_userSetting";
+            this.btn_userSetting.Size = new System.Drawing.Size(119, 23);
+            this.btn_userSetting.TabIndex = 23;
+            this.btn_userSetting.Text = "Cài đặt tài khoản";
+            this.btn_userSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_userSetting.UseVisualStyleBackColor = true;
+            this.btn_userSetting.Click += new System.EventHandler(this.btn_userSetting_Click_1);
+            // 
             // pnl_Logout
             // 
             this.pnl_Logout.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -355,7 +374,7 @@ namespace DoAn_CNPM_App
             this.btn_TroGiup.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btn_TroGiup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TroGiup.UseVisualStyleBackColor = true;
-            this.btn_TroGiup.Click += new System.EventHandler(this.iconButton1_Click);
+            this.btn_TroGiup.Click += new System.EventHandler(this.btn_TroGiup_Click);
             // 
             // btn_BaoHanh
             // 
@@ -497,25 +516,6 @@ namespace DoAn_CNPM_App
             this.btn_TrangChu.UseVisualStyleBackColor = true;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click_1);
             // 
-            // btn_userSetting
-            // 
-            this.btn_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_userSetting.ForeColor = System.Drawing.Color.White;
-            this.btn_userSetting.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btn_userSetting.IconColor = System.Drawing.Color.White;
-            this.btn_userSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_userSetting.IconSize = 20;
-            this.btn_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_userSetting.Location = new System.Drawing.Point(28, 57);
-            this.btn_userSetting.Name = "btn_userSetting";
-            this.btn_userSetting.Size = new System.Drawing.Size(119, 23);
-            this.btn_userSetting.TabIndex = 23;
-            this.btn_userSetting.Text = "Cài đặt tài khoản";
-            this.btn_userSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_userSetting.UseVisualStyleBackColor = true;
-            this.btn_userSetting.Click += new System.EventHandler(this.btn_userSetting_Click_1);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -525,6 +525,7 @@ namespace DoAn_CNPM_App
             this.Controls.Add(this.lbl_Title);
             this.Controls.Add(this.pl_Menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý - Công ty TBT";

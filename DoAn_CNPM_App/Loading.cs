@@ -23,7 +23,6 @@ namespace DoAn_CNPM_App
 
         private void Loading_Load(object sender, EventArgs e)
         {
-            ProgressBar(500);
         }
         protected override void OnLoad(EventArgs e)
         {
@@ -31,15 +30,5 @@ namespace DoAn_CNPM_App
             Task.Factory.StartNew(Worker).ContinueWith(t => { this.Close(); }, TaskScheduler.FromCurrentSynchronizationContext());
         }
 
-        void ProgressBar(int max)
-        {
-            progressBar.Minimum = 0;
-            progressBar.Maximum = max;
-            
-            for (int i = 0; i <= max; i++)
-            {
-                progressBar.Value = i; //Gán giá trị cho progressBar
-            }
-        }
     }
 }

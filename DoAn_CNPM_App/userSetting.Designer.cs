@@ -103,6 +103,9 @@ namespace DoAn_CNPM_App
             this.txt_accSet_TenTK = new Bunifu.UI.WinForms.BunifuTextBox();
             this.lbl_accSet_TenTK = new Bunifu.UI.WinForms.BunifuLabel();
             this.page_userSetting = new System.Windows.Forms.TabPage();
+            this.rbtn_userSet_Nu = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.rbtn_userSet_Nam = new MetroSet_UI.Controls.MetroSetRadioButton();
+            this.lbl_userSet_GioiTinh = new Bunifu.UI.WinForms.BunifuLabel();
             this.btn_userSet_Save = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.txt_userSet_ChucVu = new Bunifu.UI.WinForms.BunifuTextBox();
             this.lbl_userSet_ChucVu = new Bunifu.UI.WinForms.BunifuLabel();
@@ -120,9 +123,6 @@ namespace DoAn_CNPM_App
             this.pnl_Menu = new Bunifu.UI.WinForms.BunifuPanel();
             this.btn_userSetting = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btn_accountSetting = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
-            this.lbl_userSet_GioiTinh = new Bunifu.UI.WinForms.BunifuLabel();
-            this.rbtn_userSet_Nam = new MetroSet_UI.Controls.MetroSetRadioButton();
-            this.rbtn_userSet_Nu = new MetroSet_UI.Controls.MetroSetRadioButton();
             this.pnl_ContentMenu.SuspendLayout();
             this.page_Ctrl.SuspendLayout();
             this.page_accountSetting.SuspendLayout();
@@ -937,6 +937,66 @@ namespace DoAn_CNPM_App
             this.page_userSetting.Size = new System.Drawing.Size(592, 424);
             this.page_userSetting.TabIndex = 1;
             this.page_userSetting.Text = "userSetting";
+            // 
+            // rbtn_userSet_Nu
+            // 
+            this.rbtn_userSet_Nu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rbtn_userSet_Nu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.rbtn_userSet_Nu.Checked = false;
+            this.rbtn_userSet_Nu.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.rbtn_userSet_Nu.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.rbtn_userSet_Nu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.rbtn_userSet_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtn_userSet_Nu.Group = 0;
+            this.rbtn_userSet_Nu.IsDerivedStyle = true;
+            this.rbtn_userSet_Nu.Location = new System.Drawing.Point(357, 281);
+            this.rbtn_userSet_Nu.Name = "rbtn_userSet_Nu";
+            this.rbtn_userSet_Nu.Size = new System.Drawing.Size(75, 17);
+            this.rbtn_userSet_Nu.Style = MetroSet_UI.Enums.Style.Dark;
+            this.rbtn_userSet_Nu.StyleManager = null;
+            this.rbtn_userSet_Nu.TabIndex = 29;
+            this.rbtn_userSet_Nu.Text = "Nữ";
+            this.rbtn_userSet_Nu.ThemeAuthor = "Narwin";
+            this.rbtn_userSet_Nu.ThemeName = "MetroDark";
+            // 
+            // rbtn_userSet_Nam
+            // 
+            this.rbtn_userSet_Nam.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.rbtn_userSet_Nam.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
+            this.rbtn_userSet_Nam.Checked = false;
+            this.rbtn_userSet_Nam.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
+            this.rbtn_userSet_Nam.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
+            this.rbtn_userSet_Nam.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            this.rbtn_userSet_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.rbtn_userSet_Nam.Group = 0;
+            this.rbtn_userSet_Nam.IsDerivedStyle = true;
+            this.rbtn_userSet_Nam.Location = new System.Drawing.Point(234, 281);
+            this.rbtn_userSet_Nam.Name = "rbtn_userSet_Nam";
+            this.rbtn_userSet_Nam.Size = new System.Drawing.Size(75, 17);
+            this.rbtn_userSet_Nam.Style = MetroSet_UI.Enums.Style.Dark;
+            this.rbtn_userSet_Nam.StyleManager = null;
+            this.rbtn_userSet_Nam.TabIndex = 28;
+            this.rbtn_userSet_Nam.Text = "Nam";
+            this.rbtn_userSet_Nam.ThemeAuthor = "Narwin";
+            this.rbtn_userSet_Nam.ThemeName = "MetroDark";
+            // 
+            // lbl_userSet_GioiTinh
+            // 
+            this.lbl_userSet_GioiTinh.AllowParentOverrides = false;
+            this.lbl_userSet_GioiTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_userSet_GioiTinh.AutoEllipsis = false;
+            this.lbl_userSet_GioiTinh.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_userSet_GioiTinh.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_userSet_GioiTinh.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_userSet_GioiTinh.ForeColor = System.Drawing.Color.White;
+            this.lbl_userSet_GioiTinh.Location = new System.Drawing.Point(133, 279);
+            this.lbl_userSet_GioiTinh.Name = "lbl_userSet_GioiTinh";
+            this.lbl_userSet_GioiTinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_userSet_GioiTinh.Size = new System.Drawing.Size(53, 19);
+            this.lbl_userSet_GioiTinh.TabIndex = 27;
+            this.lbl_userSet_GioiTinh.Text = "Giới tính";
+            this.lbl_userSet_GioiTinh.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_userSet_GioiTinh.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
             // 
             // btn_userSet_Save
             // 
@@ -1805,66 +1865,6 @@ namespace DoAn_CNPM_App
             this.btn_accountSetting.UseDefaultRadiusAndThickness = true;
             this.btn_accountSetting.Click += new System.EventHandler(this.btn_accountSetting_Click);
             // 
-            // lbl_userSet_GioiTinh
-            // 
-            this.lbl_userSet_GioiTinh.AllowParentOverrides = false;
-            this.lbl_userSet_GioiTinh.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_userSet_GioiTinh.AutoEllipsis = false;
-            this.lbl_userSet_GioiTinh.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbl_userSet_GioiTinh.CursorType = System.Windows.Forms.Cursors.Default;
-            this.lbl_userSet_GioiTinh.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_userSet_GioiTinh.ForeColor = System.Drawing.Color.White;
-            this.lbl_userSet_GioiTinh.Location = new System.Drawing.Point(133, 279);
-            this.lbl_userSet_GioiTinh.Name = "lbl_userSet_GioiTinh";
-            this.lbl_userSet_GioiTinh.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lbl_userSet_GioiTinh.Size = new System.Drawing.Size(53, 19);
-            this.lbl_userSet_GioiTinh.TabIndex = 27;
-            this.lbl_userSet_GioiTinh.Text = "Giới tính";
-            this.lbl_userSet_GioiTinh.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.lbl_userSet_GioiTinh.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
-            // 
-            // rbtn_userSet_Nam
-            // 
-            this.rbtn_userSet_Nam.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rbtn_userSet_Nam.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.rbtn_userSet_Nam.Checked = false;
-            this.rbtn_userSet_Nam.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.rbtn_userSet_Nam.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            this.rbtn_userSet_Nam.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.rbtn_userSet_Nam.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rbtn_userSet_Nam.Group = 0;
-            this.rbtn_userSet_Nam.IsDerivedStyle = true;
-            this.rbtn_userSet_Nam.Location = new System.Drawing.Point(234, 281);
-            this.rbtn_userSet_Nam.Name = "rbtn_userSet_Nam";
-            this.rbtn_userSet_Nam.Size = new System.Drawing.Size(75, 17);
-            this.rbtn_userSet_Nam.Style = MetroSet_UI.Enums.Style.Dark;
-            this.rbtn_userSet_Nam.StyleManager = null;
-            this.rbtn_userSet_Nam.TabIndex = 28;
-            this.rbtn_userSet_Nam.Text = "Nam";
-            this.rbtn_userSet_Nam.ThemeAuthor = "Narwin";
-            this.rbtn_userSet_Nam.ThemeName = "MetroDark";
-            // 
-            // rbtn_userSet_Nu
-            // 
-            this.rbtn_userSet_Nu.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.rbtn_userSet_Nu.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.rbtn_userSet_Nu.Checked = false;
-            this.rbtn_userSet_Nu.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.rbtn_userSet_Nu.CheckState = MetroSet_UI.Enums.CheckState.Unchecked;
-            this.rbtn_userSet_Nu.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            this.rbtn_userSet_Nu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rbtn_userSet_Nu.Group = 0;
-            this.rbtn_userSet_Nu.IsDerivedStyle = true;
-            this.rbtn_userSet_Nu.Location = new System.Drawing.Point(357, 281);
-            this.rbtn_userSet_Nu.Name = "rbtn_userSet_Nu";
-            this.rbtn_userSet_Nu.Size = new System.Drawing.Size(75, 17);
-            this.rbtn_userSet_Nu.Style = MetroSet_UI.Enums.Style.Dark;
-            this.rbtn_userSet_Nu.StyleManager = null;
-            this.rbtn_userSet_Nu.TabIndex = 29;
-            this.rbtn_userSet_Nu.Text = "Nữ";
-            this.rbtn_userSet_Nu.ThemeAuthor = "Narwin";
-            this.rbtn_userSet_Nu.ThemeName = "MetroDark";
-            // 
             // userSettingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1874,6 +1874,7 @@ namespace DoAn_CNPM_App
             this.Controls.Add(this.pnl_Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "userSettingForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Cài đặt người dùng";

@@ -998,6 +998,7 @@ namespace DoAn_CNPM_App.ChildForm
             dgv_QLLK_LKien.Rows.Clear();
             if (lk.Count > 0)
             {
+                txt_QLLK_LKien_LKCountValue.Text = lk.Count.ToString();
                 for (int i = 0; i < lk.Count; i++)
                 {
                     txt_QLNCC_CountNCCValue.Text = lk.Count.ToString();

@@ -117,7 +117,30 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lbl_Wait.BaseStylesheet" xml:space="preserve">
-    <value>#bunifu-label { padding: 0px; font-family: 'Open Sans'; font-size: 36pt; width: 100%; height: 100%; font-style: normal; font-weight: bold; text-decoration: none; color: rgb(0, 0, 0); text-align: left; }</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_Thoat.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAABEcAAAAwCAYAAADzThTkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFkSURBVHhe7dgxAYAwAMCwKZnl4Q8Z+wcGUEBz5KqDjnmd
+        e17PAwAAANBz7vEdAAAAABrMEQAAACDNHAEAAADSzBEAAAAgzRwBAAAA0swRAAAAIM0cAQAAANLMEQAA
+        ACDNHAEAAADSzBEAAAAgzRwBAAAA0swRAAAAIM0cAQAAANLMEQAAACDNHAEAAADSzBEAAAAgzRwBAAAA
+        0swRAAAAIM0cAQAAANLMEQAAACDNHAEAAADSzBEAAAAgzRwBAAAA0swRAAAAIM0cAQAAANLMEQAAACDN
+        HAEAAADSzBEAAAAgzRwBAAAA0swRAAAAIM0cAQAAANLMEQAAACDNHAEAAADSzBEAAAAgzRwBAAAA0swR
+        AAAAIM0cAQAAANLMEQAAACDNHAEAAADSzBEAAAAgzRwBAAAA0swRAAAAIM0cAQAAANLMEQAAACDNHAEA
+        AADSzBEAAAAgbcx19lcAAAAA+L119gvkprF3Vk8pcgAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="bunifuPanel1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAABEcAAAAwCAYAAADzThTkAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF7SURBVHhe7drZCcNAFATBzT8e5efjYwRGGbirQKDeEIZ3
+        AAAAAPi4ruu1T2uttdZaa6211rrQt8cDAAAAQIlxBAAAAKj52UOMIwAAAECNPQQAAABIczkCAAAAMMYR
+        AAAAoMblCAAAAJBmDwEAAADSXI4AAAAAjHEEAAAAqHE5AgAAAKTZQwAAAIA0lyMAAAAAYxwBAAAAalyO
+        AAAAAGn2EAAAACDN5QgAAADAGEcAAACAGpcjAAAAQJo9BAAAAEhzOQIAAAAwxhEAAACgxuUIAAAAkGYP
+        AQAAANJcjgAAAACMcQQAAACocTkCAAAApNlDAAAAgDSXIwAAAABjHAEAAABqXI4AAAAAafYQAAAAIM3l
+        CAAAAMAYRwAAAIAalyMAAABAmj0EAAAASHM5AgAAADDGEQAAAKDG5QgAAACQZg8BAAAA0lyOAAAAAIxx
+        BAAAAKhxOQIAAACk2UMAAACAtMc48n3Y4/611lprrbXWWmut/7UBAAAAOOe8AXpDqcr3n7HpAAAAAElF
+        TkSuQmCC
+</value>
   </data>
 </root>

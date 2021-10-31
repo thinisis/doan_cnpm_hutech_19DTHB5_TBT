@@ -31,37 +31,9 @@ namespace DoAn_CNPM_App
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loading));
-            this.progressBar = new Bunifu.UI.WinForms.BunifuProgressBar();
             this.Loader = new Bunifu.UI.WinForms.BunifuLoader();
             this.lbl_Wait = new Bunifu.UI.WinForms.BunifuLabel();
             this.SuspendLayout();
-            // 
-            // progressBar
-            // 
-            this.progressBar.AllowAnimations = false;
-            this.progressBar.Animation = 0;
-            this.progressBar.AnimationSpeed = 220;
-            this.progressBar.AnimationStep = 10;
-            this.progressBar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.progressBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("progressBar.BackgroundImage")));
-            this.progressBar.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.progressBar.BorderRadius = 9;
-            this.progressBar.BorderThickness = 1;
-            this.progressBar.Location = new System.Drawing.Point(70, 164);
-            this.progressBar.Maximum = 500;
-            this.progressBar.MaximumValue = 500;
-            this.progressBar.Minimum = 0;
-            this.progressBar.MinimumValue = 0;
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Orientation = System.Windows.Forms.Orientation.Horizontal;
-            this.progressBar.ProgressBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(223)))), ((int)(((byte)(223)))));
-            this.progressBar.ProgressColorLeft = System.Drawing.Color.DodgerBlue;
-            this.progressBar.ProgressColorRight = System.Drawing.Color.DodgerBlue;
-            this.progressBar.Size = new System.Drawing.Size(296, 13);
-            this.progressBar.TabIndex = 0;
-            this.progressBar.UseWaitCursor = true;
-            this.progressBar.Value = 0;
-            this.progressBar.ValueByTransition = 0;
             // 
             // Loader
             // 
@@ -80,11 +52,11 @@ namespace DoAn_CNPM_App
             this.Loader.Preset = Bunifu.UI.WinForms.BunifuLoader.StylePresets.Solid;
             this.Loader.RingStyle = Bunifu.UI.WinForms.BunifuLoader.RingStyles.Solid;
             this.Loader.ShowText = false;
-            this.Loader.Size = new System.Drawing.Size(52, 49);
+            this.Loader.Size = new System.Drawing.Size(86, 85);
             this.Loader.Speed = 7;
             this.Loader.TabIndex = 1;
             this.Loader.Text = "bunifuLoader1";
-            this.Loader.TextPadding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.Loader.TextPadding = new System.Windows.Forms.Padding(0);
             this.Loader.Thickness = 6;
             this.Loader.Transparent = true;
             this.Loader.UseWaitCursor = true;
@@ -93,6 +65,7 @@ namespace DoAn_CNPM_App
             // 
             this.lbl_Wait.AllowParentOverrides = false;
             this.lbl_Wait.AutoEllipsis = false;
+            this.lbl_Wait.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbl_Wait.CursorType = System.Windows.Forms.Cursors.Default;
             this.lbl_Wait.Font = new System.Drawing.Font("Open Sans", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Wait.Location = new System.Drawing.Point(70, 12);
@@ -103,15 +76,15 @@ namespace DoAn_CNPM_App
             this.lbl_Wait.Text = "Vui lòng chờ";
             this.lbl_Wait.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.lbl_Wait.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            this.lbl_Wait.UseWaitCursor = true;
             // 
             // Loading
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(449, 209);
+            this.ClientSize = new System.Drawing.Size(440, 199);
             this.Controls.Add(this.lbl_Wait);
             this.Controls.Add(this.Loader);
-            this.Controls.Add(this.progressBar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Loading";
             this.ShowIcon = false;
@@ -126,8 +99,6 @@ namespace DoAn_CNPM_App
         }
 
         #endregion
-
-        private Bunifu.UI.WinForms.BunifuProgressBar progressBar;
         private Bunifu.UI.WinForms.BunifuLoader Loader;
         private Bunifu.UI.WinForms.BunifuLabel lbl_Wait;
     }
