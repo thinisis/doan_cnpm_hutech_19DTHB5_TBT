@@ -17,6 +17,7 @@ namespace DoAn_CNPM_App.ChildForm
         List<KHO> khos = new List<KHO>();
         List<LINHKIEN> lks = new List<LINHKIEN>();
         List<LOAILINHKIEN> llks = new List<LOAILINHKIEN>();
+        List<HANG> hangs = new List<HANG>();
         List<TINHTRANGLK_GIATRI> ttlks = new List<TINHTRANGLK_GIATRI>();
         bool LoadedQLNCC = false;
         bool LoadedQLKho = false;
@@ -518,6 +519,7 @@ namespace DoAn_CNPM_App.ChildForm
         #endregion
 
         #endregion
+
         #region QuanLyKho
 
         #region KiemTra
@@ -886,6 +888,9 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void btn_QLLK_SelectpageHang_Click(object sender, EventArgs e)
         {
+            LoadedQLLK_Hang = false;
+            hangs = dbContext.HANGs.ToList();
+            QLLK_Hang_FillDGV(hangs);
             page_QuanLyLK.SelectedTab = tabpage_QLLK_Hang;
         }
 
@@ -900,7 +905,7 @@ namespace DoAn_CNPM_App.ChildForm
         #region ThucThi
         void QLLK_LKien_ButtonAuth(int lv, bool value)
         {
-            if(lv != 2)
+            if(lv != 3)
             {
                 btn_QLLK_LKien_Sua.Enabled = value;
                 btn_QLLK_LKien_Xoa.Enabled = value;
@@ -1431,6 +1436,8 @@ namespace DoAn_CNPM_App.ChildForm
 
         #endregion
 
+        #region LoaiLinhKien
+
         #region KiemTra
 
         int QLLK_LoaiLK_CheckValid(int chucnang)
@@ -1445,12 +1452,41 @@ namespace DoAn_CNPM_App.ChildForm
             {
                 if(llk != null && chucnang == 1)
                 {
+                    return 2; //da co loailk tren he thong
+                }
+                if(llk == null && chucnang == 2)
+                {
+                    return 2;
+                }
+                if (llk == null && chucnang == 0)
+                {
                     return 2;
                 }
             }
             return 0;
         }
-
+        int QLLK_LoaiLK_FindCheck()
+        {
+            if(string.IsNullOrEmpty(txt_QLLK_LoaiLK_MaLoaiLK.Text) == false && string.IsNullOrEmpty(txt_QLLK_LoaiLK_TenLoai.Text) == false)
+            {
+                return 1; //tim theo maloai va ten
+            }
+            else
+            {
+                if(string.IsNullOrEmpty(txt_QLLK_LoaiLK_MaLoaiLK.Text) == false && string.IsNullOrEmpty(txt_QLLK_LoaiLK_TenLoai.Text) == true)
+                {
+                    return 2; // tim theo ma loai
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(txt_QLLK_LoaiLK_MaLoaiLK.Text) == true && string.IsNullOrEmpty(txt_QLLK_LoaiLK_TenLoai.Text) == false)
+                    {
+                        return 3; //tim theo ten
+                    }
+                }
+            }
+            return 0; // khong co du lieu de tim kiem
+        }
         #endregion
 
         #region ThucThi
@@ -1468,7 +1504,7 @@ namespace DoAn_CNPM_App.ChildForm
 
         void QLLK_LoaiLK_ButtonAuth(int lv, bool value)
         {
-            if(lv != 2)
+            if(lv != 3)
             {
                 btn_QLLK_LoaiLK_Sua.Enabled = value;
                 btn_QLLK_LoaiLK_Xoa.Enabled = value;
@@ -1500,6 +1536,197 @@ namespace DoAn_CNPM_App.ChildForm
 
         #region TruyVan
 
+        void QLLK_LoaiLK_TimKiem()
+        {
+            String mallk = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+            String tenllk = txt_QLLK_LoaiLK_TenLoai.Text;
+            List<LOAILINHKIEN> fllk = new List<LOAILINHKIEN>();
+            String mess;
+            int check = QLLK_LoaiLK_FindCheck();
+            switch (check)
+            {
+                case 0:
+                    mess = "Vui lòng tìm kiếm theo:"
+                                + "\nMã loại"
+                                + "\nTên loại"
+                                + "\nMã loại và tên loại";
+                    MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    break;
+                case 1:
+                    fllk = dbContext.LOAILINHKIENs.Where(a => a.MaLoai.Contains(mallk) && a.TenLoai.Contains(tenllk)).ToList();
+                    if(fllk.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có "+fllk.Count+" kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_LoaiLK_FillDGV(fllk);
+                        btn_QLLK_LoaiLK_BoTim.Visible = true;
+                        QLLK_LoaiLK_ClearTextbox();
+                    }
+                    break;
+                case 2:
+                    fllk = dbContext.LOAILINHKIENs.Where(a => a.MaLoai.Contains(mallk)).ToList();
+                    if (fllk.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có " + fllk.Count + " kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_LoaiLK_FillDGV(fllk);
+                        btn_QLLK_LoaiLK_BoTim.Visible = true;
+                        QLLK_LoaiLK_ClearTextbox();
+                    }
+                    break;
+                case 3:
+                    fllk = dbContext.LOAILINHKIENs.Where(a => a.TenLoai.Contains(tenllk)).ToList();
+                    if (fllk.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có " + fllk.Count + " kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_LoaiLK_FillDGV(fllk);
+                        btn_QLLK_LoaiLK_BoTim.Visible = true;
+                        QLLK_LoaiLK_ClearTextbox();
+                    }
+                    break;
+            }
+        }
+        
+        void QLLK_LoaiLK_Them()
+        {
+            LOAILINHKIEN llk = new LOAILINHKIEN();
+            int check = QLLK_LoaiLK_CheckValid(1);
+            switch (check)
+            {
+                case 0:
+                    String mess = "Xác nhận thêm mới loại linh kiện:"
+                                + "\nMã loại: " + txt_QLLK_LoaiLK_MaLoaiLK.Text
+                                + "\nTên loại: " + txt_QLLK_LoaiLK_TenLoai.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if(dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            llk.MaLoai = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+                            llk.TenLoai = txt_QLLK_LoaiLK_TenLoai.Text;
+                            dbContext.LOAILINHKIENs.Add(llk);
+                            dbContext.SaveChanges();
+                            llks = dbContext.LOAILINHKIENs.ToList();
+                            QLLK_LoaiLK_FillDGV(llks);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch(Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    
+                    break;
+            
+                case 1:
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+                    break;
+                case 2:
+                    MessageBox.Show("Mã loại linh kiện đã có trên hệ thống!", "Thông báo");
+                    break;
+            }
+        }
+
+        void QLLK_LoaiLK_Sua()
+        {
+            int check = QLLK_LoaiLK_CheckValid(2);
+            
+            switch (check)
+            {
+                case 0:
+                    String mallk = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+                    String mess = "Xác nhận sửa loại linh kiện:"
+                               + "\nMã loại: " + txt_QLLK_LoaiLK_MaLoaiLK.Text
+                               + "\nTên loại: " + txt_QLLK_LoaiLK_TenLoai.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            LOAILINHKIEN llk = dbContext.LOAILINHKIENs.FirstOrDefault(a => a.MaLoai == mallk);
+                            llk.TenLoai = txt_QLLK_LoaiLK_TenLoai.Text;
+                            dbContext.SaveChanges();
+                            llks = dbContext.LOAILINHKIENs.ToList();
+                            QLLK_LoaiLK_FillDGV(llks);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+                    break;
+                case 2:
+                    MessageBox.Show("Mã loại linh kiện không tồn tại trên hệ thống!", "Thông báo");
+                    break;
+
+            }
+        }
+
+        void QLLK_LoaiLK_Xoa()
+        {
+            int check = QLLK_LoaiLK_CheckValid(0);
+            String mallk = txt_QLLK_LoaiLK_MaLoaiLK.Text;
+            switch (check)
+            {
+                case 0:
+                    String mess = "Xác nhận xoá loại linh kiện:"
+                                + "\nMã loại: " + txt_QLLK_LoaiLK_MaLoaiLK.Text
+                                + "\nTên loại: " + txt_QLLK_LoaiLK_TenLoai.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            LOAILINHKIEN llk = dbContext.LOAILINHKIENs.FirstOrDefault(a => a.MaLoai == mallk);
+                            dbContext.LOAILINHKIENs.Remove(llk);
+                            dbContext.SaveChanges();
+                            llks = dbContext.LOAILINHKIENs.ToList();
+                            QLLK_LoaiLK_FillDGV(llks);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    break;
+                case 2:
+                    MessageBox.Show("Mã loại linh kiện không tồn tại trên hệ thống!", "Thông báo");
+                    break;
+            }
+        }
         #endregion
 
         #region Event
@@ -1522,10 +1749,6 @@ namespace DoAn_CNPM_App.ChildForm
             }
         }
 
-        #endregion
-
-        #endregion
-
         private void btn_QLLK_LoaiLK_BoChon_Click(object sender, EventArgs e)
         {
             QLLK_LoaiLK_ClearTextbox();
@@ -1534,7 +1757,413 @@ namespace DoAn_CNPM_App.ChildForm
             txt_QLLK_LoaiLK_MaLoaiLK.Enabled = true;
             btn_QLLK_LoaiLK_Them.Enabled = true;
             btn_QLLK_LoaiLK_BoChon.Visible = false;
-            
+
         }
+
+        private void btn_QLLK_LoaiLK_Them_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LoaiLK = false;
+            QLLK_LoaiLK_Them();
+            LoadedQLLK_LoaiLK = true;
+        }
+
+        private void btn_QLLK_LoaiLK_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LoaiLK = false;
+            QLLK_LoaiLK_Xoa();
+            LoadedQLLK_LoaiLK = true;
+        }
+        private void btn_QLLK_LoaiLK_Sua_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LoaiLK = false;
+            QLLK_LoaiLK_Sua();
+            LoadedQLLK_LoaiLK = true;
+        }
+
+        private void btn_QLLK_LoaiLK_TimKiem_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_LoaiLK = false;
+            QLLK_LoaiLK_TimKiem();
+            LoadedQLLK_LoaiLK = true;
+        }
+
+        private void btn_QLLK_LoaiLK_BoTim_Click(object sender, EventArgs e)
+        {
+            QLLK_LoaiLK_ClearTextbox();
+            QLLK_LoaiLK_ShowOrHide_SelectedMaLLK(false);
+            QLLK_LoaiLK_ButtonAuth(lv, false);
+            btn_QLLK_LKien_BoChon.Visible = false;
+            btn_QLLK_LKien_BoTim.Visible = false;
+            QLLK_LoaiLK_FillDGV(llks);
+        }
+
+        #endregion
+        #endregion
+
+        #region Hang
+        #region KiemTra
+
+        int QLLK_Hang_CheckValid(int chucnang)
+        {
+            String mahang = txt_QLLK_Hang_MaHang.Text;
+            HANG llk = dbContext.HANGs.FirstOrDefault(a => a.MaHang == mahang);
+            if (string.IsNullOrEmpty(txt_QLLK_Hang_MaHang.Text) == true | string.IsNullOrEmpty(txt_QLLK_Hang_TenHang.Text) == true)
+            {
+                return 1; // co text box khong co du lieu
+            }
+            else
+            {
+                if (llk != null && chucnang == 1)
+                {
+                    return 2; //da co loailk tren he thong
+                }
+                if (llk == null && chucnang == 2)
+                {
+                    return 2;
+                }
+                if (llk == null && chucnang == 0)
+                {
+                    return 2;
+                }
+            }
+            return 0;
+        }
+        int QLLK_Hang_FindCheck()
+        {
+            if (string.IsNullOrEmpty(txt_QLLK_Hang_MaHang.Text) == false && string.IsNullOrEmpty(txt_QLLK_Hang_TenHang.Text) == false)
+            {
+                return 1; //tim theo maloai va ten
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_QLLK_Hang_MaHang.Text) == false && string.IsNullOrEmpty(txt_QLLK_Hang_TenHang.Text) == true)
+                {
+                    return 2; // tim theo ma loai
+                }
+                else
+                {
+                    if (string.IsNullOrEmpty(txt_QLLK_Hang_MaHang.Text) == true && string.IsNullOrEmpty(txt_QLLK_Hang_TenHang.Text) == false)
+                    {
+                        return 3; //tim theo ten
+                    }
+                }
+            }
+            return 0; // khong co du lieu de tim kiem
+        }
+        #endregion
+
+        #region ThucThi
+        void QLLK_Hang_ClearTextbox()
+        {
+            txt_QLLK_Hang_MaHang.Text = "";
+            txt_QLLK_Hang_TenHang.Text = "";
+        }
+
+        void QLLK_Hang_ShowOrHide_SelectedMaHang(bool value)
+        {
+            lbl_QLLK_Hang_SelectedHangLabel.Visible = value;
+            lbl_QLLK_Hang_SelectedHang_Value.Visible = value;
+        }
+
+        void QLLK_Hang_ButtonAuth(int lv, bool value)
+        {
+            if (lv != 3)
+            {
+                btn_QLLK_Hang_Sua.Enabled = value;
+                btn_QLLK_Hang_Xoa.Enabled = value;
+            }
+            else
+            {
+                btn_QLLK_Hang_Them.Enabled = false;
+                btn_QLLK_Hang_Sua.Enabled = false;
+                btn_QLLK_Hang_Xoa.Enabled = false;
+            }
+        }
+
+        void QLLK_Hang_FillDGV(List<HANG> hang)
+        {
+            dgv_QLLK_Hang.Rows.Clear();
+            if (hang.Count > 0)
+            {
+                for (int i = 0; i < hang.Count; i++)
+                {
+                    int index = dgv_QLLK_Hang.Rows.Add();
+                    dgv_QLLK_Hang.Rows[i].Cells[0].Value = hang[i].MaHang;
+                    dgv_QLLK_Hang.Rows[i].Cells[1].Value = hang[i].TenHang;
+                }
+            }
+            LoadedQLLK_Hang = true;
+            QLLK_Hang_ButtonAuth(lv, false);
+        }
+        #endregion
+
+        #region TruyVan
+
+        void QLLK_Hang_TimKiem()
+        {
+            String mahang = txt_QLLK_Hang_MaHang.Text;
+            String tenhang = txt_QLLK_Hang_TenHang.Text;
+            List<HANG> fhang = new List<HANG>();
+            String mess;
+            int check = QLLK_Hang_FindCheck();
+            switch (check)
+            {
+                case 0:
+                    mess = "Vui lòng tìm kiếm theo:"
+                                + "\nMã hãng"
+                                + "\nTên hãng"
+                                + "\nMã hãng và tên hãng";
+                    MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    break;
+                case 1:
+                    fhang = dbContext.HANGs.Where(a => a.MaHang.Contains(mahang) && a.TenHang.Contains(tenhang)).ToList();
+                    if (fhang.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có " + fhang.Count + " kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_Hang_FillDGV(fhang);
+                        btn_QLLK_Hang_BoTim.Visible = true;
+                        QLLK_Hang_ClearTextbox();
+                    }
+                    break;
+                case 2:
+                    fhang = dbContext.HANGs.Where(a => a.MaHang.Contains(mahang)).ToList();
+                    if (fhang.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có " + fhang.Count + " kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_Hang_FillDGV(fhang);
+                        btn_QLLK_Hang_BoTim.Visible = true;
+                        QLLK_Hang_ClearTextbox();
+                    }
+                    break;
+                case 3:
+                    fhang = dbContext.HANGs.Where(a => a.TenHang.Contains(tenhang)).ToList();
+                    if (fhang.Count == 0)
+                    {
+                        mess = "Không tìm thấy kết quả nào!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        mess = "Có " + fhang.Count + " kết quả phù hợp!";
+                        MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK);
+                        QLLK_Hang_FillDGV(fhang);
+                        btn_QLLK_Hang_BoTim.Visible = true;
+                        QLLK_Hang_ClearTextbox();
+                    }
+                    break;
+            }
+        }
+
+        void QLLK_Hang_Them()
+        {
+            HANG hang = new HANG();
+            int check = QLLK_Hang_CheckValid(1);
+            switch (check)
+            {
+                case 0:
+                    String mess = "Xác nhận thêm mới hãng:"
+                                + "\nMã hãng: " + txt_QLLK_Hang_MaHang.Text
+                                + "\nTên hãng: " + txt_QLLK_Hang_TenHang.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            hang.MaHang = txt_QLLK_Hang_MaHang.Text;
+                            hang.TenHang = txt_QLLK_Hang_TenHang.Text;
+                            dbContext.HANGs.Add(hang);
+                            dbContext.SaveChanges();
+                            hangs = dbContext.HANGs.ToList();
+                            QLLK_Hang_FillDGV(hangs);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+
+                    break;
+
+                case 1:
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+                    break;
+                case 2:
+                    MessageBox.Show("Mã hãng đã có trên hệ thống!", "Thông báo");
+                    break;
+            }
+        }
+
+        void QLLK_Hang_Sua()
+        {
+            int check = QLLK_Hang_CheckValid(2);
+
+            switch (check)
+            {
+                case 0:
+                    String mahang = txt_QLLK_Hang_MaHang.Text;
+                    String mess = "Xác nhận sửa thông tin hãng:"
+                                + "\nMã hãng: " + txt_QLLK_Hang_MaHang.Text
+                                + "\nTên hãng: " + txt_QLLK_Hang_TenHang.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            HANG hang = dbContext.HANGs.FirstOrDefault(a => a.MaHang == mahang);
+                            hang.TenHang = txt_QLLK_Hang_TenHang.Text;
+                            dbContext.SaveChanges();
+                            hangs = dbContext.HANGs.ToList();
+                            QLLK_Hang_FillDGV(hangs);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Vui lòng điền đầy đủ thông tin!", "Thông báo");
+                    break;
+                case 2:
+                    MessageBox.Show("Mã hãng không tồn tại trên hệ thống!", "Thông báo");
+                    break;
+
+            }
+        }
+
+        void QLLK_Hang_Xoa()
+        {
+            int check = QLLK_Hang_CheckValid(0);
+            String mahang = txt_QLLK_Hang_MaHang.Text;
+            switch (check)
+            {
+                case 0:
+                    String mess = "Xác nhận xoá hãng:"
+                                + "\nMã hãng: " + txt_QLLK_Hang_MaHang.Text
+                                + "\nTên hãng: " + txt_QLLK_Hang_TenHang.Text;
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    if (dr == DialogResult.OK)
+                    {
+                        try
+                        {
+                            HANG hang = dbContext.HANGs.FirstOrDefault(a => a.MaHang == mahang);
+                            dbContext.HANGs.Remove(hang);
+                            dbContext.SaveChanges();
+                            hangs = dbContext.HANGs.ToList();
+                            QLLK_Hang_FillDGV(hangs);
+                            MessageBox.Show("Thao tác thành công!", "Thông báo");
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ thao tác!", "Thông báo");
+                    }
+                    break;
+                case 2:
+                    MessageBox.Show("Mã hãng không tồn tại trên hệ thống!", "Thông báo");
+                    break;
+            }
+        }
+        #endregion
+
+        #region Event
+        private void dgv_QLLK_Hang_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_QLLK_Hang.SelectedRows.Count > 0 && LoadedQLLK_Hang == true)
+            {
+
+                btn_QLLK_Hang_BoChon.Visible = true;
+                txt_QLLK_Hang_MaHang.Enabled = false;
+                btn_QLLK_Hang_Them.Enabled = false;
+                txt_QLLK_Hang_MaHang.Text = dgv_QLLK_Hang.SelectedRows[0].Cells[0].Value?.ToString();
+                txt_QLLK_Hang_TenHang.Text = dgv_QLLK_Hang.SelectedRows[0].Cells[1].Value?.ToString();
+                QLLK_Hang_ButtonAuth(lv, true);
+                lbl_QLLK_Hang_SelectedHang_Value.Text = txt_QLLK_Hang_MaHang.Text;
+                if (string.IsNullOrEmpty(lbl_QLLK_Hang_SelectedHang_Value.Text) == false)
+                {
+                    QLLK_Hang_ShowOrHide_SelectedMaHang(true);
+                }
+            }
+        }
+
+        private void btn_QLLK_Hang_BoChon_Click(object sender, EventArgs e)
+        {
+            QLLK_Hang_ClearTextbox();
+            QLLK_Hang_ButtonAuth(lv, false);
+            QLLK_Hang_ShowOrHide_SelectedMaHang(false);
+            txt_QLLK_Hang_MaHang.Enabled = true;
+            btn_QLLK_Hang_Them.Enabled = true;
+            btn_QLLK_Hang_BoChon.Visible = false;
+
+        }
+
+        private void btn_QLLK_Hang_Them_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_Hang = false;
+            QLLK_Hang_Them();
+            LoadedQLLK_Hang = true;
+        }
+
+        private void btn_QLLK_Hang_Xoa_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_Hang = false;
+            QLLK_Hang_Xoa();
+            LoadedQLLK_Hang = true;
+        }
+        private void btn_QLLK_Hang_Sua_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_Hang = false;
+            QLLK_Hang_Sua();
+            LoadedQLLK_Hang = true;
+        }
+
+        private void btn_QLLK_Hang_TimKiem_Click(object sender, EventArgs e)
+        {
+            LoadedQLLK_Hang = false;
+            QLLK_Hang_TimKiem();
+            LoadedQLLK_Hang = true;
+        }
+
+        private void btn_QLLK_Hang_BoTim_Click(object sender, EventArgs e)
+        {
+            QLLK_Hang_ClearTextbox();
+            QLLK_Hang_ShowOrHide_SelectedMaHang(false);
+            QLLK_Hang_ButtonAuth(lv, false);
+            btn_QLLK_Hang_BoChon.Visible = false;
+            btn_QLLK_Hang_BoTim.Visible = false;
+            QLLK_Hang_FillDGV(hangs);
+        }
+
+        #endregion
+        #endregion
+        #endregion
+
+
     }
 }
