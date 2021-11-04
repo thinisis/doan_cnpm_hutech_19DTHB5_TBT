@@ -20,7 +20,6 @@ namespace DoAn_CNPM_App.Report
 
         private void BaoCaoLinhKien_Load(object sender, EventArgs e)
         {
-            this.Controls.Add(reportViewer1);
             EntityFramework dbContext = new EntityFramework();
             List<LINHKIEN> listLK = dbContext.LINHKIENs.ToList();
             ReportParameter[] param = new ReportParameter[2];

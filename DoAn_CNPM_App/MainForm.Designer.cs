@@ -32,12 +32,23 @@ namespace DoAn_CNPM_App
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.pl_Menu = new System.Windows.Forms.Panel();
+            this.pnl_Logout = new Bunifu.UI.WinForms.BunifuPanel();
+            this.btn_DangXuat = new FontAwesome.Sharp.IconButton();
             this.lbl_cpt = new System.Windows.Forms.Label();
             this.lbl_Logo = new System.Windows.Forms.Label();
+            this.btn_TroGiup = new FontAwesome.Sharp.IconButton();
+            this.btn_BaoHanh = new FontAwesome.Sharp.IconButton();
+            this.btn_TimKiem = new FontAwesome.Sharp.IconButton();
+            this.btn_BaoCao = new FontAwesome.Sharp.IconButton();
+            this.btn_XuLy = new FontAwesome.Sharp.IconButton();
+            this.btn_DanhMuc = new FontAwesome.Sharp.IconButton();
+            this.btn_HeThong = new FontAwesome.Sharp.IconButton();
+            this.btn_TrangChu = new FontAwesome.Sharp.IconButton();
             this.lb_Copyright = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.lbl_Title = new System.Windows.Forms.Panel();
             this.pnl_Account = new System.Windows.Forms.Panel();
+            this.btn_userSetting = new FontAwesome.Sharp.IconButton();
             this.label3 = new System.Windows.Forms.Label();
             this.pnl_Gach = new System.Windows.Forms.Label();
             this.lbl_UserHello = new System.Windows.Forms.Label();
@@ -50,23 +61,12 @@ namespace DoAn_CNPM_App
             this.lbl_HelloUsername = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_GioiThieu = new System.Windows.Forms.Label();
-            this.btn_userSetting = new FontAwesome.Sharp.IconButton();
-            this.pnl_Logout = new Bunifu.UI.WinForms.BunifuPanel();
-            this.btn_DangXuat = new FontAwesome.Sharp.IconButton();
-            this.btn_TroGiup = new FontAwesome.Sharp.IconButton();
-            this.btn_BaoHanh = new FontAwesome.Sharp.IconButton();
-            this.btn_TimKiem = new FontAwesome.Sharp.IconButton();
-            this.btn_BaoCao = new FontAwesome.Sharp.IconButton();
-            this.btn_XuLy = new FontAwesome.Sharp.IconButton();
-            this.btn_DanhMuc = new FontAwesome.Sharp.IconButton();
-            this.btn_HeThong = new FontAwesome.Sharp.IconButton();
-            this.btn_TrangChu = new FontAwesome.Sharp.IconButton();
             this.pl_Menu.SuspendLayout();
+            this.pnl_Logout.SuspendLayout();
             this.lbl_Title.SuspendLayout();
             this.pnl_Account.SuspendLayout();
             this.pannel_Main.SuspendLayout();
             this.lbl_Home.SuspendLayout();
-            this.pnl_Logout.SuspendLayout();
             this.SuspendLayout();
             // 
             // pl_Menu
@@ -89,234 +89,6 @@ namespace DoAn_CNPM_App
             this.pl_Menu.Name = "pl_Menu";
             this.pl_Menu.Size = new System.Drawing.Size(200, 657);
             this.pl_Menu.TabIndex = 0;
-            // 
-            // lbl_cpt
-            // 
-            this.lbl_cpt.AutoSize = true;
-            this.lbl_cpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.lbl_cpt.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_cpt.ForeColor = System.Drawing.Color.White;
-            this.lbl_cpt.Location = new System.Drawing.Point(67, 64);
-            this.lbl_cpt.Name = "lbl_cpt";
-            this.lbl_cpt.Size = new System.Drawing.Size(57, 15);
-            this.lbl_cpt.TabIndex = 20;
-            this.lbl_cpt.Text = "computer";
-            // 
-            // lbl_Logo
-            // 
-            this.lbl_Logo.AutoSize = true;
-            this.lbl_Logo.Font = new System.Drawing.Font("Open Sans Condensed ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Logo.ForeColor = System.Drawing.Color.White;
-            this.lbl_Logo.Location = new System.Drawing.Point(47, 3);
-            this.lbl_Logo.Name = "lbl_Logo";
-            this.lbl_Logo.Size = new System.Drawing.Size(101, 69);
-            this.lbl_Logo.TabIndex = 19;
-            this.lbl_Logo.Text = "TBT";
-            // 
-            // lb_Copyright
-            // 
-            this.lb_Copyright.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lb_Copyright.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Copyright.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lb_Copyright.Location = new System.Drawing.Point(-3, 633);
-            this.lb_Copyright.Name = "lb_Copyright";
-            this.lb_Copyright.Size = new System.Drawing.Size(197, 15);
-            this.lb_Copyright.TabIndex = 1;
-            this.lb_Copyright.Text = "Sản phẩm của Công ty TBT";
-            this.lb_Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "logo-house-home-building-computer-icons-png-favpng-ye8GiyCUUkuuWJmUPGdtcdWqn.jpg");
-            // 
-            // lbl_Title
-            // 
-            this.lbl_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
-            this.lbl_Title.Controls.Add(this.pnl_Account);
-            this.lbl_Title.Controls.Add(this.lbl_TitleText);
-            this.lbl_Title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lbl_Title.Location = new System.Drawing.Point(200, 0);
-            this.lbl_Title.Name = "lbl_Title";
-            this.lbl_Title.Size = new System.Drawing.Size(893, 82);
-            this.lbl_Title.TabIndex = 1;
-            this.lbl_Title.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_Title_Paint);
-            // 
-            // pnl_Account
-            // 
-            this.pnl_Account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnl_Account.Controls.Add(this.btn_userSetting);
-            this.pnl_Account.Controls.Add(this.label3);
-            this.pnl_Account.Controls.Add(this.pnl_Gach);
-            this.pnl_Account.Controls.Add(this.lbl_UserHello);
-            this.pnl_Account.Controls.Add(this.lbl_Time);
-            this.pnl_Account.Controls.Add(this.lbl_Day);
-            this.pnl_Account.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pnl_Account.ForeColor = System.Drawing.Color.Transparent;
-            this.pnl_Account.Location = new System.Drawing.Point(718, 0);
-            this.pnl_Account.Name = "pnl_Account";
-            this.pnl_Account.Size = new System.Drawing.Size(175, 82);
-            this.pnl_Account.TabIndex = 5;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(21, 41);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Tài khoản:";
-            // 
-            // pnl_Gach
-            // 
-            this.pnl_Gach.AutoSize = true;
-            this.pnl_Gach.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pnl_Gach.ForeColor = System.Drawing.Color.White;
-            this.pnl_Gach.Location = new System.Drawing.Point(76, 14);
-            this.pnl_Gach.Name = "pnl_Gach";
-            this.pnl_Gach.Size = new System.Drawing.Size(16, 19);
-            this.pnl_Gach.TabIndex = 6;
-            this.pnl_Gach.Text = "|";
-            // 
-            // lbl_UserHello
-            // 
-            this.lbl_UserHello.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_UserHello.ForeColor = System.Drawing.Color.White;
-            this.lbl_UserHello.Location = new System.Drawing.Point(79, 37);
-            this.lbl_UserHello.Name = "lbl_UserHello";
-            this.lbl_UserHello.Size = new System.Drawing.Size(77, 15);
-            this.lbl_UserHello.TabIndex = 1;
-            this.lbl_UserHello.Text = "Username";
-            this.lbl_UserHello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_UserHello.Click += new System.EventHandler(this.lbl_UserHello_Click);
-            // 
-            // lbl_Time
-            // 
-            this.lbl_Time.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_Time.AutoSize = true;
-            this.lbl_Time.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Time.ForeColor = System.Drawing.Color.White;
-            this.lbl_Time.Location = new System.Drawing.Point(89, 15);
-            this.lbl_Time.Name = "lbl_Time";
-            this.lbl_Time.Size = new System.Drawing.Size(83, 19);
-            this.lbl_Time.TabIndex = 3;
-            this.lbl_Time.Text = "12:00:00 AM";
-            this.lbl_Time.Visible = false;
-            // 
-            // lbl_Day
-            // 
-            this.lbl_Day.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lbl_Day.ForeColor = System.Drawing.Color.White;
-            this.lbl_Day.Location = new System.Drawing.Point(3, 14);
-            this.lbl_Day.Name = "lbl_Day";
-            this.lbl_Day.Size = new System.Drawing.Size(80, 19);
-            this.lbl_Day.TabIndex = 4;
-            this.lbl_Day.Text = "01/01/1970";
-            this.lbl_Day.Click += new System.EventHandler(this.lbl_Day_Click);
-            // 
-            // lbl_TitleText
-            // 
-            this.lbl_TitleText.AutoSize = true;
-            this.lbl_TitleText.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbl_TitleText.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lbl_TitleText.Location = new System.Drawing.Point(20, 42);
-            this.lbl_TitleText.Name = "lbl_TitleText";
-            this.lbl_TitleText.Size = new System.Drawing.Size(104, 23);
-            this.lbl_TitleText.TabIndex = 0;
-            this.lbl_TitleText.Text = "TRANG CHỦ";
-            // 
-            // pannel_Main
-            // 
-            this.pannel_Main.Controls.Add(this.lbl_Home);
-            this.pannel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pannel_Main.Location = new System.Drawing.Point(200, 82);
-            this.pannel_Main.Name = "pannel_Main";
-            this.pannel_Main.Size = new System.Drawing.Size(893, 575);
-            this.pannel_Main.TabIndex = 2;
-            // 
-            // lbl_Home
-            // 
-            this.lbl_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(219)))), ((int)(((byte)(243)))));
-            this.lbl_Home.Controls.Add(this.label1);
-            this.lbl_Home.Controls.Add(this.lbl_HelloUsername);
-            this.lbl_Home.Controls.Add(this.label2);
-            this.lbl_Home.Controls.Add(this.lbl_GioiThieu);
-            this.lbl_Home.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbl_Home.Location = new System.Drawing.Point(0, 0);
-            this.lbl_Home.Name = "lbl_Home";
-            this.lbl_Home.Size = new System.Drawing.Size(893, 575);
-            this.lbl_Home.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(427, 280);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 15);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "computer";
-            // 
-            // lbl_HelloUsername
-            // 
-            this.lbl_HelloUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_HelloUsername.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl_HelloUsername.ForeColor = System.Drawing.Color.Black;
-            this.lbl_HelloUsername.Location = new System.Drawing.Point(271, 185);
-            this.lbl_HelloUsername.Name = "lbl_HelloUsername";
-            this.lbl_HelloUsername.Size = new System.Drawing.Size(383, 26);
-            this.lbl_HelloUsername.TabIndex = 2;
-            this.lbl_HelloUsername.Text = "Xin chào User!";
-            this.lbl_HelloUsername.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_HelloUsername.Click += new System.EventHandler(this.lbl_HelloUsername_Click);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Open Sans Condensed ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(408, 226);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(101, 69);
-            this.label2.TabIndex = 21;
-            this.label2.Text = "TBT";
-            // 
-            // lbl_GioiThieu
-            // 
-            this.lbl_GioiThieu.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_GioiThieu.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_GioiThieu.ForeColor = System.Drawing.Color.Black;
-            this.lbl_GioiThieu.Location = new System.Drawing.Point(275, 321);
-            this.lbl_GioiThieu.Name = "lbl_GioiThieu";
-            this.lbl_GioiThieu.Size = new System.Drawing.Size(379, 25);
-            this.lbl_GioiThieu.TabIndex = 1;
-            this.lbl_GioiThieu.Text = "Chọn chức năng theo danh sách bên trái";
-            this.lbl_GioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_GioiThieu.Click += new System.EventHandler(this.lbl_GioiThieu_Click);
-            // 
-            // btn_userSetting
-            // 
-            this.btn_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_userSetting.ForeColor = System.Drawing.Color.White;
-            this.btn_userSetting.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btn_userSetting.IconColor = System.Drawing.Color.White;
-            this.btn_userSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_userSetting.IconSize = 20;
-            this.btn_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_userSetting.Location = new System.Drawing.Point(28, 57);
-            this.btn_userSetting.Name = "btn_userSetting";
-            this.btn_userSetting.Size = new System.Drawing.Size(119, 23);
-            this.btn_userSetting.TabIndex = 23;
-            this.btn_userSetting.Text = "Cài đặt tài khoản";
-            this.btn_userSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_userSetting.UseVisualStyleBackColor = true;
-            this.btn_userSetting.Click += new System.EventHandler(this.btn_userSetting_Click_1);
             // 
             // pnl_Logout
             // 
@@ -355,6 +127,29 @@ namespace DoAn_CNPM_App
             this.btn_DangXuat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_DangXuat.UseVisualStyleBackColor = true;
             this.btn_DangXuat.Click += new System.EventHandler(this.btn_DangXuat_Click);
+            // 
+            // lbl_cpt
+            // 
+            this.lbl_cpt.AutoSize = true;
+            this.lbl_cpt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbl_cpt.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cpt.ForeColor = System.Drawing.Color.White;
+            this.lbl_cpt.Location = new System.Drawing.Point(67, 64);
+            this.lbl_cpt.Name = "lbl_cpt";
+            this.lbl_cpt.Size = new System.Drawing.Size(57, 15);
+            this.lbl_cpt.TabIndex = 20;
+            this.lbl_cpt.Text = "computer";
+            // 
+            // lbl_Logo
+            // 
+            this.lbl_Logo.AutoSize = true;
+            this.lbl_Logo.Font = new System.Drawing.Font("Open Sans Condensed ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Logo.ForeColor = System.Drawing.Color.White;
+            this.lbl_Logo.Location = new System.Drawing.Point(47, 3);
+            this.lbl_Logo.Name = "lbl_Logo";
+            this.lbl_Logo.Size = new System.Drawing.Size(101, 69);
+            this.lbl_Logo.TabIndex = 19;
+            this.lbl_Logo.Text = "TBT";
             // 
             // btn_TroGiup
             // 
@@ -516,6 +311,211 @@ namespace DoAn_CNPM_App
             this.btn_TrangChu.UseVisualStyleBackColor = true;
             this.btn_TrangChu.Click += new System.EventHandler(this.btn_TrangChu_Click_1);
             // 
+            // lb_Copyright
+            // 
+            this.lb_Copyright.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lb_Copyright.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Copyright.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lb_Copyright.Location = new System.Drawing.Point(-3, 633);
+            this.lb_Copyright.Name = "lb_Copyright";
+            this.lb_Copyright.Size = new System.Drawing.Size(197, 15);
+            this.lb_Copyright.TabIndex = 1;
+            this.lb_Copyright.Text = "Sản phẩm của Công ty TBT";
+            this.lb_Copyright.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "logo-house-home-building-computer-icons-png-favpng-ye8GiyCUUkuuWJmUPGdtcdWqn.jpg");
+            // 
+            // lbl_Title
+            // 
+            this.lbl_Title.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(34)))), ((int)(((byte)(49)))));
+            this.lbl_Title.Controls.Add(this.pnl_Account);
+            this.lbl_Title.Controls.Add(this.lbl_TitleText);
+            this.lbl_Title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lbl_Title.Location = new System.Drawing.Point(200, 0);
+            this.lbl_Title.Name = "lbl_Title";
+            this.lbl_Title.Size = new System.Drawing.Size(893, 82);
+            this.lbl_Title.TabIndex = 1;
+            this.lbl_Title.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_Title_Paint);
+            // 
+            // pnl_Account
+            // 
+            this.pnl_Account.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnl_Account.Controls.Add(this.btn_userSetting);
+            this.pnl_Account.Controls.Add(this.label3);
+            this.pnl_Account.Controls.Add(this.pnl_Gach);
+            this.pnl_Account.Controls.Add(this.lbl_UserHello);
+            this.pnl_Account.Controls.Add(this.lbl_Time);
+            this.pnl_Account.Controls.Add(this.lbl_Day);
+            this.pnl_Account.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pnl_Account.ForeColor = System.Drawing.Color.Transparent;
+            this.pnl_Account.Location = new System.Drawing.Point(718, 0);
+            this.pnl_Account.Name = "pnl_Account";
+            this.pnl_Account.Size = new System.Drawing.Size(175, 82);
+            this.pnl_Account.TabIndex = 5;
+            // 
+            // btn_userSetting
+            // 
+            this.btn_userSetting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_userSetting.ForeColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btn_userSetting.IconColor = System.Drawing.Color.White;
+            this.btn_userSetting.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_userSetting.IconSize = 20;
+            this.btn_userSetting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_userSetting.Location = new System.Drawing.Point(28, 57);
+            this.btn_userSetting.Name = "btn_userSetting";
+            this.btn_userSetting.Size = new System.Drawing.Size(119, 23);
+            this.btn_userSetting.TabIndex = 23;
+            this.btn_userSetting.Text = "Cài đặt tài khoản";
+            this.btn_userSetting.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_userSetting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_userSetting.UseVisualStyleBackColor = true;
+            this.btn_userSetting.Click += new System.EventHandler(this.btn_userSetting_Click_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 41);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Tài khoản:";
+            // 
+            // pnl_Gach
+            // 
+            this.pnl_Gach.AutoSize = true;
+            this.pnl_Gach.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pnl_Gach.ForeColor = System.Drawing.Color.White;
+            this.pnl_Gach.Location = new System.Drawing.Point(76, 14);
+            this.pnl_Gach.Name = "pnl_Gach";
+            this.pnl_Gach.Size = new System.Drawing.Size(16, 19);
+            this.pnl_Gach.TabIndex = 6;
+            this.pnl_Gach.Text = "|";
+            // 
+            // lbl_UserHello
+            // 
+            this.lbl_UserHello.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_UserHello.ForeColor = System.Drawing.Color.White;
+            this.lbl_UserHello.Location = new System.Drawing.Point(79, 37);
+            this.lbl_UserHello.Name = "lbl_UserHello";
+            this.lbl_UserHello.Size = new System.Drawing.Size(77, 15);
+            this.lbl_UserHello.TabIndex = 1;
+            this.lbl_UserHello.Text = "Username";
+            this.lbl_UserHello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_UserHello.Click += new System.EventHandler(this.lbl_UserHello_Click);
+            // 
+            // lbl_Time
+            // 
+            this.lbl_Time.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_Time.AutoSize = true;
+            this.lbl_Time.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Time.ForeColor = System.Drawing.Color.White;
+            this.lbl_Time.Location = new System.Drawing.Point(89, 15);
+            this.lbl_Time.Name = "lbl_Time";
+            this.lbl_Time.Size = new System.Drawing.Size(83, 19);
+            this.lbl_Time.TabIndex = 3;
+            this.lbl_Time.Text = "12:00:00 AM";
+            this.lbl_Time.Visible = false;
+            // 
+            // lbl_Day
+            // 
+            this.lbl_Day.Font = new System.Drawing.Font("Open Sans", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_Day.ForeColor = System.Drawing.Color.White;
+            this.lbl_Day.Location = new System.Drawing.Point(3, 14);
+            this.lbl_Day.Name = "lbl_Day";
+            this.lbl_Day.Size = new System.Drawing.Size(80, 19);
+            this.lbl_Day.TabIndex = 4;
+            this.lbl_Day.Text = "01/01/1970";
+            this.lbl_Day.Click += new System.EventHandler(this.lbl_Day_Click);
+            // 
+            // lbl_TitleText
+            // 
+            this.lbl_TitleText.AutoSize = true;
+            this.lbl_TitleText.Font = new System.Drawing.Font("Open Sans", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.lbl_TitleText.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_TitleText.Location = new System.Drawing.Point(20, 42);
+            this.lbl_TitleText.Name = "lbl_TitleText";
+            this.lbl_TitleText.Size = new System.Drawing.Size(104, 23);
+            this.lbl_TitleText.TabIndex = 0;
+            this.lbl_TitleText.Text = "TRANG CHỦ";
+            // 
+            // pannel_Main
+            // 
+            this.pannel_Main.Controls.Add(this.lbl_Home);
+            this.pannel_Main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pannel_Main.Location = new System.Drawing.Point(200, 82);
+            this.pannel_Main.Name = "pannel_Main";
+            this.pannel_Main.Size = new System.Drawing.Size(893, 575);
+            this.pannel_Main.TabIndex = 2;
+            // 
+            // lbl_Home
+            // 
+            this.lbl_Home.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(183)))), ((int)(((byte)(219)))), ((int)(((byte)(243)))));
+            this.lbl_Home.Controls.Add(this.label1);
+            this.lbl_Home.Controls.Add(this.lbl_HelloUsername);
+            this.lbl_Home.Controls.Add(this.label2);
+            this.lbl_Home.Controls.Add(this.lbl_GioiThieu);
+            this.lbl_Home.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbl_Home.Location = new System.Drawing.Point(0, 0);
+            this.lbl_Home.Name = "lbl_Home";
+            this.lbl_Home.Size = new System.Drawing.Size(893, 575);
+            this.lbl_Home.TabIndex = 2;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Open Sans", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(427, 280);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(57, 15);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "computer";
+            // 
+            // lbl_HelloUsername
+            // 
+            this.lbl_HelloUsername.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_HelloUsername.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold);
+            this.lbl_HelloUsername.ForeColor = System.Drawing.Color.Black;
+            this.lbl_HelloUsername.Location = new System.Drawing.Point(271, 185);
+            this.lbl_HelloUsername.Name = "lbl_HelloUsername";
+            this.lbl_HelloUsername.Size = new System.Drawing.Size(383, 26);
+            this.lbl_HelloUsername.TabIndex = 2;
+            this.lbl_HelloUsername.Text = "Xin chào User!";
+            this.lbl_HelloUsername.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_HelloUsername.Click += new System.EventHandler(this.lbl_HelloUsername_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Open Sans Condensed ExtraBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(408, 226);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(101, 69);
+            this.label2.TabIndex = 21;
+            this.label2.Text = "TBT";
+            // 
+            // lbl_GioiThieu
+            // 
+            this.lbl_GioiThieu.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_GioiThieu.Font = new System.Drawing.Font("Open Sans", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_GioiThieu.ForeColor = System.Drawing.Color.Black;
+            this.lbl_GioiThieu.Location = new System.Drawing.Point(275, 321);
+            this.lbl_GioiThieu.Name = "lbl_GioiThieu";
+            this.lbl_GioiThieu.Size = new System.Drawing.Size(379, 25);
+            this.lbl_GioiThieu.TabIndex = 1;
+            this.lbl_GioiThieu.Text = "Chọn chức năng theo danh sách bên trái";
+            this.lbl_GioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lbl_GioiThieu.Click += new System.EventHandler(this.lbl_GioiThieu_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -532,6 +532,7 @@ namespace DoAn_CNPM_App
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.pl_Menu.ResumeLayout(false);
             this.pl_Menu.PerformLayout();
+            this.pnl_Logout.ResumeLayout(false);
             this.lbl_Title.ResumeLayout(false);
             this.lbl_Title.PerformLayout();
             this.pnl_Account.ResumeLayout(false);
@@ -539,7 +540,6 @@ namespace DoAn_CNPM_App
             this.pannel_Main.ResumeLayout(false);
             this.lbl_Home.ResumeLayout(false);
             this.lbl_Home.PerformLayout();
-            this.pnl_Logout.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

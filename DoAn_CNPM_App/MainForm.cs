@@ -140,7 +140,7 @@ namespace DoAn_CNPM_App
 
         private void btn_HeThong_Click(object sender, EventArgs e)
         {
-            if(userLevel != 2)
+            if(userLevel == 0 )
             {
                 using (Loading form = new Loading(LoadingTime))
                 {
@@ -171,7 +171,7 @@ namespace DoAn_CNPM_App
 
         private void btn_BaoCao_Click(object sender, EventArgs e)
         {
-            if (userLevel == 0)
+            if (userLevel != 2)
             {
                 OpenChildForm(new ChildForm.BaoCao(), sender);
             }

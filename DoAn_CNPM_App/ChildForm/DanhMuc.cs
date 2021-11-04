@@ -1111,7 +1111,6 @@ namespace DoAn_CNPM_App.ChildForm
                         DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.OK)
                         {
-                            TINHTRANGLK ttlk = new TINHTRANGLK();
                             LINHKIEN lk = new LINHKIEN();
                             lk.MaLK = txt_QLLK_LKien_MaLK.Text;
                             lk.MaLoai = cbx_QLLK_LKien_LoaiLK.SelectedValue.ToString();

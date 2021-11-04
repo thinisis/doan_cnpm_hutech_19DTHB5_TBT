@@ -20,15 +20,14 @@ namespace DoAn_CNPM_App.Report
 
         private void BaoCaoNhanVien_Load(object sender, EventArgs e)
         {
-            this.Controls.Add(reportViewer1);
-            EntityFramework dbContext = new EntityFramework();
+            EntityFramework dbContext = new EntityFramework(); //Khai bao EntityFramework 
             List<NHANVIEN> listNhanVien = dbContext.NHANVIENs.ToList();
             ReportParameter[] param = new ReportParameter[2];
             ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == Properties.Settings.Default.Username.ToString());
             NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(a => a.MaNV == acc.MaNV);
             param[0] = new ReportParameter("NguoiLap", nv.TenNV.ToString());
             param[1] = new ReportParameter("NgayXuat", DateTime.Now.ToString("dd/MM/yyyy HH:mm"));
-            this.reportViewer1.LocalReport.ReportPath = "BaoCaoNhanVien.rdlc"; //nh copy report->debug
+            this.reportViewer1.LocalReport.ReportPath = "BaoCaoNhanVien.rdlc";
             this.reportViewer1.LocalReport.SetParameters(param);
             var reportDataSource = new ReportDataSource("DataSet_NhanVien", listNhanVien);
             this.reportViewer1.LocalReport.DataSources.Clear();

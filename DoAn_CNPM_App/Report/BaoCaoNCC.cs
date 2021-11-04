@@ -25,7 +25,6 @@ namespace DoAn_CNPM_App.Report
 
         private void BaoCaoNCC_Load(object sender, EventArgs e)
         {
-            this.Controls.Add(reportViewer1);
             EntityFramework dbContext = new EntityFramework();
             List<NHACUNGCAP> listNCC = dbContext.NHACUNGCAPs.ToList();
             ReportParameter[] param = new ReportParameter[2];

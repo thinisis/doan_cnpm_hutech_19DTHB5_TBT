@@ -13,6 +13,7 @@ namespace DoAn_CNPM_App
         [StringLength(20)]
         public string username { get; set; }
 
+        [Required]
         [StringLength(50)]
         public string password { get; set; }
 
@@ -20,6 +21,7 @@ namespace DoAn_CNPM_App
         [StringLength(10)]
         public string lv { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string MaNV { get; set; }
 
