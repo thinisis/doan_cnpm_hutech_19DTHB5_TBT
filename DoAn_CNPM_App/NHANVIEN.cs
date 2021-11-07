@@ -12,6 +12,7 @@ namespace DoAn_CNPM_App
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public NHANVIEN()
         {
+            ACCOUNTs = new HashSet<ACCOUNT>();
             CALAMVIECs = new HashSet<CALAMVIEC>();
             DONHANGs = new HashSet<DONHANG>();
         }
@@ -36,6 +37,9 @@ namespace DoAn_CNPM_App
         public string Email { get; set; }
 
         public bool? Phai { get; set; }
+
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ACCOUNT> ACCOUNTs { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CALAMVIEC> CALAMVIECs { get; set; }

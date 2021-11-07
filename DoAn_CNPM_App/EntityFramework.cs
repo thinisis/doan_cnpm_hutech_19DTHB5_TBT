@@ -11,11 +11,9 @@ namespace DoAn_CNPM_App
             : base("name=EntityFramework")
         {
         }
-
         public virtual DbSet<ACCOUNT> ACCOUNTs { get; set; }
         public virtual DbSet<ACCOUNTLV> ACCOUNTLVs { get; set; }
         public virtual DbSet<CALAMVIEC> CALAMVIECs { get; set; }
-        public virtual DbSet<CTDONHANG> CTDONHANGs { get; set; }
         public virtual DbSet<DONHANG> DONHANGs { get; set; }
         public virtual DbSet<HANG> HANGs { get; set; }
         public virtual DbSet<KHACHHANG> KHACHHANGs { get; set; }
@@ -27,6 +25,7 @@ namespace DoAn_CNPM_App
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<THEKHACHHANG> THEKHACHHANGs { get; set; }
         public virtual DbSet<TINHTRANGLK_GIATRI> TINHTRANGLK_GIATRI { get; set; }
+        public virtual DbSet<CTDONHANG> CTDONHANGs { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -40,7 +39,7 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<ACCOUNT>()
                 .Property(e => e.lv)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<ACCOUNT>()
                 .Property(e => e.MaNV)
@@ -48,7 +47,7 @@ namespace DoAn_CNPM_App
 
             modelBuilder.Entity<ACCOUNTLV>()
                 .Property(e => e.lv)
-                .IsFixedLength();
+                .IsUnicode(false);
 
             modelBuilder.Entity<ACCOUNTLV>()
                 .HasMany(e => e.ACCOUNTs)
@@ -71,14 +70,6 @@ namespace DoAn_CNPM_App
                 .Property(e => e.ThoiGianKetThuc)
                 .IsUnicode(false);
 
-            modelBuilder.Entity<CTDONHANG>()
-                .Property(e => e.MaHD)
-                .IsUnicode(false);
-
-            modelBuilder.Entity<CTDONHANG>()
-                .Property(e => e.MaLK)
-                .IsUnicode(false);
-
             modelBuilder.Entity<DONHANG>()
                 .Property(e => e.MaDH)
                 .IsUnicode(false);
@@ -92,12 +83,10 @@ namespace DoAn_CNPM_App
                 .IsUnicode(false);
 
             modelBuilder.Entity<DONHANG>()
-                .Property(e => e.TongTien)
-                .HasPrecision(19, 4);
-
-            modelBuilder.Entity<DONHANG>()
-                .HasOptional(e => e.CTDONHANG)
-                .WithRequired(e => e.DONHANG);
+                .HasMany(e => e.CTDONHANGs)
+                .WithRequired(e => e.DONHANG)
+                .HasForeignKey(e => e.MaDH)
+                .WillCascadeOnDelete(false);
 
             modelBuilder.Entity<HANG>()
                 .Property(e => e.MaHang)
@@ -167,6 +156,11 @@ namespace DoAn_CNPM_App
                 .Property(e => e.MaHang)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<LINHKIEN>()
+                .HasMany(e => e.CTDONHANGs)
+                .WithRequired(e => e.LINHKIEN)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<LOAILINHKIEN>()
                 .Property(e => e.MaLoai)
                 .IsUnicode(false);
@@ -205,6 +199,16 @@ namespace DoAn_CNPM_App
                 .Property(e => e.Email)
                 .IsUnicode(false);
 
+            modelBuilder.Entity<NHANVIEN>()
+                .HasMany(e => e.ACCOUNTs)
+                .WithRequired(e => e.NHANVIEN)
+                .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<NHANVIEN>()
+                .HasMany(e => e.DONHANGs)
+                .WithRequired(e => e.NHANVIEN)
+                .WillCascadeOnDelete(false);
+
             modelBuilder.Entity<THEKHACHHANG>()
                 .Property(e => e.MaThe)
                 .IsUnicode(false);
@@ -217,6 +221,14 @@ namespace DoAn_CNPM_App
                 .HasMany(e => e.LINHKIENs)
                 .WithRequired(e => e.TINHTRANGLK_GIATRI)
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<CTDONHANG>()
+                .Property(e => e.MaDH)
+                .IsUnicode(false);
+
+            modelBuilder.Entity<CTDONHANG>()
+                .Property(e => e.MaLK)
+                .IsUnicode(false);
         }
     }
 }

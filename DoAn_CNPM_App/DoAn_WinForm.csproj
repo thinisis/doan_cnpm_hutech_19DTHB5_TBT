@@ -310,6 +310,12 @@
     <Compile Include="Report\BaoCaoNhanVien.Designer.cs">
       <DependentUpon>BaoCaoNhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Report\XuatHoaDon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\XuatHoaDon.Designer.cs">
+      <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="sysdiagram.cs" />
     <Compile Include="THEKHACHHANG.cs" />
@@ -321,6 +327,13 @@
     <Compile Include="userSetting.Designer.cs">
       <DependentUpon>userSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="XuLy\ChiTietDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XuLy\ChiTietDonHang.Designer.cs">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XULY_CTDONHANG.cs" />
     <EmbeddedResource Include="BaoCaoLinhKien.rdlc" />
     <EmbeddedResource Include="BaoCaoNhaCungCap.rdlc" />
     <EmbeddedResource Include="BaoCaoNhanVien.rdlc" />
@@ -386,13 +399,23 @@
     <EmbeddedResource Include="Report\BaoCaoNhanVien.resx">
       <DependentUpon>BaoCaoNhanVien.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report\XuatHoaDon.resx">
+      <DependentUpon>XuatHoaDon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="userSetting.resx">
       <DependentUpon>userSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="XuLy\ChiTietDonHang.resx">
+      <DependentUpon>ChiTietDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XuLy_DonHang.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\CTDONHANG.datasource" />
+    <None Include="Properties\DataSources\DONHANG.datasource" />
     <None Include="Properties\DataSources\LINHKIEN.datasource" />
     <None Include="Properties\DataSources\NHACUNGCAP.datasource" />
     <None Include="Properties\DataSources\NHANVIEN.datasource" />
+    <None Include="Properties\DataSources\XULY_CTDONHANG.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -482,6 +505,7 @@
     <None Include="Resources\baseline_print_black_48dp.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\baseline_print_black_48dp1.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

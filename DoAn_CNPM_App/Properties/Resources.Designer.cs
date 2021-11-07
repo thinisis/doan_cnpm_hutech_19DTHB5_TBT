@@ -133,6 +133,16 @@ namespace DoAn_CNPM_App.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap baseline_print_black_48dp1 {
+            get {
+                object obj = ResourceManager.GetObject("baseline_print_black_48dp1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap baseline_search_white_24dp {
             get {
                 object obj = ResourceManager.GetObject("baseline_search_white_24dp", resourceCulture);

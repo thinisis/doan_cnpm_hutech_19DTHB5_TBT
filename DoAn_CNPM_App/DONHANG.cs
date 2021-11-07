@@ -9,6 +9,12 @@ namespace DoAn_CNPM_App
     [Table("DONHANG")]
     public partial class DONHANG
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DONHANG()
+        {
+            CTDONHANGs = new HashSet<CTDONHANG>();
+        }
+
         [Key]
         [StringLength(10)]
         public string MaDH { get; set; }
@@ -17,11 +23,11 @@ namespace DoAn_CNPM_App
         [StringLength(10)]
         public string MaKH { get; set; }
 
+        [Required]
         [StringLength(10)]
         public string MaNV { get; set; }
 
-        [Column(TypeName = "money")]
-        public decimal? TongTien { get; set; }
+        public double? TongTien { get; set; }
 
         [Column(TypeName = "smalldatetime")]
         public DateTime? NgayGiao { get; set; }
@@ -29,7 +35,8 @@ namespace DoAn_CNPM_App
         [Column(TypeName = "smalldatetime")]
         public DateTime? NgayLapDH { get; set; }
 
-        public virtual CTDONHANG CTDONHANG { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTDONHANG> CTDONHANGs { get; set; }
 
         public virtual KHACHHANG KHACHHANG { get; set; }
 

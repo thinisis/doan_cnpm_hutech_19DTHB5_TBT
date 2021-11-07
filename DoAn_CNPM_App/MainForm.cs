@@ -121,7 +121,7 @@ namespace DoAn_CNPM_App
 
         private void btn_XuLy_Click_1(object sender, EventArgs e)
         {
-            OpenChildForm(new ChildForm.DangXayDung(), sender);
+            OpenChildForm(new ChildForm.frmXuLy(), sender);
         }
 
         private void btn_TrangChu_Click_1(object sender, EventArgs e)
@@ -150,10 +150,6 @@ namespace DoAn_CNPM_App
             }
             else
             {
-                using (Loading form = new Loading(LoadingTime))
-                {
-                    form.ShowDialog(this);
-                }
                 OpenChildForm(new ChildForm.PQ_Error(), sender);
             }
             

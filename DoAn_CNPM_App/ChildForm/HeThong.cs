@@ -508,28 +508,6 @@ namespace DoAn_CNPM_App.ChildForm
             return 0; //Khong co loi
 
         }
-        void TNV_FillDGV(List<NHANVIEN> nv)
-        {
-            tnv_DGV_Add.Rows.Clear();
-            for (int i = 0; i < nv.Count(); i++)
-            {
-                int index = tnv_DGV_Add.Rows.Add();
-                tnv_DGV_Add.Rows[i].Cells[0].Value = nv[i].MaNV;
-                tnv_DGV_Add.Rows[i].Cells[1].Value = nv[i].TenNV;
-                tnv_DGV_Add.Rows[i].Cells[2].Value = nv[i].DiaChi;
-                tnv_DGV_Add.Rows[i].Cells[3].Value = nv[i].SDT;
-                tnv_DGV_Add.Rows[i].Cells[4].Value = nv[i].Email;
-                if (nv[i].Phai == true)
-                {
-                    tnv_DGV_Add.Rows[i].Cells[5].Value = "Nữ";
-                }
-                else
-                {
-                    tnv_DGV_Add.Rows[i].Cells[5].Value = "Nam";
-                }
-                tnv_DGV_Add.Rows[i].Cells[6].Value = nv[i].ChucVu;
-            }
-        }
 
         void TNV_ThemNV()
         {
@@ -557,8 +535,6 @@ namespace DoAn_CNPM_App.ChildForm
                         nvs.Add(nv);
                         dbContext.NHANVIENs.Add(nv);
                         dbContext.SaveChanges();
-                        TNV_FillDGV(nvs);
-                        btn_TNV_TongNVDaThem_Disable.Text = nvs.Count.ToString();
                         MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
@@ -591,105 +567,13 @@ namespace DoAn_CNPM_App.ChildForm
             }
         }
 
-        private void tnv_DGV_Add_SelectionChanged(object sender, EventArgs e)
-        {
-            btn_TNV_Sua.Enabled = true;
-            if (LoadedNVAdd == true && tnv_DGV_Add.SelectedRows.Count > 0 && string.IsNullOrEmpty(tnv_DGV_Add.SelectedRows[0].Cells[0].Value?.ToString()) == false)
-            {
 
-                txt_TTK_MSNV.Enabled = false;
-                txt_TNV_MaNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[0].Value?.ToString();
-                txt_TNV_TenNV.Text = tnv_DGV_Add.SelectedRows[0].Cells[1].Value?.ToString();
-                txt_TNV_SDT.Text = tnv_DGV_Add.SelectedRows[0].Cells[3].Value?.ToString();
-                txt_TNV_Email.Text = tnv_DGV_Add.SelectedRows[0].Cells[4].Value?.ToString();
-                txt_TNV_DiaChi.Text = tnv_DGV_Add.SelectedRows[0].Cells[2].Value?.ToString();
-                txt_TNV_ChucVu.Text = tnv_DGV_Add.SelectedRows[0].Cells[6].Value?.ToString();
-
-                if (tnv_DGV_Add.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
-                {
-                    rdb_TNV_Nam.Checked = true;
-                    rdb_TNV_Nu.Checked = false;
-                }
-                else
-                {
-                    rdb_TNV_Nu.Checked = true;
-                    rdb_TNV_Nam.Checked = false;
-                }
-            }
-        }
-
-
-        void TNV_SuaNVDaThem()
-        {
-            int c = TNV_CheckValid(2);
-            switch (c)
-            {
-                case 0:
-                    try
-                    {
-                        String MaNV = tnv_DGV_Add.SelectedRows[0].Cells[0].Value.ToString();
-                        NHANVIEN nv = dbContext.NHANVIENs.FirstOrDefault(d => d.MaNV.CompareTo(MaNV) == 0);
-                        nv.TenNV = txt_TNV_TenNV.Text;
-                        nv.SDT = txt_TNV_SDT.Text;
-                        nv.Email = txt_TNV_Email.Text;
-                        nv.DiaChi = txt_TNV_DiaChi.Text;
-                        nv.ChucVu = txt_TNV_ChucVu.Text;
-                        if (rdb_TNV_Nam.Checked == true)
-                        {
-                            nv.Phai = false;
-                        }
-                        else
-                        {
-                            nv.Phai = true;
-                        }
-                        dbContext.SaveChanges();
-                        nvs[nvs.FindIndex(a => a.MaNV.Equals(MaNV))] = nv;
-                        TNV_FillDGV(nvs);
-                        btn_TNV_TongNVDaThem_Disable.Text = nvs.Count.ToString();
-                        btn_TNV_Sua.Enabled = false;
-                        txt_TTK_MSNV.Enabled = true;
-                        MessageBox.Show("Thao tác thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.ToString(), "Lỗi");
-                    }
-                    break;
-                case 1:
-
-                    break;
-                case 2:
-                    MessageBox.Show("SĐT không hợp lệ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case 3:
-                    MessageBox.Show("Không thể để trống tên nhân viên!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case 4:
-                    MessageBox.Show("Email không hợp lệ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case 5:
-                    MessageBox.Show("Không thể để trống địa chỉ", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case 6:
-                    MessageBox.Show("Không thể để trống chức vụ!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-                case 7:
-                    MessageBox.Show("Mã nhân viên đã có trên hệ thống!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    break;
-
-            }
-        }
+       
         private void btn_TNV_Them_Click(object sender, EventArgs e)
         {
             LoadedNVAdd = false;
             TNV_ThemNV();
             LoadedNVAdd = true;
-        }
-
-
-        private void btn_TNV_Sua_Click(object sender, EventArgs e)
-        {
-            TNV_SuaNVDaThem();
         }
 
         private void txt_TNV_MaNV_TextChange(object sender, EventArgs e)
@@ -759,37 +643,6 @@ namespace DoAn_CNPM_App.ChildForm
                 }
             }
             return 0;
-        }
-
-        private void dgv_QLNV_CS_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgv_QLNV_CS.SelectedRows.Count > 0 && LoadedNVCS == true)
-            {
-                txt_QLNV_CS_MaNV.Enabled = false;
-                EnableOrDisable_TextBox_Find_CSNV(true);
-                EnableOrDisableButtonCSNV(true);
-                txt_QLNV_CS_MaNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
-                txt_QLNV_CS_TenNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[2].Value?.ToString();
-                txt_QLNV_CS_SDT.Text = dgv_QLNV_CS.SelectedRows[0].Cells[4].Value?.ToString();
-                txt_QLNV_CS_Email.Text = dgv_QLNV_CS.SelectedRows[0].Cells[5].Value?.ToString();
-                txt_QLNV_CS_DiaChi.Text = dgv_QLNV_CS.SelectedRows[0].Cells[3].Value?.ToString();
-                txt_QLNV_CS_ChucVu.Text = dgv_QLNV_CS.SelectedRows[0].Cells[7].Value?.ToString();
-                if (dgv_QLNV_CS.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
-                {
-                    rdb_QLNV_CS_Nam.Checked = true;
-                    rdb_TNV_Nu.Checked = false;
-                }
-                else
-                {
-                    rdb_QLNV_CS_Nu.Checked = true;
-                    rdb_TNV_Nam.Checked = false;
-                }
-                lbl_QLNV_CS_SelectedMaNVValue.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
-                if (string.IsNullOrEmpty(lbl_QLNV_CS_SelectedMaNVValue.Text) == false)
-                {
-                    ShowOrHide_SelectedMaNV_QLNVCS(true);
-                }
-            }
         }
 
         void QLNV_CS_Find()
@@ -1024,6 +877,36 @@ namespace DoAn_CNPM_App.ChildForm
             LoadedNVCS = false;
             XoaNV_CSNV();
             LoadedNVCS = true;
+        }
+        private void dgv_QLNV_CS_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgv_QLNV_CS.SelectedRows.Count > 0 && LoadedNVCS == true)
+            {
+                txt_QLNV_CS_MaNV.Enabled = false;
+                EnableOrDisable_TextBox_Find_CSNV(true);
+                EnableOrDisableButtonCSNV(true);
+                txt_QLNV_CS_MaNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
+                txt_QLNV_CS_TenNV.Text = dgv_QLNV_CS.SelectedRows[0].Cells[2].Value?.ToString();
+                txt_QLNV_CS_SDT.Text = dgv_QLNV_CS.SelectedRows[0].Cells[4].Value?.ToString();
+                txt_QLNV_CS_Email.Text = dgv_QLNV_CS.SelectedRows[0].Cells[5].Value?.ToString();
+                txt_QLNV_CS_DiaChi.Text = dgv_QLNV_CS.SelectedRows[0].Cells[3].Value?.ToString();
+                txt_QLNV_CS_ChucVu.Text = dgv_QLNV_CS.SelectedRows[0].Cells[7].Value?.ToString();
+                if (dgv_QLNV_CS.SelectedRows[0].Cells[6].Value?.ToString() == "Nam")
+                {
+                    rdb_QLNV_CS_Nam.Checked = true;
+                    rdb_TNV_Nu.Checked = false;
+                }
+                else
+                {
+                    rdb_QLNV_CS_Nu.Checked = true;
+                    rdb_TNV_Nam.Checked = false;
+                }
+                lbl_QLNV_CS_SelectedMaNVValue.Text = dgv_QLNV_CS.SelectedRows[0].Cells[1].Value?.ToString();
+                if (string.IsNullOrEmpty(lbl_QLNV_CS_SelectedMaNVValue.Text) == false)
+                {
+                    ShowOrHide_SelectedMaNV_QLNVCS(true);
+                }
+            }
         }
         #endregion
 

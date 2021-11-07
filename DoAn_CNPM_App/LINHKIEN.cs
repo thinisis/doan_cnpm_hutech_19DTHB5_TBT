@@ -9,14 +9,8 @@ namespace DoAn_CNPM_App
     [Table("LINHKIEN")]
     public partial class LINHKIEN
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public LINHKIEN()
-        {
-            CTDONHANGs = new HashSet<CTDONHANG>();
-        }
-
         [Key]
-        [StringLength(10)]
+        [StringLength(50)]
         public string MaLK { get; set; }
 
         [Required]
@@ -28,7 +22,7 @@ namespace DoAn_CNPM_App
         public string TenLK { get; set; }
 
         [Required]
-        [StringLength(20)]
+        [StringLength(50)]
         public string Serial { get; set; }
 
         [Required]
@@ -54,7 +48,9 @@ namespace DoAn_CNPM_App
 
         public bool TinhTrang { get; set; }
 
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public int? SoLuong { get; set; }
+
+[System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTDONHANG> CTDONHANGs { get; set; }
 
         public virtual HANG HANG { get; set; }

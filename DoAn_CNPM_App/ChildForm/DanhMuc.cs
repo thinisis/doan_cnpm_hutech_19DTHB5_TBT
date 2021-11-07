@@ -1015,11 +1015,11 @@ namespace DoAn_CNPM_App.ChildForm
                     dgv_QLLK_LKien.Rows[i].Cells[9].Value = lk[i].HANG.TenHang;
                     if (lk[i].TinhTrang == true)
                     {
-                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Còn trong kho";
+                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Có thể bán";
                     }
                     else
                     {
-                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Đã bán";
+                        dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Không thể bán";
                     }
 
                 }
@@ -1043,9 +1043,13 @@ namespace DoAn_CNPM_App.ChildForm
             {
                 return 3; //De trong Serial
             }
-            if (string.IsNullOrEmpty(txt_QLLK_LKien_DonGia.Text) == true)
+            if (string.IsNullOrEmpty(txt_QLLK_LKien_DonGia.Text) == true | int.TryParse(txt_QLLK_LKien_DonGia.Text, out _) == false)
             {
-                return 4; //de trong don gia
+                return 4; //de trong don gia hoac don gia la ky tu chu cai
+            }
+            if (int.Parse(txt_QLLK_LKien_DonGia.Text) < 0)
+            {
+                return 41; // Don gia khong duoc am
             }
             if (string.IsNullOrEmpty(txt_QLLK_LKien_XuatXu.Text) == true)
             {
@@ -1156,7 +1160,7 @@ namespace DoAn_CNPM_App.ChildForm
                     MessageBox.Show("Không thể để trống Serial!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 4:
-                    MessageBox.Show("Không thể để trống đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không thể để trống đơn giá hoặc sai định dạng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 5:
                     MessageBox.Show("Không thể để trống xuất xứ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -1164,6 +1168,10 @@ namespace DoAn_CNPM_App.ChildForm
                 case 6:
                     MessageBox.Show("Mã linh kiện đã có trên hệ thống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
+                case 41:
+                    MessageBox.Show("Đơn giá không được âm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+
             }
         }
 
@@ -1236,10 +1244,13 @@ namespace DoAn_CNPM_App.ChildForm
                     MessageBox.Show("Không thể để trống Serial!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 4:
-                    MessageBox.Show("Không thể để trống đơn giá!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không thể để trống đơn giá hoặc sai định dạng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
                 case 5:
                     MessageBox.Show("Không thể để trống xuất xứ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 41:
+                    MessageBox.Show("Đơn giá không được âm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
         }
