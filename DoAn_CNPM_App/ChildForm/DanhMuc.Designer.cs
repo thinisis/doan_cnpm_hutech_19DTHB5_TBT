@@ -77,20 +77,16 @@ namespace DoAn_CNPM_App.ChildForm
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation3 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges15 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges16 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges17 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges18 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges19 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges20 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties29 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties30 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties31 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties32 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties33 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties34 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties35 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
@@ -103,6 +99,10 @@ namespace DoAn_CNPM_App.ChildForm
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties42 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties43 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties44 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties45 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties46 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties47 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties48 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -115,14 +115,14 @@ namespace DoAn_CNPM_App.ChildForm
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges24 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges25 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges26 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties45 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties46 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties47 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties48 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties49 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties50 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties51 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties52 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties53 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties54 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties55 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties56 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges27 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges28 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -132,17 +132,21 @@ namespace DoAn_CNPM_App.ChildForm
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges30 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges31 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges32 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties53 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties54 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties55 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties56 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties57 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties58 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties59 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties60 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties61 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties62 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties63 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties64 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges33 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges34 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges borderEdges35 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties25 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties26 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties27 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties28 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.tab_QLKho = new MetroSet_UI.Child.MetroSetSetTabPage();
             this.page_QlKho = new Bunifu.UI.WinForms.BunifuPages();
             this.tabpage_QLLK_LKien = new System.Windows.Forms.TabPage();
@@ -234,17 +238,6 @@ namespace DoAn_CNPM_App.ChildForm
             this.lbl_QLLK_LKien_LoaiLK = new Bunifu.UI.WinForms.BunifuLabel();
             this.lbl_QLLK_LKien_MaLK = new Bunifu.UI.WinForms.BunifuLabel();
             this.dgv_QLLK_LKien = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_QLLK_LKien_ColumnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabpage_QLLK_LoaiLK = new System.Windows.Forms.TabPage();
             this.btn_QLLK_LoaiLK_BoTim = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btn_QLLK_LoaiLK_BoChon = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -281,6 +274,20 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLLK_SelectpageHang = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btn_QLLK_SelectpageLoaiLKien = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
             this.btn_QLLK_SelectpageLKien = new Bunifu.UI.WinForms.BunifuButton.BunifuButton2();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_QLLK_LKien_ColumnNgayNhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_QLLK_LKien_SoLuong = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.lbl_QLLK_LKien_SoLuong = new Bunifu.UI.WinForms.BunifuLabel();
             this.tab_QLKho.SuspendLayout();
             this.page_QlKho.SuspendLayout();
             this.tabpage_QLLK_LKien.SuspendLayout();
@@ -2724,10 +2731,10 @@ namespace DoAn_CNPM_App.ChildForm
             this.page_QuanLyLK.Location = new System.Drawing.Point(0, 44);
             this.page_QuanLyLK.Multiline = true;
             this.page_QuanLyLK.Name = "page_QuanLyLK";
-            this.page_QuanLyLK.Page = this.tabpage_QLLK_Hang;
-            this.page_QuanLyLK.PageIndex = 2;
-            this.page_QuanLyLK.PageName = "tabpage_QLLK_Hang";
-            this.page_QuanLyLK.PageTitle = "tabpage_QLLK_Hang";
+            this.page_QuanLyLK.Page = this.tabpage_QLLK_LinhKien;
+            this.page_QuanLyLK.PageIndex = 0;
+            this.page_QuanLyLK.PageName = "tabpage_QLLK_LinhKien";
+            this.page_QuanLyLK.PageTitle = "tabpage_QLLK_LKien";
             this.page_QuanLyLK.SelectedIndex = 0;
             this.page_QuanLyLK.Size = new System.Drawing.Size(1025, 571);
             this.page_QuanLyLK.TabIndex = 5;
@@ -2752,6 +2759,8 @@ namespace DoAn_CNPM_App.ChildForm
             // tabpage_QLLK_LinhKien
             // 
             this.tabpage_QLLK_LinhKien.BackColor = System.Drawing.Color.White;
+            this.tabpage_QLLK_LinhKien.Controls.Add(this.txt_QLLK_LKien_SoLuong);
+            this.tabpage_QLLK_LinhKien.Controls.Add(this.lbl_QLLK_LKien_SoLuong);
             this.tabpage_QLLK_LinhKien.Controls.Add(this.cbx_QLLK_LKien_Hang);
             this.tabpage_QLLK_LinhKien.Controls.Add(this.cbx_QLLK_LKien_NCC);
             this.tabpage_QLLK_LinhKien.Controls.Add(this.cbx_QLLK_LKien_Kho);
@@ -3007,26 +3016,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LKien_Serial.Modified = false;
             this.txt_QLLK_LKien_Serial.Multiline = false;
             this.txt_QLLK_LKien_Serial.Name = "txt_QLLK_LKien_Serial";
-            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties25.FillColor = System.Drawing.Color.Empty;
-            stateProperties25.ForeColor = System.Drawing.Color.Empty;
-            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_Serial.OnActiveState = stateProperties25;
-            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LKien_Serial.OnDisabledState = stateProperties26;
-            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties27.FillColor = System.Drawing.Color.Empty;
-            stateProperties27.ForeColor = System.Drawing.Color.Empty;
-            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_Serial.OnHoverState = stateProperties27;
-            stateProperties28.BorderColor = System.Drawing.Color.Silver;
-            stateProperties28.FillColor = System.Drawing.Color.White;
-            stateProperties28.ForeColor = System.Drawing.Color.Empty;
-            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_Serial.OnIdleState = stateProperties28;
+            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties29.FillColor = System.Drawing.Color.Empty;
+            stateProperties29.ForeColor = System.Drawing.Color.Empty;
+            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_Serial.OnActiveState = stateProperties29;
+            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_Serial.OnDisabledState = stateProperties30;
+            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties31.FillColor = System.Drawing.Color.Empty;
+            stateProperties31.ForeColor = System.Drawing.Color.Empty;
+            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_Serial.OnHoverState = stateProperties31;
+            stateProperties32.BorderColor = System.Drawing.Color.Silver;
+            stateProperties32.FillColor = System.Drawing.Color.White;
+            stateProperties32.ForeColor = System.Drawing.Color.Empty;
+            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_Serial.OnIdleState = stateProperties32;
             this.txt_QLLK_LKien_Serial.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LKien_Serial.PasswordChar = '\0';
             this.txt_QLLK_LKien_Serial.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -3703,26 +3712,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LKien_XuatXu.Modified = false;
             this.txt_QLLK_LKien_XuatXu.Multiline = false;
             this.txt_QLLK_LKien_XuatXu.Name = "txt_QLLK_LKien_XuatXu";
-            stateProperties29.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties29.FillColor = System.Drawing.Color.Empty;
-            stateProperties29.ForeColor = System.Drawing.Color.Empty;
-            stateProperties29.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_XuatXu.OnActiveState = stateProperties29;
-            stateProperties30.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties30.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties30.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties30.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LKien_XuatXu.OnDisabledState = stateProperties30;
-            stateProperties31.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties31.FillColor = System.Drawing.Color.Empty;
-            stateProperties31.ForeColor = System.Drawing.Color.Empty;
-            stateProperties31.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_XuatXu.OnHoverState = stateProperties31;
-            stateProperties32.BorderColor = System.Drawing.Color.Silver;
-            stateProperties32.FillColor = System.Drawing.Color.White;
-            stateProperties32.ForeColor = System.Drawing.Color.Empty;
-            stateProperties32.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_XuatXu.OnIdleState = stateProperties32;
+            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties33.FillColor = System.Drawing.Color.Empty;
+            stateProperties33.ForeColor = System.Drawing.Color.Empty;
+            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_XuatXu.OnActiveState = stateProperties33;
+            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_XuatXu.OnDisabledState = stateProperties34;
+            stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties35.FillColor = System.Drawing.Color.Empty;
+            stateProperties35.ForeColor = System.Drawing.Color.Empty;
+            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_XuatXu.OnHoverState = stateProperties35;
+            stateProperties36.BorderColor = System.Drawing.Color.Silver;
+            stateProperties36.FillColor = System.Drawing.Color.White;
+            stateProperties36.ForeColor = System.Drawing.Color.Empty;
+            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_XuatXu.OnIdleState = stateProperties36;
             this.txt_QLLK_LKien_XuatXu.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LKien_XuatXu.PasswordChar = '\0';
             this.txt_QLLK_LKien_XuatXu.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -3779,26 +3788,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LKien_DonGia.Modified = false;
             this.txt_QLLK_LKien_DonGia.Multiline = false;
             this.txt_QLLK_LKien_DonGia.Name = "txt_QLLK_LKien_DonGia";
-            stateProperties33.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties33.FillColor = System.Drawing.Color.Empty;
-            stateProperties33.ForeColor = System.Drawing.Color.Empty;
-            stateProperties33.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_DonGia.OnActiveState = stateProperties33;
-            stateProperties34.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties34.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties34.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties34.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LKien_DonGia.OnDisabledState = stateProperties34;
-            stateProperties35.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties35.FillColor = System.Drawing.Color.Empty;
-            stateProperties35.ForeColor = System.Drawing.Color.Empty;
-            stateProperties35.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_DonGia.OnHoverState = stateProperties35;
-            stateProperties36.BorderColor = System.Drawing.Color.Silver;
-            stateProperties36.FillColor = System.Drawing.Color.White;
-            stateProperties36.ForeColor = System.Drawing.Color.Empty;
-            stateProperties36.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_DonGia.OnIdleState = stateProperties36;
+            stateProperties37.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties37.FillColor = System.Drawing.Color.Empty;
+            stateProperties37.ForeColor = System.Drawing.Color.Empty;
+            stateProperties37.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_DonGia.OnActiveState = stateProperties37;
+            stateProperties38.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties38.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties38.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_DonGia.OnDisabledState = stateProperties38;
+            stateProperties39.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties39.FillColor = System.Drawing.Color.Empty;
+            stateProperties39.ForeColor = System.Drawing.Color.Empty;
+            stateProperties39.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_DonGia.OnHoverState = stateProperties39;
+            stateProperties40.BorderColor = System.Drawing.Color.Silver;
+            stateProperties40.FillColor = System.Drawing.Color.White;
+            stateProperties40.ForeColor = System.Drawing.Color.Empty;
+            stateProperties40.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_DonGia.OnIdleState = stateProperties40;
             this.txt_QLLK_LKien_DonGia.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LKien_DonGia.PasswordChar = '\0';
             this.txt_QLLK_LKien_DonGia.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -3855,26 +3864,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LKien_TenLK.Modified = false;
             this.txt_QLLK_LKien_TenLK.Multiline = false;
             this.txt_QLLK_LKien_TenLK.Name = "txt_QLLK_LKien_TenLK";
-            stateProperties37.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties37.FillColor = System.Drawing.Color.Empty;
-            stateProperties37.ForeColor = System.Drawing.Color.Empty;
-            stateProperties37.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_TenLK.OnActiveState = stateProperties37;
-            stateProperties38.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties38.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties38.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties38.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LKien_TenLK.OnDisabledState = stateProperties38;
-            stateProperties39.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties39.FillColor = System.Drawing.Color.Empty;
-            stateProperties39.ForeColor = System.Drawing.Color.Empty;
-            stateProperties39.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_TenLK.OnHoverState = stateProperties39;
-            stateProperties40.BorderColor = System.Drawing.Color.Silver;
-            stateProperties40.FillColor = System.Drawing.Color.White;
-            stateProperties40.ForeColor = System.Drawing.Color.Empty;
-            stateProperties40.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_TenLK.OnIdleState = stateProperties40;
+            stateProperties41.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties41.FillColor = System.Drawing.Color.Empty;
+            stateProperties41.ForeColor = System.Drawing.Color.Empty;
+            stateProperties41.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_TenLK.OnActiveState = stateProperties41;
+            stateProperties42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties42.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties42.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_TenLK.OnDisabledState = stateProperties42;
+            stateProperties43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties43.FillColor = System.Drawing.Color.Empty;
+            stateProperties43.ForeColor = System.Drawing.Color.Empty;
+            stateProperties43.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_TenLK.OnHoverState = stateProperties43;
+            stateProperties44.BorderColor = System.Drawing.Color.Silver;
+            stateProperties44.FillColor = System.Drawing.Color.White;
+            stateProperties44.ForeColor = System.Drawing.Color.Empty;
+            stateProperties44.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_TenLK.OnIdleState = stateProperties44;
             this.txt_QLLK_LKien_TenLK.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LKien_TenLK.PasswordChar = '\0';
             this.txt_QLLK_LKien_TenLK.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -3931,26 +3940,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LKien_MaLK.Modified = false;
             this.txt_QLLK_LKien_MaLK.Multiline = false;
             this.txt_QLLK_LKien_MaLK.Name = "txt_QLLK_LKien_MaLK";
-            stateProperties41.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties41.FillColor = System.Drawing.Color.Empty;
-            stateProperties41.ForeColor = System.Drawing.Color.Empty;
-            stateProperties41.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_MaLK.OnActiveState = stateProperties41;
-            stateProperties42.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties42.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties42.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties42.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LKien_MaLK.OnDisabledState = stateProperties42;
-            stateProperties43.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties43.FillColor = System.Drawing.Color.Empty;
-            stateProperties43.ForeColor = System.Drawing.Color.Empty;
-            stateProperties43.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_MaLK.OnHoverState = stateProperties43;
-            stateProperties44.BorderColor = System.Drawing.Color.Silver;
-            stateProperties44.FillColor = System.Drawing.Color.White;
-            stateProperties44.ForeColor = System.Drawing.Color.Empty;
-            stateProperties44.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LKien_MaLK.OnIdleState = stateProperties44;
+            stateProperties45.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties45.FillColor = System.Drawing.Color.Empty;
+            stateProperties45.ForeColor = System.Drawing.Color.Empty;
+            stateProperties45.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_MaLK.OnActiveState = stateProperties45;
+            stateProperties46.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties46.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties46.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_MaLK.OnDisabledState = stateProperties46;
+            stateProperties47.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties47.FillColor = System.Drawing.Color.Empty;
+            stateProperties47.ForeColor = System.Drawing.Color.Empty;
+            stateProperties47.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_MaLK.OnHoverState = stateProperties47;
+            stateProperties48.BorderColor = System.Drawing.Color.Silver;
+            stateProperties48.FillColor = System.Drawing.Color.White;
+            stateProperties48.ForeColor = System.Drawing.Color.Empty;
+            stateProperties48.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_MaLK.OnIdleState = stateProperties48;
             this.txt_QLLK_LKien_MaLK.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LKien_MaLK.PasswordChar = '\0';
             this.txt_QLLK_LKien_MaLK.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -4246,7 +4255,8 @@ namespace DoAn_CNPM_App.ChildForm
             this.Column13,
             this.Column14,
             this.Column15,
-            this.Column17});
+            this.Column17,
+            this.Column20});
             this.dgv_QLLK_LKien.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.dgv_QLLK_LKien.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             this.dgv_QLLK_LKien.CurrentTheme.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Black;
@@ -4289,72 +4299,6 @@ namespace DoAn_CNPM_App.ChildForm
             this.dgv_QLLK_LKien.TabIndex = 80;
             this.dgv_QLLK_LKien.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             this.dgv_QLLK_LKien.SelectionChanged += new System.EventHandler(this.dgv_QLLK_LKien_SelectionChanged);
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Mã LK";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Loại LK";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "Tên LK";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column16
-            // 
-            this.Column16.HeaderText = "Serial";
-            this.Column16.Name = "Column16";
-            this.Column16.ReadOnly = true;
-            // 
-            // dgv_QLLK_LKien_ColumnNgayNhap
-            // 
-            this.dgv_QLLK_LKien_ColumnNgayNhap.HeaderText = "Ngày nhập";
-            this.dgv_QLLK_LKien_ColumnNgayNhap.Name = "dgv_QLLK_LKien_ColumnNgayNhap";
-            this.dgv_QLLK_LKien_ColumnNgayNhap.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Đơn giá";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Xuất xứ";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "Kho";
-            this.Column13.Name = "Column13";
-            this.Column13.ReadOnly = true;
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "Nhà cung cấp";
-            this.Column14.Name = "Column14";
-            this.Column14.ReadOnly = true;
-            // 
-            // Column15
-            // 
-            this.Column15.HeaderText = "Hãng";
-            this.Column15.Name = "Column15";
-            this.Column15.ReadOnly = true;
-            // 
-            // Column17
-            // 
-            this.Column17.HeaderText = "Tình trạng";
-            this.Column17.Name = "Column17";
-            this.Column17.ReadOnly = true;
             // 
             // tabpage_QLLK_LoaiLK
             // 
@@ -5068,26 +5012,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LoaiLK_TenLoai.Modified = false;
             this.txt_QLLK_LoaiLK_TenLoai.Multiline = false;
             this.txt_QLLK_LoaiLK_TenLoai.Name = "txt_QLLK_LoaiLK_TenLoai";
-            stateProperties45.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties45.FillColor = System.Drawing.Color.Empty;
-            stateProperties45.ForeColor = System.Drawing.Color.Empty;
-            stateProperties45.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_TenLoai.OnActiveState = stateProperties45;
-            stateProperties46.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties46.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties46.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LoaiLK_TenLoai.OnDisabledState = stateProperties46;
-            stateProperties47.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties47.FillColor = System.Drawing.Color.Empty;
-            stateProperties47.ForeColor = System.Drawing.Color.Empty;
-            stateProperties47.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_TenLoai.OnHoverState = stateProperties47;
-            stateProperties48.BorderColor = System.Drawing.Color.Silver;
-            stateProperties48.FillColor = System.Drawing.Color.White;
-            stateProperties48.ForeColor = System.Drawing.Color.Empty;
-            stateProperties48.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_TenLoai.OnIdleState = stateProperties48;
+            stateProperties49.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties49.FillColor = System.Drawing.Color.Empty;
+            stateProperties49.ForeColor = System.Drawing.Color.Empty;
+            stateProperties49.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_TenLoai.OnActiveState = stateProperties49;
+            stateProperties50.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties50.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties50.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LoaiLK_TenLoai.OnDisabledState = stateProperties50;
+            stateProperties51.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties51.FillColor = System.Drawing.Color.Empty;
+            stateProperties51.ForeColor = System.Drawing.Color.Empty;
+            stateProperties51.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_TenLoai.OnHoverState = stateProperties51;
+            stateProperties52.BorderColor = System.Drawing.Color.Silver;
+            stateProperties52.FillColor = System.Drawing.Color.White;
+            stateProperties52.ForeColor = System.Drawing.Color.Empty;
+            stateProperties52.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_TenLoai.OnIdleState = stateProperties52;
             this.txt_QLLK_LoaiLK_TenLoai.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LoaiLK_TenLoai.PasswordChar = '\0';
             this.txt_QLLK_LoaiLK_TenLoai.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -5161,26 +5105,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_LoaiLK_MaLoaiLK.Modified = false;
             this.txt_QLLK_LoaiLK_MaLoaiLK.Multiline = false;
             this.txt_QLLK_LoaiLK_MaLoaiLK.Name = "txt_QLLK_LoaiLK_MaLoaiLK";
-            stateProperties49.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties49.FillColor = System.Drawing.Color.Empty;
-            stateProperties49.ForeColor = System.Drawing.Color.Empty;
-            stateProperties49.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_MaLoaiLK.OnActiveState = stateProperties49;
-            stateProperties50.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties50.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties50.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties50.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_LoaiLK_MaLoaiLK.OnDisabledState = stateProperties50;
-            stateProperties51.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties51.FillColor = System.Drawing.Color.Empty;
-            stateProperties51.ForeColor = System.Drawing.Color.Empty;
-            stateProperties51.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_MaLoaiLK.OnHoverState = stateProperties51;
-            stateProperties52.BorderColor = System.Drawing.Color.Silver;
-            stateProperties52.FillColor = System.Drawing.Color.White;
-            stateProperties52.ForeColor = System.Drawing.Color.Empty;
-            stateProperties52.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_LoaiLK_MaLoaiLK.OnIdleState = stateProperties52;
+            stateProperties53.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties53.FillColor = System.Drawing.Color.Empty;
+            stateProperties53.ForeColor = System.Drawing.Color.Empty;
+            stateProperties53.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_MaLoaiLK.OnActiveState = stateProperties53;
+            stateProperties54.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties54.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties54.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LoaiLK_MaLoaiLK.OnDisabledState = stateProperties54;
+            stateProperties55.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties55.FillColor = System.Drawing.Color.Empty;
+            stateProperties55.ForeColor = System.Drawing.Color.Empty;
+            stateProperties55.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_MaLoaiLK.OnHoverState = stateProperties55;
+            stateProperties56.BorderColor = System.Drawing.Color.Silver;
+            stateProperties56.FillColor = System.Drawing.Color.White;
+            stateProperties56.ForeColor = System.Drawing.Color.Empty;
+            stateProperties56.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LoaiLK_MaLoaiLK.OnIdleState = stateProperties56;
             this.txt_QLLK_LoaiLK_MaLoaiLK.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_LoaiLK_MaLoaiLK.PasswordChar = '\0';
             this.txt_QLLK_LoaiLK_MaLoaiLK.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -5931,26 +5875,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_Hang_TenHang.Modified = false;
             this.txt_QLLK_Hang_TenHang.Multiline = false;
             this.txt_QLLK_Hang_TenHang.Name = "txt_QLLK_Hang_TenHang";
-            stateProperties53.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties53.FillColor = System.Drawing.Color.Empty;
-            stateProperties53.ForeColor = System.Drawing.Color.Empty;
-            stateProperties53.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_TenHang.OnActiveState = stateProperties53;
-            stateProperties54.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties54.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties54.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties54.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_Hang_TenHang.OnDisabledState = stateProperties54;
-            stateProperties55.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties55.FillColor = System.Drawing.Color.Empty;
-            stateProperties55.ForeColor = System.Drawing.Color.Empty;
-            stateProperties55.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_TenHang.OnHoverState = stateProperties55;
-            stateProperties56.BorderColor = System.Drawing.Color.Silver;
-            stateProperties56.FillColor = System.Drawing.Color.White;
-            stateProperties56.ForeColor = System.Drawing.Color.Empty;
-            stateProperties56.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_TenHang.OnIdleState = stateProperties56;
+            stateProperties57.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties57.FillColor = System.Drawing.Color.Empty;
+            stateProperties57.ForeColor = System.Drawing.Color.Empty;
+            stateProperties57.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_TenHang.OnActiveState = stateProperties57;
+            stateProperties58.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties58.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties58.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_Hang_TenHang.OnDisabledState = stateProperties58;
+            stateProperties59.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties59.FillColor = System.Drawing.Color.Empty;
+            stateProperties59.ForeColor = System.Drawing.Color.Empty;
+            stateProperties59.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_TenHang.OnHoverState = stateProperties59;
+            stateProperties60.BorderColor = System.Drawing.Color.Silver;
+            stateProperties60.FillColor = System.Drawing.Color.White;
+            stateProperties60.ForeColor = System.Drawing.Color.Empty;
+            stateProperties60.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_TenHang.OnIdleState = stateProperties60;
             this.txt_QLLK_Hang_TenHang.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_Hang_TenHang.PasswordChar = '\0';
             this.txt_QLLK_Hang_TenHang.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -6024,26 +5968,26 @@ namespace DoAn_CNPM_App.ChildForm
             this.txt_QLLK_Hang_MaHang.Modified = false;
             this.txt_QLLK_Hang_MaHang.Multiline = false;
             this.txt_QLLK_Hang_MaHang.Name = "txt_QLLK_Hang_MaHang";
-            stateProperties57.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties57.FillColor = System.Drawing.Color.Empty;
-            stateProperties57.ForeColor = System.Drawing.Color.Empty;
-            stateProperties57.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_MaHang.OnActiveState = stateProperties57;
-            stateProperties58.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties58.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties58.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties58.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.txt_QLLK_Hang_MaHang.OnDisabledState = stateProperties58;
-            stateProperties59.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties59.FillColor = System.Drawing.Color.Empty;
-            stateProperties59.ForeColor = System.Drawing.Color.Empty;
-            stateProperties59.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_MaHang.OnHoverState = stateProperties59;
-            stateProperties60.BorderColor = System.Drawing.Color.Silver;
-            stateProperties60.FillColor = System.Drawing.Color.White;
-            stateProperties60.ForeColor = System.Drawing.Color.Empty;
-            stateProperties60.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.txt_QLLK_Hang_MaHang.OnIdleState = stateProperties60;
+            stateProperties61.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties61.FillColor = System.Drawing.Color.Empty;
+            stateProperties61.ForeColor = System.Drawing.Color.Empty;
+            stateProperties61.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_MaHang.OnActiveState = stateProperties61;
+            stateProperties62.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties62.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties62.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties62.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_Hang_MaHang.OnDisabledState = stateProperties62;
+            stateProperties63.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties63.FillColor = System.Drawing.Color.Empty;
+            stateProperties63.ForeColor = System.Drawing.Color.Empty;
+            stateProperties63.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_MaHang.OnHoverState = stateProperties63;
+            stateProperties64.BorderColor = System.Drawing.Color.Silver;
+            stateProperties64.FillColor = System.Drawing.Color.White;
+            stateProperties64.ForeColor = System.Drawing.Color.Empty;
+            stateProperties64.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_Hang_MaHang.OnIdleState = stateProperties64;
             this.txt_QLLK_Hang_MaHang.Padding = new System.Windows.Forms.Padding(3);
             this.txt_QLLK_Hang_MaHang.PasswordChar = '\0';
             this.txt_QLLK_Hang_MaHang.PlaceholderForeColor = System.Drawing.Color.Silver;
@@ -6373,6 +6317,171 @@ namespace DoAn_CNPM_App.ChildForm
             this.btn_QLLK_SelectpageLKien.UseDefaultRadiusAndThickness = true;
             this.btn_QLLK_SelectpageLKien.Click += new System.EventHandler(this.btn_QLLK_SelectpageLKien_Click);
             // 
+            // Column8
+            // 
+            this.Column8.HeaderText = "Mã LK";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "Loại LK";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.HeaderText = "Tên LK";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column16
+            // 
+            this.Column16.HeaderText = "Serial";
+            this.Column16.Name = "Column16";
+            this.Column16.ReadOnly = true;
+            // 
+            // dgv_QLLK_LKien_ColumnNgayNhap
+            // 
+            this.dgv_QLLK_LKien_ColumnNgayNhap.HeaderText = "Ngày nhập";
+            this.dgv_QLLK_LKien_ColumnNgayNhap.Name = "dgv_QLLK_LKien_ColumnNgayNhap";
+            this.dgv_QLLK_LKien_ColumnNgayNhap.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.HeaderText = "Đơn giá";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.HeaderText = "Xuất xứ";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
+            // Column13
+            // 
+            this.Column13.HeaderText = "Kho";
+            this.Column13.Name = "Column13";
+            this.Column13.ReadOnly = true;
+            // 
+            // Column14
+            // 
+            this.Column14.HeaderText = "Nhà cung cấp";
+            this.Column14.Name = "Column14";
+            this.Column14.ReadOnly = true;
+            // 
+            // Column15
+            // 
+            this.Column15.HeaderText = "Hãng";
+            this.Column15.Name = "Column15";
+            this.Column15.ReadOnly = true;
+            // 
+            // Column17
+            // 
+            this.Column17.HeaderText = "Tình trạng";
+            this.Column17.Name = "Column17";
+            this.Column17.ReadOnly = true;
+            // 
+            // Column20
+            // 
+            this.Column20.HeaderText = "Số lượng";
+            this.Column20.Name = "Column20";
+            this.Column20.ReadOnly = true;
+            // 
+            // txt_QLLK_LKien_SoLuong
+            // 
+            this.txt_QLLK_LKien_SoLuong.AcceptsReturn = false;
+            this.txt_QLLK_LKien_SoLuong.AcceptsTab = false;
+            this.txt_QLLK_LKien_SoLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_QLLK_LKien_SoLuong.AnimationSpeed = 200;
+            this.txt_QLLK_LKien_SoLuong.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txt_QLLK_LKien_SoLuong.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txt_QLLK_LKien_SoLuong.AutoSizeHeight = true;
+            this.txt_QLLK_LKien_SoLuong.BackColor = System.Drawing.Color.Transparent;
+            this.txt_QLLK_LKien_SoLuong.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txt_QLLK_LKien_SoLuong.BackgroundImage")));
+            this.txt_QLLK_LKien_SoLuong.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txt_QLLK_LKien_SoLuong.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txt_QLLK_LKien_SoLuong.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txt_QLLK_LKien_SoLuong.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txt_QLLK_LKien_SoLuong.BorderRadius = 1;
+            this.txt_QLLK_LKien_SoLuong.BorderThickness = 1;
+            this.txt_QLLK_LKien_SoLuong.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txt_QLLK_LKien_SoLuong.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_QLLK_LKien_SoLuong.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txt_QLLK_LKien_SoLuong.DefaultText = "";
+            this.txt_QLLK_LKien_SoLuong.FillColor = System.Drawing.Color.White;
+            this.txt_QLLK_LKien_SoLuong.HideSelection = true;
+            this.txt_QLLK_LKien_SoLuong.IconLeft = null;
+            this.txt_QLLK_LKien_SoLuong.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_QLLK_LKien_SoLuong.IconPadding = 10;
+            this.txt_QLLK_LKien_SoLuong.IconRight = null;
+            this.txt_QLLK_LKien_SoLuong.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txt_QLLK_LKien_SoLuong.Lines = new string[0];
+            this.txt_QLLK_LKien_SoLuong.Location = new System.Drawing.Point(777, 186);
+            this.txt_QLLK_LKien_SoLuong.MaxLength = 32767;
+            this.txt_QLLK_LKien_SoLuong.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txt_QLLK_LKien_SoLuong.Modified = false;
+            this.txt_QLLK_LKien_SoLuong.Multiline = false;
+            this.txt_QLLK_LKien_SoLuong.Name = "txt_QLLK_LKien_SoLuong";
+            stateProperties25.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties25.FillColor = System.Drawing.Color.Empty;
+            stateProperties25.ForeColor = System.Drawing.Color.Empty;
+            stateProperties25.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_SoLuong.OnActiveState = stateProperties25;
+            stateProperties26.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties26.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties26.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties26.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txt_QLLK_LKien_SoLuong.OnDisabledState = stateProperties26;
+            stateProperties27.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties27.FillColor = System.Drawing.Color.Empty;
+            stateProperties27.ForeColor = System.Drawing.Color.Empty;
+            stateProperties27.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_SoLuong.OnHoverState = stateProperties27;
+            stateProperties28.BorderColor = System.Drawing.Color.Silver;
+            stateProperties28.FillColor = System.Drawing.Color.White;
+            stateProperties28.ForeColor = System.Drawing.Color.Empty;
+            stateProperties28.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txt_QLLK_LKien_SoLuong.OnIdleState = stateProperties28;
+            this.txt_QLLK_LKien_SoLuong.Padding = new System.Windows.Forms.Padding(3);
+            this.txt_QLLK_LKien_SoLuong.PasswordChar = '\0';
+            this.txt_QLLK_LKien_SoLuong.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txt_QLLK_LKien_SoLuong.PlaceholderText = "Số lượng";
+            this.txt_QLLK_LKien_SoLuong.ReadOnly = false;
+            this.txt_QLLK_LKien_SoLuong.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_QLLK_LKien_SoLuong.SelectedText = "";
+            this.txt_QLLK_LKien_SoLuong.SelectionLength = 0;
+            this.txt_QLLK_LKien_SoLuong.SelectionStart = 0;
+            this.txt_QLLK_LKien_SoLuong.ShortcutsEnabled = true;
+            this.txt_QLLK_LKien_SoLuong.Size = new System.Drawing.Size(210, 39);
+            this.txt_QLLK_LKien_SoLuong.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txt_QLLK_LKien_SoLuong.TabIndex = 130;
+            this.txt_QLLK_LKien_SoLuong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_QLLK_LKien_SoLuong.TextMarginBottom = 0;
+            this.txt_QLLK_LKien_SoLuong.TextMarginLeft = 3;
+            this.txt_QLLK_LKien_SoLuong.TextMarginTop = 1;
+            this.txt_QLLK_LKien_SoLuong.TextPlaceholder = "Số lượng";
+            this.txt_QLLK_LKien_SoLuong.UseSystemPasswordChar = false;
+            this.txt_QLLK_LKien_SoLuong.WordWrap = true;
+            // 
+            // lbl_QLLK_LKien_SoLuong
+            // 
+            this.lbl_QLLK_LKien_SoLuong.AllowParentOverrides = false;
+            this.lbl_QLLK_LKien_SoLuong.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_QLLK_LKien_SoLuong.AutoEllipsis = false;
+            this.lbl_QLLK_LKien_SoLuong.Cursor = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLLK_LKien_SoLuong.CursorType = System.Windows.Forms.Cursors.Default;
+            this.lbl_QLLK_LKien_SoLuong.Font = new System.Drawing.Font("Open Sans SemiBold", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lbl_QLLK_LKien_SoLuong.Location = new System.Drawing.Point(714, 194);
+            this.lbl_QLLK_LKien_SoLuong.Name = "lbl_QLLK_LKien_SoLuong";
+            this.lbl_QLLK_LKien_SoLuong.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbl_QLLK_LKien_SoLuong.Size = new System.Drawing.Size(54, 19);
+            this.lbl_QLLK_LKien_SoLuong.TabIndex = 129;
+            this.lbl_QLLK_LKien_SoLuong.Text = "Số lượng";
+            this.lbl_QLLK_LKien_SoLuong.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.lbl_QLLK_LKien_SoLuong.TextFormat = Bunifu.UI.WinForms.BunifuLabel.TextFormattingOptions.Default;
+            // 
             // frmDanhMuc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -6510,17 +6619,6 @@ namespace DoAn_CNPM_App.ChildForm
         private Bunifu.UI.WinForms.BunifuDropdown cbx_QLLK_LKien_Kho;
         private Bunifu.UI.WinForms.BunifuDropdown cbx_QLLK_LKien_LoaiLK;
         private Bunifu.UI.WinForms.BunifuLabel lbl_QLLK_LKien_Kho;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_QLLK_LKien_ColumnNgayNhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
         private Bunifu.UI.WinForms.BunifuTextBox txt_QLLK_LoaiLK_TenLoai;
         private Bunifu.UI.WinForms.BunifuLabel lbl_QLLK_LoaiLK_TenLoai;
         private Bunifu.UI.WinForms.BunifuTextBox txt_QLLK_LoaiLK_MaLoaiLK;
@@ -6551,5 +6649,19 @@ namespace DoAn_CNPM_App.ChildForm
         private Bunifu.UI.WinForms.BunifuLabel lbl_QLLK_Hang_MaHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private Bunifu.UI.WinForms.BunifuTextBox txt_QLLK_LKien_SoLuong;
+        private Bunifu.UI.WinForms.BunifuLabel lbl_QLLK_LKien_SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_QLLK_LKien_ColumnNgayNhap;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column20;
     }
 }

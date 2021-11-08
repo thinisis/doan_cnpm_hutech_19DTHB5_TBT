@@ -936,6 +936,7 @@ namespace DoAn_CNPM_App.ChildForm
             txt_QLLK_LKien_TenLK.Text = "";
             txt_QLLK_LKien_XuatXu.Text = "";
             txt_QLLK_LKien_Serial.Text = "";
+            txt_QLLK_LKien_SoLuong.Text = "";
             cbx_QLLK_LKien_TinhTrang.SelectedIndex = 0;
             dpick_QLLK_LKien_NgayNhapKho.Value = DateTime.Today;
 
@@ -1013,6 +1014,7 @@ namespace DoAn_CNPM_App.ChildForm
                     dgv_QLLK_LKien.Rows[i].Cells[7].Value = lk[i].KHO.TenKho;
                     dgv_QLLK_LKien.Rows[i].Cells[8].Value = lk[i].NHACUNGCAP.TenNCC;
                     dgv_QLLK_LKien.Rows[i].Cells[9].Value = lk[i].HANG.TenHang;
+                    dgv_QLLK_LKien.Rows[i].Cells[11].Value = lk[i].SoLuong;
                     if (lk[i].TinhTrang == true)
                     {
                         dgv_QLLK_LKien.Rows[i].Cells[10].Value = "Có thể bán";
@@ -1061,7 +1063,18 @@ namespace DoAn_CNPM_App.ChildForm
             {
                 return 6; //da co mã linh kiện tren he thong
             }
-
+            if(string.IsNullOrEmpty(txt_QLLK_LKien_SoLuong.Text) == true)
+            {
+                return 7; // Trong so luong
+            }
+            if(int.TryParse(txt_QLLK_LKien_SoLuong.Text, out _) == false)
+            {
+                return 8; // so luong sai dinh dang
+            }
+            if(int.Parse(txt_QLLK_LKien_SoLuong.Text) < 0)
+            {
+                return 9; // So luong khong duoc am
+            }
             return 0; //Khong co loi
         }
 
@@ -1111,7 +1124,8 @@ namespace DoAn_CNPM_App.ChildForm
                                     + "\nMã kho: " + cbx_QLLK_LKien_Kho.Text.ToString()
                                     + "\nMã nhà cung cấp: " + cbx_QLLK_LKien_NCC.Text.ToString()
                                     + "\nMã hàng: " + cbx_QLLK_LKien_Hang.Text.ToString()
-                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString();
+                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString()
+                                    + "\nSố lượng: " + txt_QLLK_LKien_SoLuong.Text.ToString();
                         DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                         if (dr == DialogResult.OK)
                         {
@@ -1127,7 +1141,7 @@ namespace DoAn_CNPM_App.ChildForm
                             lk.MaNCC = cbx_QLLK_LKien_NCC.SelectedValue.ToString();
                             lk.MaHang = cbx_QLLK_LKien_Hang.SelectedValue.ToString();
                             lk.TinhTrang = bool.Parse(cbx_QLLK_LKien_TinhTrang.SelectedValue.ToString());
-
+                            lk.SoLuong = int.Parse(txt_QLLK_LKien_SoLuong.Text);
                             dbContext.LINHKIENs.Add(lk);
                             dbContext.SaveChanges();
 
@@ -1171,6 +1185,15 @@ namespace DoAn_CNPM_App.ChildForm
                 case 41:
                     MessageBox.Show("Đơn giá không được âm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
+                case 7:
+                    MessageBox.Show("Số lượng không thể để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 8:
+                    MessageBox.Show("Số lượng sai định dạng! Vui lòng nhập chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 9:
+                    MessageBox.Show("Số lượng không thể nhỏ hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
 
             }
         }
@@ -1195,7 +1218,8 @@ namespace DoAn_CNPM_App.ChildForm
                                     + "\nMã kho: " + cbx_QLLK_LKien_Kho.Text.ToString()
                                     + "\nMã nhà cung cấp: " + cbx_QLLK_LKien_NCC.Text.ToString()
                                     + "\nMã hàng: " + cbx_QLLK_LKien_Hang.Text.ToString()
-                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString();
+                                    + "\nTình trạng: " + cbx_QLLK_LKien_TinhTrang.Text.ToString()
+                                    + "\nSố lượng: " + txt_QLLK_LKien_SoLuong.Text.ToString();
 
                         DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
@@ -1213,6 +1237,7 @@ namespace DoAn_CNPM_App.ChildForm
                             lk.MaNCC = cbx_QLLK_LKien_NCC.SelectedValue.ToString();
                             lk.MaHang = cbx_QLLK_LKien_Hang.SelectedValue.ToString();
                             lk.TinhTrang = bool.Parse(cbx_QLLK_LKien_TinhTrang.SelectedValue.ToString());
+                            lk.SoLuong = int.Parse(txt_QLLK_LKien_SoLuong.Text);
                             dbContext.SaveChanges();
                             lks = dbContext.LINHKIENs.ToList();
                             QLLK_LKien_FillDGV(lks);
@@ -1251,6 +1276,15 @@ namespace DoAn_CNPM_App.ChildForm
                     break;
                 case 41:
                     MessageBox.Show("Đơn giá không được âm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 7:
+                    MessageBox.Show("Số lượng không thể để trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 8:
+                    MessageBox.Show("Số lượng sai định dạng! Vui lòng nhập chữ số!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 9:
+                    MessageBox.Show("Số lượng không thể nhỏ hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     break;
             }
         }
@@ -1386,6 +1420,7 @@ namespace DoAn_CNPM_App.ChildForm
                 cbx_QLLK_LKien_NCC.SelectedIndex = cbx_QLLK_LKien_NCC.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[8].Value?.ToString());
                 cbx_QLLK_LKien_Hang.SelectedIndex = cbx_QLLK_LKien_Hang.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[9].Value?.ToString());
                 cbx_QLLK_LKien_TinhTrang.SelectedIndex = cbx_QLLK_LKien_TinhTrang.FindStringExact(dgv_QLLK_LKien.SelectedRows[0].Cells[10].Value?.ToString());
+                txt_QLLK_LKien_SoLuong.Text = dgv_QLLK_LKien.SelectedRows[0].Cells[11].Value?.ToString();
                 lbl_QLLK_LKien_SelectedMaLKValue.Text = txt_QLLK_LKien_MaLK.Text;
                 if(string.IsNullOrEmpty(lbl_QLLK_LKien_SelectedMaLKValue.Text) == false)
                 {

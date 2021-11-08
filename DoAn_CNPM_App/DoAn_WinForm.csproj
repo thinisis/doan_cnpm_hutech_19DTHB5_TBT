@@ -506,6 +506,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\baseline_print_black_48dp1.png" />
+    <None Include="Resources\baseline_search_black_24dp.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

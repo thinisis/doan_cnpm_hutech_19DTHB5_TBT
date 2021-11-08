@@ -101,6 +101,8 @@ namespace DoAn_CNPM_App.XuLy
 
         void Fill_DonHang_DGV(List<CTDONHANG> ctdh)
         {
+            txt_XuLy_DonHang_TongTien.Text = "0";
+            double ThanhTien = 0;
             dgv_ChiTietDonHang.Rows.Clear();
             if(ctdh.Count > 0)
             {
@@ -114,7 +116,7 @@ namespace DoAn_CNPM_App.XuLy
                     dgv_ChiTietDonHang.Rows[i].Cells[3].Value = ctdh[i].DonGia.ToString();
                     dgv_ChiTietDonHang.Rows[i].Cells[4].Value = ctdh[i].SoLuong.ToString();
                     dgv_ChiTietDonHang.Rows[i].Cells[5].Value = ctdh[i].GiamGia.ToString();
-                    double ThanhTien = (ctdh[i].DonGia * ctdh[i].SoLuong) - ctdh[i].GiamGia;
+                    ThanhTien = (ctdh[i].DonGia * ctdh[i].SoLuong) - ctdh[i].GiamGia;
                     txt_XuLy_DonHang_TongTien.Text = (ThanhTien + double.Parse(txt_XuLy_DonHang_TongTien.Text)).ToString();
                     dgv_ChiTietDonHang.Rows[i].Cells[6].Value = ThanhTien.ToString();
                 }
@@ -123,11 +125,33 @@ namespace DoAn_CNPM_App.XuLy
         bool CheckSL_Hang()
         {
             LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
-            if(int.Parse(number_SL.Value.ToString()) > lk.SoLuong || int.Parse(number_SL.Value.ToString()) <= 0)
+            if (int.Parse(number_SL.Value.ToString()) > lk.SoLuong || int.Parse(number_SL.Value.ToString()) <= 0)
             {
                 return false;
             }
             return true;
+        }
+
+        bool CheckSL_Hang_Sua()
+        {
+            LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+            CTDONHANG ctdh = dbContext.CTDONHANGs.FirstOrDefault(a => a.MaDH == madh && a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+            if(number_SL.Value <= ctdh.SoLuong)
+            {
+                return true;
+            }
+            else
+            {
+                if(number_SL.Value > ctdh.SoLuong)
+                {
+                    decimal SL = (number_SL.Value - ctdh.SoLuong);
+                    if(SL <= lk.SoLuong)
+                    {
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
         int Check_Valid_Input(int chucnang)
@@ -219,24 +243,36 @@ namespace DoAn_CNPM_App.XuLy
                     {
                         try
                         {
-                            CTDONHANG ct = new CTDONHANG();
-                            ct.MaDH = madh;
-                            ct.MaLK = txt_XuLy_DonHang_MaLK.Text;
-                            ct.SoLuong = int.Parse(number_SL.Value.ToString());
-                            ct.DonGia = double.Parse(txt_XuLy_DonHang_DonGia.Text);
-                            ct.GiamGia = double.Parse(txt_XuLy_DonHang_GiamGia.Text);
-                            LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
-                            lk.SoLuong = lk.SoLuong - int.Parse(number_SL.Value.ToString());
-                            dbContext.CTDONHANGs.Add(ct);
-                            dbContext.SaveChanges();
-                            ctdhs = dbContext.CTDONHANGs.Where(a => a.MaDH == madh).ToList();
-                            Fill_DonHang_DGV(ctdhs);
-                            DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
-                            dh.TongTien = double.Parse(txt_XuLy_DonHang_TongTien.Text);
-                            EnableOrDisable_Textbox(true);
-                            btn_BoChon.Visible = false;
-                            ClearTextbox();
-                            MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            String mess = "Xác nhận thêm mới linh kiện " + txt_XuLy_DonHang_MaLK.Text + " với số lượng là " + number_SL.Value.ToString();
+                            DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                            if(dr == DialogResult.OK)
+                            {
+                                CTDONHANG ct = new CTDONHANG();
+                                ct.MaDH = madh;
+                                ct.MaLK = txt_XuLy_DonHang_MaLK.Text;
+                                ct.SoLuong = int.Parse(number_SL.Value.ToString());
+                                ct.DonGia = double.Parse(txt_XuLy_DonHang_DonGia.Text);
+                                ct.GiamGia = double.Parse(txt_XuLy_DonHang_GiamGia.Text);
+                                LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                                lk.SoLuong = lk.SoLuong - int.Parse(number_SL.Value.ToString());
+                                dbContext.CTDONHANGs.Add(ct);
+                                dbContext.SaveChanges();
+                                ctdhs = dbContext.CTDONHANGs.Where(a => a.MaDH == madh).ToList();
+                                Fill_DonHang_DGV(ctdhs);
+                                DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
+                                dh.TongTien = double.Parse(txt_XuLy_DonHang_TongTien.Text);
+                                dbContext.SaveChanges();
+                                EnableOrDisable_Textbox(true);
+                                btn_BoChon.Visible = false;
+                                ClearTextbox();
+                                lks = dbContext.LINHKIENs.ToList();
+                                Fill_Find_DGV(lks);
+                                MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Đã huỷ bỏ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
                         }
                         catch(Exception ex)
                         {
@@ -274,6 +310,12 @@ namespace DoAn_CNPM_App.XuLy
             ThemHang_CTDonHang();
             Loaded = true;
         }
+        private void btn_XuLy_DonHang_ChinhSua_Click(object sender, EventArgs e)
+        {
+            Loaded = false;
+            XuLy_DonHang_ChinhSua();
+            Loaded = true;
+        }
 
         private void btn_XuLy_DonHang_InDH_Click(object sender, EventArgs e)
         {
@@ -308,12 +350,229 @@ namespace DoAn_CNPM_App.XuLy
         void XuLy_DonHang_ChinhSua()
         {
             int check = Check_Valid_Input(2);
+            switch (check)
+            {
+                case 0:
+                    if (CheckSL_Hang_Sua() == true)
+                    {
+                        try
+                        {
+                            String mess = "Xác nhận chỉnh sửa linh kiện " + txt_XuLy_DonHang_MaLK.Text + " với số lượng là " + number_SL.Value.ToString();
+                            DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                            if (dr == DialogResult.OK)
+                            {
+                                CTDONHANG ctc = dbContext.CTDONHANGs.FirstOrDefault(a => a.MaDH == madh && a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                                CTDONHANG ct = ctc;
+                                decimal soluongcu = ctc.SoLuong;
+                                dbContext.CTDONHANGs.Remove(ctc);
+                                dbContext.SaveChanges();
+                                ct.SoLuong = int.Parse(number_SL.Value.ToString());
+                                ct.DonGia = double.Parse(txt_XuLy_DonHang_DonGia.Text);
+                                ct.GiamGia = double.Parse(txt_XuLy_DonHang_GiamGia.Text);
+                                LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                                if (soluongcu < number_SL.Value)
+                                {
+                                    lk.SoLuong = lk.SoLuong - int.Parse((number_SL.Value - soluongcu).ToString());
 
+                                }
+                                else
+                                {
+                                    if (soluongcu > number_SL.Value)
+                                    {
+                                        lk.SoLuong = lk.SoLuong + int.Parse((soluongcu - number_SL.Value).ToString());
+                                    }
+                                }
+                                dbContext.CTDONHANGs.Add(ct);
+                                dbContext.SaveChanges();
+                                ctdhs = dbContext.CTDONHANGs.Where(a => a.MaDH == madh).ToList();
+                                Fill_DonHang_DGV(ctdhs);
+                                DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
+                                dh.TongTien = double.Parse(txt_XuLy_DonHang_TongTien.Text);
+                                dbContext.SaveChanges();
+                                EnableOrDisable_Textbox(true);
+                                btn_BoChon.Visible = false;
+                                btn_XuLy_DonHang_ThemVao.Enabled = true;
+                                ClearTextbox();
+                                lks = dbContext.LINHKIENs.ToList();
+                                Fill_Find_DGV(lks);
+                                MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Đã huỷ bỏ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            }
+                        }
+                            
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.ToString(), "Lỗi");
+                        }
+                    }
+                    else
+                    {
+                    LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                    String mess = "Số lượng hàng tăng thêm không thể vượt quá " + lk.SoLuong + " và số lượng không thể nhỏ hơn 0!";
+                    MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Đơn giá không hợp lệ hoặc nhỏ hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                case 2:
+                    MessageBox.Show("Giảm giá không hợp lệ hoặc nhỏ hơn 0!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                case 4:
+                    MessageBox.Show("Vui lòng điền đẩy đủ vào các ô trống!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                case 5:
+                    MessageBox.Show("Mã linh kiện không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+            }
         }
 
-        private void btn_XuLy_DonHang_ChinhSua_Click(object sender, EventArgs e)
+        int CheckXoaLK()
         {
+            if(string.IsNullOrEmpty(txt_XuLy_DonHang_MaLK.Text) == true)
+            {
+                return 1; //trong ma lk
+            }
+            else
+            {
+                CTDONHANG ct = dbContext.CTDONHANGs.FirstOrDefault(a => a.MaDH == madh && a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                if (ct == null)
+                {
+                    return 2; // ctdh khong ton tai
+                }
+            }
+            return 0;
+        }
 
+        void XoaLK()
+        {
+            int check = CheckXoaLK();
+            switch (check)
+            {
+                case 0:
+                    try
+                    {
+                        String mess = "Xác nhận xoá linh kiện " + txt_XuLy_DonHang_MaLK.Text + " với số lượng là " + number_SL.Value.ToString();
+                        DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        if (dr == DialogResult.OK)
+                        {
+                            CTDONHANG ctdh = dbContext.CTDONHANGs.FirstOrDefault(a => a.MaDH == madh && a.MaLK == txt_XuLy_DonHang_MaLK.Text);
+                            int soluong = ctdh.SoLuong;
+                            String malk = ctdh.MaLK;
+                            dbContext.CTDONHANGs.Remove(ctdh);
+                            dbContext.SaveChanges();
+                            if (soluong > 0)
+                            {
+                                LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == malk);
+                                lk.SoLuong = lk.SoLuong + soluong;
+                                dbContext.SaveChanges();
+                                lks = dbContext.LINHKIENs.ToList();
+                                Fill_Find_DGV(lks);
+                            }
+                            ctdhs = dbContext.CTDONHANGs.Where(a => a.MaDH == madh).ToList();
+                            Fill_DonHang_DGV(ctdhs);
+                            DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
+                            dh.TongTien = double.Parse(txt_XuLy_DonHang_TongTien.Text);
+                            dbContext.SaveChanges();
+                            EnableOrDisable_Textbox(true);
+                            btn_BoChon.Visible = false;
+                            btn_XuLy_DonHang_ThemVao.Enabled = true;
+                            ClearTextbox();
+                            MessageBox.Show("Thao tác thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Đã huỷ bỏ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), "Lỗi");
+                    }
+                    break;
+                case 1:
+                    MessageBox.Show("Không thể để trống mã linh kiện!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+                case 2:
+                    MessageBox.Show("Mã linh kiện không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    break;
+            }
+        }
+
+        private void btn_XuLy_DonHang_Xoa_Click(object sender, EventArgs e)
+        {
+            Loaded = false;
+            XoaLK();
+            Loaded = true;
+        }
+
+        bool CheckDH_Valid()
+        {
+            DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
+            if(dh == null)
+            {
+                return false;
+            }
+            return true;
+        }
+
+        void XoaDH()
+        {
+            if(CheckDH_Valid() == true)
+            {
+                try
+                {
+                    String mess = "Bạn có chắc chắn xoá đơn hàng " + madh + " hay không? \nThao tác này sẽ không thể khôi phục";
+                    DialogResult dr = MessageBox.Show(mess, "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                    if (dr == DialogResult.OK)
+                    {
+                        List<CTDONHANG> lct = dbContext.CTDONHANGs.Where(a => a.MaDH == madh).ToList();
+                        if(lct.Count > 0)
+                        {
+                            for(int i = 0; i < lct.Count; i++)
+                            {
+                                String malk = lct[i].MaLK;
+                                int soluong = lct[i].SoLuong;
+                                if (soluong > 0)
+                                {
+                                    LINHKIEN lk = dbContext.LINHKIENs.FirstOrDefault(a => a.MaLK == malk);
+                                    lk.SoLuong = lk.SoLuong + soluong;
+                                    dbContext.SaveChanges();
+                                }
+                            }
+                            dbContext.CTDONHANGs.RemoveRange(lct);
+                            dbContext.SaveChanges();
+                        }
+
+                        DONHANG dh = dbContext.DONHANGs.FirstOrDefault(a => a.MaDH == madh);
+                        dbContext.DONHANGs.Remove(dh);
+                        dbContext.SaveChanges();
+                        MessageBox.Show("Thao tác thành công! Nhấn OK để thoát", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Đã huỷ bỏ thao tác!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.ToString(), "Lỗi");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Đơn hàng không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
+        }
+
+        private void btn_XuLy_DonHang_XoaDonHang_Click(object sender, EventArgs e)
+        {
+            XoaDH();
         }
     }
 }

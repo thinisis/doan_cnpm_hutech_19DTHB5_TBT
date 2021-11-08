@@ -902,6 +902,7 @@ namespace DoAn_CNPM_App.XuLy
             this.btn_XuLy_DonHang_Xoa.TextMarginLeft = 0;
             this.btn_XuLy_DonHang_Xoa.TextPadding = new System.Windows.Forms.Padding(0);
             this.btn_XuLy_DonHang_Xoa.UseDefaultRadiusAndThickness = true;
+            this.btn_XuLy_DonHang_Xoa.Click += new System.EventHandler(this.btn_XuLy_DonHang_Xoa_Click);
             // 
             // btn_XuLy_DonHang_ChinhSua
             // 
@@ -1577,6 +1578,7 @@ namespace DoAn_CNPM_App.XuLy
             this.btn_XuLy_DonHang_XoaDonHang.TextMarginLeft = 0;
             this.btn_XuLy_DonHang_XoaDonHang.TextPadding = new System.Windows.Forms.Padding(0);
             this.btn_XuLy_DonHang_XoaDonHang.UseDefaultRadiusAndThickness = true;
+            this.btn_XuLy_DonHang_XoaDonHang.Click += new System.EventHandler(this.btn_XuLy_DonHang_XoaDonHang_Click);
             // 
             // frmChiTietDonHang
             // 
