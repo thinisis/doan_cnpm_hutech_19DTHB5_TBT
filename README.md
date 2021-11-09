@@ -20,7 +20,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/thinisis/DoAn_CNPM_HUTECH_K19_19DTHB5/">
+  <a href="https://github.com/thinisis/doan_cnpm_hutech_19DTHB5_TBT">
     <img src="https://raw.githubusercontent.com/othneildrew/Best-README-Template/master/images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
@@ -29,7 +29,7 @@
   <p align="center">
     Nhóm 10 - TBT
     <br />
-    <a href="https://github.com/thinisis/DoAn_CNPM_HUTECH_K19_19DTHB5/"><strong>Liên kết tới dự án trên GitHub»</strong></a>
+    <a href="https://github.com/thinisis/doan_cnpm_hutech_19DTHB5_TBT"><strong>Liên kết tới dự án trên GitHub»</strong></a>
     <br />
     <br />
     <a href="https://www.facebook.com/thinnguyen.vn/">thinnguyenvn on Facebook</a>
