@@ -15,6 +15,7 @@ namespace DoAn_CNPM_App.ChildForm
         EntityFramework dbContext = new EntityFramework();
         int lv;
         bool LoadedQLKH = false;
+        bool LoadedQLDH = false;
         List<DONHANG> dhs = new List<DONHANG>();
         List<KHACHHANG> KHs = new List<KHACHHANG>();
         ACCOUNT acc = new ACCOUNT();
@@ -40,8 +41,10 @@ namespace DoAn_CNPM_App.ChildForm
         
         void Fill_DGV()
         {
+            LoadedQLDH = false;
             dhs = dbContext.DONHANGs.ToList();
             Fill_DGV_DonHang_TimKiemDH(dhs, lv);
+            LoadedQLDH = true;
         }
 
         void XuLy_DonHang_GetTTNV()
@@ -244,7 +247,7 @@ namespace DoAn_CNPM_App.ChildForm
 
         private void dgv_XuLy_DonHang_TimKiemDH_SelectionChanged(object sender, EventArgs e)
         {
-            if (dgv_XuLy_DonHang_TimKiemDH.SelectedRows.Count > 0 && dgv_XuLy_DonHang_TimKiemDH.Rows.Count == dhs.Count())
+            if (dgv_XuLy_DonHang_TimKiemDH.SelectedRows.Count > 0 && dgv_XuLy_DonHang_TimKiemDH.Rows.Count == dhs.Count() && LoadedQLDH == true);
             {
                 txt_XyLy_DonHang_TimKiemDH.Text = dgv_XuLy_DonHang_TimKiemDH.SelectedRows[0].Cells[1].Value.ToString();
             }
