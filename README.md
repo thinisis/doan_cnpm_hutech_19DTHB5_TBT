@@ -79,6 +79,6 @@ Là một sản phẩm quản lý - quản lý linh kiện máy tính cho công 
 
 ### Phần mềm đóng gói
 
-* [Advanced Installer#](https://www.advancedinstaller.com/)
+* [Advanced Installer](https://www.advancedinstaller.com/)
 
 <p align="right">(<a href="#top">Quay trở lại đầu trang</a>)</p>
