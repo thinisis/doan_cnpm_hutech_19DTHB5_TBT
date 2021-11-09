@@ -50,6 +50,7 @@
       <a href="#about-the-project">Về dự án</a>
       <ul>
         <li><a href="#built-with">Ngôn ngữ & Framework sử dụng</a></li>
+        <li><a href="#installer">Phần mềm đóng gói</a></li>
       </ul>
     </li>
   </ol>
@@ -73,5 +74,11 @@ Là một sản phẩm quản lý - quản lý linh kiện máy tính cho công 
 * [CSharp - C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
 * [Bunifu UI Framework](https://bunifuframework.com/)
 * [MetroSet UI Framework](https://n-a-r-w-i-n.github.io/MetroSet-UI/)
+
+<p align="right">(<a href="#top">Quay trở lại đầu trang</a>)</p>
+
+### Phần mềm đóng gói
+
+* [Advanced Installer#](https://www.advancedinstaller.com/)
 
 <p align="right">(<a href="#top">Quay trở lại đầu trang</a>)</p>
