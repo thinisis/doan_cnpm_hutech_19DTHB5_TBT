@@ -32,7 +32,7 @@
     <a href="https://github.com/thinisis/DoAn_CNPM_HUTECH_K19_19DTHB5/"><strong>Liên kết tới dự án trên GitHub»</strong></a>
     <br />
     <br />
-    <a href="https://www.facebook.com/thinnguyen.vn/">Design - Developed by thinnguyenvn</a>
+    <a href="https://www.facebook.com/thinnguyen.vn/">thinnguyenvn on Facebook</a>
     ·
     <a href="https://t.me/thinnguyenvn/">Telegram</a>
     ·
