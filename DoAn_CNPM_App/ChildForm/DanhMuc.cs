@@ -928,7 +928,7 @@ namespace DoAn_CNPM_App.ChildForm
         void QLLK_LKien_ClearTextBox()
         {
             txt_QLLK_LKien_DonGia.Text = "";
-            cbx_QLLK_LKien_Hang.SelectedIndex = 0;
+            cbx_QLLK_LKien_Hang.SelectedIndex = ;
             cbx_QLLK_LKien_Kho.SelectedIndex = 0;
             txt_QLLK_LKien_MaLK.Text = "";
             cbx_QLLK_LKien_LoaiLK.SelectedIndex = 0;

@@ -13,27 +13,19 @@ namespace DoAn_CNPM_App
 {
     public partial class Login : Form
     {
-        SqlConnection con = new SqlConnection();
+        EntityFramework dbContext = new EntityFramework();
         public Login()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
         }
 
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
-            con.Open();
             string userid = txt_Account.Text;
             string password = txt_Pwd.Text;
-            SqlCommand cmd = new SqlCommand("select username,password from ACCOUNT where username='" + txt_Account.Text + "'and password='" + txt_Pwd.Text + "'", con);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == userid && a.password == password);
+            if (acc != null)
             {
                 MessageBox.Show(this, "Đăng nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.None);
                 if (ckbx_RememberPwd.Checked == true)
@@ -59,7 +51,6 @@ namespace DoAn_CNPM_App
             {
                 MessageBox.Show(this, "Đăng nhập thất bại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            con.Close();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -75,8 +66,6 @@ namespace DoAn_CNPM_App
         private void Login_Load(object sender, EventArgs e)
         {
             this.AcceptButton = btn_Login;
-            SqlConnection con = new SqlConnection("Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True");
-            con.Open();
             txt_Account.Text = Properties.Settings.Default.Username;
             txt_Pwd.Text = Properties.Settings.Default.Password;
             if (Properties.Settings.Default.Checked == true)

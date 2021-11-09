@@ -163,7 +163,11 @@ namespace DoAn_CNPM_App.XuLy
             }
             if(lk == null)
             {
-                return 5; // Linh kien khong ton tai
+                return 5; // Linh kien khong ton tai 
+            }
+            if(lk.TinhTrang == false)
+            {
+                return 6; //linh kien khong dc ban
             }
             if(int.TryParse(txt_XuLy_DonHang_DonGia.Text, out _) == false || int.Parse(txt_XuLy_DonHang_DonGia.Text) < 0 ) 
             {
@@ -300,6 +304,9 @@ namespace DoAn_CNPM_App.XuLy
                     break;
                 case 5:
                     MessageBox.Show("Mã linh kiện không tồn tại!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    break;
+                case 6:
+                    MessageBox.Show("Linh kiện trong trạng thái không được bán!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     break;
             }
         }

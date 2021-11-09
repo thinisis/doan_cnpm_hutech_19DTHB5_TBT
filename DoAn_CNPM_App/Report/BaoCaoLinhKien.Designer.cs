@@ -167,7 +167,7 @@ namespace DoAn_CNPM_App.Report
             this.Name = "BaoCaoLinhKien";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BÁO CÁO LINH KIỆN";
+            this.Text = "Báo cáo linh kiện";
             this.Load += new System.EventHandler(this.BaoCaoLinhKien_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

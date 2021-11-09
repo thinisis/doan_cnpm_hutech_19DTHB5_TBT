@@ -295,7 +295,6 @@ namespace DoAn_CNPM_App
             this.lbl_Title.Name = "lbl_Title";
             this.lbl_Title.Size = new System.Drawing.Size(893, 82);
             this.lbl_Title.TabIndex = 1;
-            this.lbl_Title.Paint += new System.Windows.Forms.PaintEventHandler(this.lbl_Title_Paint);
             // 
             // pnl_Account
             // 
@@ -362,7 +361,6 @@ namespace DoAn_CNPM_App
             this.lbl_UserHello.TabIndex = 1;
             this.lbl_UserHello.Text = "Username";
             this.lbl_UserHello.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_UserHello.Click += new System.EventHandler(this.lbl_UserHello_Click);
             // 
             // lbl_Time
             // 
@@ -386,7 +384,6 @@ namespace DoAn_CNPM_App
             this.lbl_Day.Size = new System.Drawing.Size(80, 19);
             this.lbl_Day.TabIndex = 4;
             this.lbl_Day.Text = "01/01/1970";
-            this.lbl_Day.Click += new System.EventHandler(this.lbl_Day_Click);
             // 
             // lbl_TitleText
             // 
@@ -445,7 +442,6 @@ namespace DoAn_CNPM_App
             this.lbl_HelloUsername.TabIndex = 2;
             this.lbl_HelloUsername.Text = "Xin chào User!";
             this.lbl_HelloUsername.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lbl_HelloUsername.Click += new System.EventHandler(this.lbl_HelloUsername_Click);
             // 
             // label2
             // 
@@ -470,7 +466,6 @@ namespace DoAn_CNPM_App
             this.lbl_GioiThieu.TabIndex = 1;
             this.lbl_GioiThieu.Text = "Chọn chức năng theo danh sách bên trái";
             this.lbl_GioiThieu.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lbl_GioiThieu.Click += new System.EventHandler(this.lbl_GioiThieu_Click);
             // 
             // MainForm
             // 

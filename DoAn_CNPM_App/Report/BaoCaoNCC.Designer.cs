@@ -30,7 +30,7 @@ namespace DoAn_CNPM_App.Report
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaoCaoNCC));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
             this.btn_Thoat = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -72,11 +72,11 @@ namespace DoAn_CNPM_App.Report
             this.btn_Thoat.ColorContrastOnClick = 45;
             this.btn_Thoat.ColorContrastOnHover = 45;
             this.btn_Thoat.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.btn_Thoat.CustomizableEdges = borderEdges2;
+            borderEdges1.BottomLeft = true;
+            borderEdges1.BottomRight = true;
+            borderEdges1.TopLeft = true;
+            borderEdges1.TopRight = true;
+            this.btn_Thoat.CustomizableEdges = borderEdges1;
             this.btn_Thoat.DialogResult = System.Windows.Forms.DialogResult.None;
             this.btn_Thoat.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.btn_Thoat.DisabledFillColor = System.Drawing.Color.Empty;
@@ -166,7 +166,7 @@ namespace DoAn_CNPM_App.Report
             this.MinimizeBox = false;
             this.Name = "BaoCaoNCC";
             this.ShowIcon = false;
-            this.Text = "BÁO CÁO NHÀ CUNG CẤP";
+            this.Text = "Báo cáo nhà cung cấp";
             this.Load += new System.EventHandler(this.BaoCaoNCC_Load);
             this.bunifuPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

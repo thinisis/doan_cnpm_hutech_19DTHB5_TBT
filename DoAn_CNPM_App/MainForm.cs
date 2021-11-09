@@ -14,18 +14,15 @@ namespace DoAn_CNPM_App
 {
     public partial class MainForm : Form
     {
-
+        EntityFramework dbContext = new EntityFramework();
         private Form activeForm;
         int userLevel;
         String userName;
         String nameOfUser;
         String maNV;
-        SqlConnection con = new SqlConnection();
         public MainForm()
         {
             InitializeComponent();
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
         }
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -55,32 +52,20 @@ namespace DoAn_CNPM_App
 
         public void GetInfoUser()
         {
-            con.ConnectionString = "Data Source=THINNGUYENVN\\SQLEXPRESS;Initial Catalog=TBT_DTB;Integrated Security=True";
             try
             {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("select * from ACCOUNT, NHANVIEN where username='" + Properties.Settings.Default.Username + "' AND ACCOUNT.MaNV = NHANVIEN.MaNV", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt != null)
+                ACCOUNT acc = dbContext.ACCOUNTs.FirstOrDefault(a => a.username == Properties.Settings.Default.Username);
+                if (acc != null)
                 {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        int.TryParse(dr["lv"].ToString(), out userLevel);
-                        nameOfUser = dr["TenNV"].ToString();
-                        maNV = dr["MaNV"].ToString();
-                        userName = dr["username"].ToString();
-                    }
+                    userLevel = int.Parse(acc.lv);
+                    nameOfUser = acc.NHANVIEN.TenNV;
+                    maNV = acc.MaNV;
+                    userName = acc.username;
                 }
             }
             catch (Exception)
             {
                 MessageBox.Show("Không thể lấy thông tin người dùng!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            finally
-            {
-                con.Close();
             }
         }
 
@@ -99,24 +84,6 @@ namespace DoAn_CNPM_App
             ChildForm.BringToFront();
             ChildForm.Show();
             lbl_TitleText.Text = ChildForm.Text;
-        }
-
-
-
-
-        private void lbl_GioiThieu_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_Title_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lbl_HelloUsername_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btn_XuLy_Click_1(object sender, EventArgs e)
@@ -198,15 +165,6 @@ namespace DoAn_CNPM_App
             
         }
 
-        private void lbl_Day_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_UserHello_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btn_DangXuat_Click(object sender, EventArgs e)
         {
