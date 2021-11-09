@@ -292,6 +292,18 @@
     <Compile Include="NHANVIEN.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Report\BaoCaoDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\BaoCaoDonHang.Designer.cs">
+      <DependentUpon>BaoCaoDonHang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\BaoCaoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\BaoCaoKhachHang.Designer.cs">
+      <DependentUpon>BaoCaoKhachHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\BaoCaoLinhKien.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +346,8 @@
       <DependentUpon>ChiTietDonHang.cs</DependentUpon>
     </Compile>
     <Compile Include="XULY_CTDONHANG.cs" />
+    <EmbeddedResource Include="BaoCaoDonHang.rdlc" />
+    <EmbeddedResource Include="BaoCaoKhachHang.rdlc" />
     <EmbeddedResource Include="BaoCaoLinhKien.rdlc" />
     <EmbeddedResource Include="BaoCaoNhaCungCap.rdlc" />
     <EmbeddedResource Include="BaoCaoNhanVien.rdlc" />
@@ -390,6 +404,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\BaoCaoDonHang.resx">
+      <DependentUpon>BaoCaoDonHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\BaoCaoKhachHang.resx">
+      <DependentUpon>BaoCaoKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\BaoCaoLinhKien.resx">
       <DependentUpon>BaoCaoLinhKien.cs</DependentUpon>
     </EmbeddedResource>
@@ -412,6 +432,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CTDONHANG.datasource" />
     <None Include="Properties\DataSources\DONHANG.datasource" />
+    <None Include="Properties\DataSources\KHACHHANG.datasource" />
     <None Include="Properties\DataSources\LINHKIEN.datasource" />
     <None Include="Properties\DataSources\NHACUNGCAP.datasource" />
     <None Include="Properties\DataSources\NHANVIEN.datasource" />

@@ -37,8 +37,6 @@ namespace DoAn_CNPM_App
             this.lbl_cpt = new System.Windows.Forms.Label();
             this.lbl_Logo = new System.Windows.Forms.Label();
             this.btn_TroGiup = new FontAwesome.Sharp.IconButton();
-            this.btn_BaoHanh = new FontAwesome.Sharp.IconButton();
-            this.btn_TimKiem = new FontAwesome.Sharp.IconButton();
             this.btn_BaoCao = new FontAwesome.Sharp.IconButton();
             this.btn_XuLy = new FontAwesome.Sharp.IconButton();
             this.btn_DanhMuc = new FontAwesome.Sharp.IconButton();
@@ -76,8 +74,6 @@ namespace DoAn_CNPM_App
             this.pl_Menu.Controls.Add(this.lbl_cpt);
             this.pl_Menu.Controls.Add(this.lbl_Logo);
             this.pl_Menu.Controls.Add(this.btn_TroGiup);
-            this.pl_Menu.Controls.Add(this.btn_BaoHanh);
-            this.pl_Menu.Controls.Add(this.btn_TimKiem);
             this.pl_Menu.Controls.Add(this.btn_BaoCao);
             this.pl_Menu.Controls.Add(this.btn_XuLy);
             this.pl_Menu.Controls.Add(this.btn_DanhMuc);
@@ -161,7 +157,7 @@ namespace DoAn_CNPM_App
             this.btn_TroGiup.IconColor = System.Drawing.Color.White;
             this.btn_TroGiup.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_TroGiup.IconSize = 30;
-            this.btn_TroGiup.Location = new System.Drawing.Point(0, 508);
+            this.btn_TroGiup.Location = new System.Drawing.Point(0, 394);
             this.btn_TroGiup.Name = "btn_TroGiup";
             this.btn_TroGiup.Size = new System.Drawing.Size(200, 60);
             this.btn_TroGiup.TabIndex = 18;
@@ -170,46 +166,6 @@ namespace DoAn_CNPM_App
             this.btn_TroGiup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_TroGiup.UseVisualStyleBackColor = true;
             this.btn_TroGiup.Click += new System.EventHandler(this.btn_TroGiup_Click);
-            // 
-            // btn_BaoHanh
-            // 
-            this.btn_BaoHanh.FlatAppearance.BorderSize = 0;
-            this.btn_BaoHanh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_BaoHanh.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_BaoHanh.ForeColor = System.Drawing.Color.White;
-            this.btn_BaoHanh.IconChar = FontAwesome.Sharp.IconChar.Sync;
-            this.btn_BaoHanh.IconColor = System.Drawing.Color.White;
-            this.btn_BaoHanh.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_BaoHanh.IconSize = 30;
-            this.btn_BaoHanh.Location = new System.Drawing.Point(0, 448);
-            this.btn_BaoHanh.Name = "btn_BaoHanh";
-            this.btn_BaoHanh.Size = new System.Drawing.Size(200, 60);
-            this.btn_BaoHanh.TabIndex = 17;
-            this.btn_BaoHanh.Text = "Bảo hành";
-            this.btn_BaoHanh.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_BaoHanh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_BaoHanh.UseVisualStyleBackColor = true;
-            this.btn_BaoHanh.Click += new System.EventHandler(this.btn_BaoHanh_Click);
-            // 
-            // btn_TimKiem
-            // 
-            this.btn_TimKiem.FlatAppearance.BorderSize = 0;
-            this.btn_TimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_TimKiem.Font = new System.Drawing.Font("Open Sans", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_TimKiem.ForeColor = System.Drawing.Color.White;
-            this.btn_TimKiem.IconChar = FontAwesome.Sharp.IconChar.Search;
-            this.btn_TimKiem.IconColor = System.Drawing.Color.White;
-            this.btn_TimKiem.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_TimKiem.IconSize = 30;
-            this.btn_TimKiem.Location = new System.Drawing.Point(0, 388);
-            this.btn_TimKiem.Name = "btn_TimKiem";
-            this.btn_TimKiem.Size = new System.Drawing.Size(200, 60);
-            this.btn_TimKiem.TabIndex = 16;
-            this.btn_TimKiem.Text = "Tìm kiếm";
-            this.btn_TimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_TimKiem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_TimKiem.UseVisualStyleBackColor = true;
-            this.btn_TimKiem.Click += new System.EventHandler(this.btn_TimKiem_Click);
             // 
             // btn_BaoCao
             // 
@@ -559,8 +515,6 @@ namespace DoAn_CNPM_App
         private FontAwesome.Sharp.IconButton btn_HeThong;
         private FontAwesome.Sharp.IconButton btn_XuLy;
         private FontAwesome.Sharp.IconButton btn_TroGiup;
-        private FontAwesome.Sharp.IconButton btn_BaoHanh;
-        private FontAwesome.Sharp.IconButton btn_TimKiem;
         private FontAwesome.Sharp.IconButton btn_BaoCao;
         private System.Windows.Forms.Label lbl_Logo;
         private System.Windows.Forms.Label lbl_TitleText;
